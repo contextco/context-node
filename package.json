@@ -1,0 +1,34 @@
+{
+  "name": "context-js",
+  "version": "0.1.0",
+  "description": "Node SDK for the Context API",
+  "type": "module",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "prepack": "npm run build",
+    "build_generated": "cd generated && npm run build",
+    "build_types": "tsc --emitDeclarationOnly --declaration --project tsconfig.json"
+  },
+  "dependencies": {
+    "context-generated": "file:./generated"
+  },
+  "keywords": [
+    "context",
+    "api",
+    "sdk"
+  ],
+  "author": "Alex Gamble",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "@types/node": "^20.2.5",
+    "esbuild": "^0.17.19",
+    "rollup": "^3.23.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "typescript": "^5.1.3"
+  }
+}

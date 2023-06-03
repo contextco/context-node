@@ -1,0 +1,1 @@
+{"version":3,"file":"log.d.ts","sourceRoot":"","sources":["../../src/operationsInterfaces/log.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,6BAA6B,EAAE,MAAM,WAAW,CAAC;AAE1D,oCAAoC;AACpC,MAAM,WAAW,GAAG;IAClB;;;OAGG;IACH,YAAY,CAAC,OAAO,CAAC,EAAE,6BAA6B,GAAG,OAAO,CAAC,IAAI,CAAC,CAAC;CACtE"}

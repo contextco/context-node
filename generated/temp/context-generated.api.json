@@ -1,0 +1,935 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.35.1",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "context-generated!",
+  "docComment": "",
+  "name": "context-generated",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "context-generated!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Class",
+          "canonicalReference": "context-generated!ContextAPI:class",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class ContextAPI extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "coreClient.ServiceClient",
+              "canonicalReference": "@azure/core-client!ServiceClient:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/contextAPI.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "ContextAPI",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "context-generated!ContextAPI:constructor(1)",
+              "docComment": "/**\n * Initializes a new instance of the ContextAPI class.\n *\n * @param options - The parameter options\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ContextAPIOptionalParams",
+                  "canonicalReference": "context-generated!ContextAPIOptionalParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ]
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "context-generated!ContextAPI#$host:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "$host: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "$host",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "context-generated!ContextAPI#log:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "log: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Log",
+                  "canonicalReference": "context-generated!Log:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "log",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "context-generated!ContextAPIOptionalParams:interface",
+          "docComment": "/**\n * Optional parameters.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ContextAPIOptionalParams extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "coreClient.ServiceClientOptions",
+              "canonicalReference": "@azure/core-client!ServiceClientOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "ContextAPIOptionalParams",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!ContextAPIOptionalParams#$host:member",
+              "docComment": "/**\n * server parameter\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "$host?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "$host",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!ContextAPIOptionalParams#endpoint:member",
+              "docComment": "/**\n * Overrides client endpoint.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "endpoint?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "endpoint",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "context-generated!Conversation:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Conversation "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "Conversation",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!Conversation#messages:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "messages?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Message",
+                  "canonicalReference": "context-generated!Message:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "messages",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!Conversation#metadata:member",
+              "docComment": "/**\n * Any object\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "metadata?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, unknown>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "metadata",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "context-generated!KnownMessageRole:enum",
+          "docComment": "/**\n * Known values of {@link MessageRole} that the service accepts.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum KnownMessageRole "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "KnownMessageRole",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "context-generated!KnownMessageRole.Assistant:member",
+              "docComment": "/**\n * Assistant\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Assistant = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"assistant\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Assistant"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "context-generated!KnownMessageRole.System:member",
+              "docComment": "/**\n * System\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "System = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"system\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "System"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "context-generated!KnownMessageRole.User:member",
+              "docComment": "/**\n * User\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "User = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"user\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "User"
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "context-generated!Log:interface",
+          "docComment": "/**\n * Interface representing a Log.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Log "
+            }
+          ],
+          "fileUrlPath": "src/operationsInterfaces/log.ts",
+          "releaseTag": "Public",
+          "name": "Log",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "context-generated!Log#conversation:member(1)",
+              "docComment": "/**\n * Ingests a conversation\n *\n * @param options - The options parameters.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "conversation(options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LogConversationOptionalParams",
+                  "canonicalReference": "context-generated!LogConversationOptionalParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<void>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "name": "conversation"
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "context-generated!LogConversationOptionalParams:interface",
+          "docComment": "/**\n * Optional parameters.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface LogConversationOptionalParams extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "coreClient.OperationOptions",
+              "canonicalReference": "@azure/core-client!OperationOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "LogConversationOptionalParams",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!LogConversationOptionalParams#authorization:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "authorization?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "authorization",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!LogConversationOptionalParams#body:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "body?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema",
+                  "canonicalReference": "context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "body",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "context-generated!Message:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Message "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "Message",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!Message#eventTimestamp:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "eventTimestamp?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "eventTimestamp",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!Message#message:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "message: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "message",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!Message#rating:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "rating?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Rating",
+                  "canonicalReference": "context-generated!Rating:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "rating",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!Message#role:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "role: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MessageRole",
+                  "canonicalReference": "context-generated!MessageRole:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "role",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "context-generated!MessageRole:type",
+          "docComment": "/**\n * Defines values for MessageRole. \\ {@link KnownMessageRole} can be used interchangeably with MessageRole, this enum contains the known values that the service supports. ### Known values supported by the service **system** \\ **assistant** \\ **user**\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MessageRole = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "MessageRole",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema#conversation:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "conversation?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Conversation",
+                  "canonicalReference": "context-generated!Conversation:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "conversation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "context-generated!Rating:type",
+          "docComment": "/**\n * Defines values for Rating.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Rating = "
+            },
+            {
+              "kind": "Content",
+              "text": "-1 | 0 | 1"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "Rating",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        }
+      ]
+    }
+  ]
+}
