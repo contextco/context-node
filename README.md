@@ -1,3 +1,39 @@
+
+# Context Node Library
+
+The Context Node library provides a convenient way to interface with the Context APIs. We include pre-defined classes and operations to interact with API resources.
+
+## Installation
+
+## Usage
+
+The library needs to be configured with your Context API key, which is available in the [Context Settings Dashboard](https://go.getcontext.ai/settings).
+
+### Synchronous Example
+
+```typescript
+import { ContextAPI, ContextAPIOptionalParams, KnownMessageRole, Credential } from "context-js";
+
+const options: ContextAPIOptionalParams = {
+  credential: new Credential(process.env.CONTEXT_TOKEN),
+};
+const c = new ContextAPI(options);
+
+await c.log.conversation({
+  body: {
+    conversation: {
+      messages: [
+        { message: "You are a helpful assistant.", role: KnownMessageRole.System, rating: 0 },
+        { message: "Hi, how are you doing?", role: KnownMessageRole.User, rating: 0 },
+        { message: "I'm doing super well, how are you?", role: KnownMessageRole.Assistant, rating: 1 }
+      ],
+    }
+  }
+})
+```
+
+## Appendix
+
 ```yaml
 typescript: true
 output-folder: generated
