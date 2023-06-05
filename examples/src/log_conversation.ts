@@ -1,7 +1,7 @@
-import { ContextAPI, ContextAPIOptionalParams, KnownMessageRole, Credential } from "context-js";
+import { ContextAPI, ContextAPIOptionalParams, KnownMessageRole, Credential } from "@contextco/context-node";
 
 const options: ContextAPIOptionalParams = {
-  credential: new Credential(process.env.CONTEXT_TOKEN),
+  credential: new Credential(process.env.CONTEXT_TOKEN!),
 };
 const c = new ContextAPI(options);
 

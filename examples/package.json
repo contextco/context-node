@@ -2,12 +2,13 @@
   "name": "examples",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "./build/log_conversation.js",
   "scripts": {
     "build": "esbuild ./src/* --bundle --platform=node --outdir=build"
   },
   "dependencies": {
-    "context-js": "file:.."
+    "@contextco/context-node": "file:.."
   },
   "author": "",
   "license": "ISC",
