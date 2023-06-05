@@ -1,15 +1,29 @@
 
 # Context Node Library
 
+[![Npm package version](https://badgen.net/npm/v/@contextco/context-node)](https://npmjs.com/package/express)
+
 The Context Node library provides a convenient way to interface with the Context APIs. We include pre-defined classes and operations to interact with API resources.
 
 ## Installation
+
+### NPM
+
+```shell
+npm install @contextco/context-node
+```
+
+### Yarn
+
+```shell
+yarn add @contextco/context-node
+```
 
 ## Usage
 
 The library needs to be configured with your Context API key, which is available in the [Context Settings Dashboard](https://go.getcontext.ai/settings).
 
-### Synchronous Example
+### Example
 
 ```typescript
 import { ContextAPI, ContextAPIOptionalParams, KnownMessageRole, Credential } from "context-js";

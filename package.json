@@ -1,5 +1,5 @@
 {
-  "name": "context-js",
+  "name": "@contextco/context-node",
   "version": "0.1.0",
   "description": "Node SDK for the Context API",
   "type": "module",
