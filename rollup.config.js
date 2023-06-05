@@ -9,7 +9,7 @@ const config = [
     input: 'src/index.ts',
     output: {
       dir: 'build',
-      format: 'cjs'
+      format: 'es'
     },
     plugins: [typescript({ tsconfig: './tsconfig.json' }), nodeResolve(), cjs(), json()],
   },
