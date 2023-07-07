@@ -1,7 +1,7 @@
 
 # Context Node Library
 
-[![Npm package version](https://badgen.net/npm/v/@contextco/context-node)](https://npmjs.com/package/express)
+[![Npm package version](https://badgen.net/npm/v/@contextco/context-node)](https://npmjs.com/package/@contextco/context-node)
 
 The Context Node library provides a convenient way to interface with the Context APIs. We include pre-defined classes and operations to interact with API resources.
 
