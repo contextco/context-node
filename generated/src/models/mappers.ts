@@ -80,3 +80,20 @@ export const Message: coreClient.CompositeMapper = {
     }
   }
 };
+
+export const PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className:
+      "PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema",
+    modelProperties: {
+      conversation: {
+        serializedName: "conversation",
+        type: {
+          name: "Composite",
+          className: "Conversation"
+        }
+      }
+    }
+  }
+};

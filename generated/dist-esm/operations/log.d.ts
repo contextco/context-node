@@ -1,6 +1,6 @@
 import { Log } from "../operationsInterfaces";
 import { ContextAPI } from "../contextAPI";
-import { LogConversationOptionalParams } from "../models";
+import { LogConversationOptionalParams, LogConversationUpsertOptionalParams } from "../models";
 /** Class containing Log operations. */
 export declare class LogImpl implements Log {
     private readonly client;
@@ -14,5 +14,10 @@ export declare class LogImpl implements Log {
      * @param options The options parameters.
      */
     conversation(options?: LogConversationOptionalParams): Promise<void>;
+    /**
+     * Ingests or updates conversation
+     * @param options The options parameters.
+     */
+    conversationUpsert(options?: LogConversationUpsertOptionalParams): Promise<void>;
 }
 //# sourceMappingURL=log.d.ts.map

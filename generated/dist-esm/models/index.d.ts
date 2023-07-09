@@ -13,6 +13,9 @@ export interface Message {
     eventTimestamp?: Date;
     rating?: Rating;
 }
+export interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema {
+    conversation?: Conversation;
+}
 /** Known values of {@link MessageRole} that the service accepts. */
 export declare enum KnownMessageRole {
     /** System */
@@ -38,6 +41,11 @@ export type Rating = -1 | 0 | 1;
 export interface LogConversationOptionalParams extends coreClient.OperationOptions {
     body?: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema;
     authorization?: string;
+}
+/** Optional parameters. */
+export interface LogConversationUpsertOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    body?: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema;
 }
 /** Optional parameters. */
 export interface ContextAPIOptionalParams extends coreClient.ServiceClientOptions {

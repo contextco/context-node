@@ -611,6 +611,57 @@
                 }
               ],
               "name": "conversation"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "context-generated!Log#conversationUpsert:member(1)",
+              "docComment": "/**\n * Ingests or updates conversation\n *\n * @param options - The options parameters.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "conversationUpsert(options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "LogConversationUpsertOptionalParams",
+                  "canonicalReference": "context-generated!LogConversationUpsertOptionalParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<void>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "name": "conversationUpsert"
             }
           ],
           "extendsTokenRanges": []
@@ -679,6 +730,93 @@
                   "kind": "Reference",
                   "text": "PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema",
                   "canonicalReference": "context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "body",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "context-generated!LogConversationUpsertOptionalParams:interface",
+          "docComment": "/**\n * Optional parameters.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface LogConversationUpsertOptionalParams extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "coreClient.OperationOptions",
+              "canonicalReference": "@azure/core-client!OperationOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "LogConversationUpsertOptionalParams",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!LogConversationUpsertOptionalParams#authorization:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "authorization?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "authorization",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!LogConversationUpsertOptionalParams#body:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "body?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema",
+                  "canonicalReference": "context-generated!PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema:interface"
                 },
                 {
                   "kind": "Content",
@@ -875,6 +1013,52 @@
             {
               "kind": "PropertySignature",
               "canonicalReference": "context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema#conversation:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "conversation?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Conversation",
+                  "canonicalReference": "context-generated!Conversation:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "conversation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "context-generated!PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "context-generated!PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema#conversation:member",
               "docComment": "",
               "excerptTokens": [
                 {

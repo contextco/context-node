@@ -17,6 +17,13 @@ export class LogImpl {
     conversation(options) {
         return this.client.sendOperationRequest({ options }, conversationOperationSpec);
     }
+    /**
+     * Ingests or updates conversation
+     * @param options The options parameters.
+     */
+    conversationUpsert(options) {
+        return this.client.sendOperationRequest({ options }, conversationUpsertOperationSpec);
+    }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
@@ -25,6 +32,16 @@ const conversationOperationSpec = {
     httpMethod: "POST",
     responses: { 201: {} },
     requestBody: Parameters.body,
+    urlParameters: [Parameters.$host],
+    headerParameters: [Parameters.contentType, Parameters.authorization],
+    mediaType: "json",
+    serializer
+};
+const conversationUpsertOperationSpec = {
+    path: "/api/v1/log/conversation/upsert",
+    httpMethod: "POST",
+    responses: { 201: {} },
+    requestBody: Parameters.body1,
     urlParameters: [Parameters.$host],
     headerParameters: [Parameters.contentType, Parameters.authorization],
     mediaType: "json",

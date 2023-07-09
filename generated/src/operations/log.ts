@@ -3,7 +3,10 @@ import * as coreClient from "@azure/core-client";
 import * as Mappers from "../models/mappers";
 import * as Parameters from "../models/parameters";
 import { ContextAPI } from "../contextAPI";
-import { LogConversationOptionalParams } from "../models";
+import {
+  LogConversationOptionalParams,
+  LogConversationUpsertOptionalParams
+} from "../models";
 
 /** Class containing Log operations. */
 export class LogImpl implements Log {
@@ -27,6 +30,19 @@ export class LogImpl implements Log {
       conversationOperationSpec
     );
   }
+
+  /**
+   * Ingests or updates conversation
+   * @param options The options parameters.
+   */
+  conversationUpsert(
+    options?: LogConversationUpsertOptionalParams
+  ): Promise<void> {
+    return this.client.sendOperationRequest(
+      { options },
+      conversationUpsertOperationSpec
+    );
+  }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
@@ -36,6 +52,16 @@ const conversationOperationSpec: coreClient.OperationSpec = {
   httpMethod: "POST",
   responses: { 201: {} },
   requestBody: Parameters.body,
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.contentType, Parameters.authorization],
+  mediaType: "json",
+  serializer
+};
+const conversationUpsertOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/log/conversation/upsert",
+  httpMethod: "POST",
+  responses: { 201: {} },
+  requestBody: Parameters.body1,
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.contentType, Parameters.authorization],
   mediaType: "json",

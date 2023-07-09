@@ -38,6 +38,7 @@ export enum KnownMessageRole {
 // @public
 export interface Log {
     conversation(options?: LogConversationOptionalParams): Promise<void>;
+    conversationUpsert(options?: LogConversationUpsertOptionalParams): Promise<void>;
 }
 
 // @public
@@ -46,6 +47,14 @@ export interface LogConversationOptionalParams extends coreClient.OperationOptio
     authorization?: string;
     // (undocumented)
     body?: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema;
+}
+
+// @public
+export interface LogConversationUpsertOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    // (undocumented)
+    body?: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema;
 }
 
 // @public (undocumented)
@@ -65,6 +74,12 @@ export type MessageRole = string;
 
 // @public (undocumented)
 export interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema {
+    // (undocumented)
+    conversation?: Conversation;
+}
+
+// @public (undocumented)
+export interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema {
     // (undocumented)
     conversation?: Conversation;
 }

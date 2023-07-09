@@ -41,12 +41,23 @@ export declare interface Log {
      * @param options The options parameters.
      */
     conversation(options?: LogConversationOptionalParams): Promise<void>;
+    /**
+     * Ingests or updates conversation
+     * @param options The options parameters.
+     */
+    conversationUpsert(options?: LogConversationUpsertOptionalParams): Promise<void>;
 }
 
 /** Optional parameters. */
 export declare interface LogConversationOptionalParams extends coreClient.OperationOptions {
     body?: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema;
     authorization?: string;
+}
+
+/** Optional parameters. */
+export declare interface LogConversationUpsertOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    body?: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema;
 }
 
 export declare interface Message {
@@ -68,6 +79,10 @@ export declare interface Message {
 export declare type MessageRole = string;
 
 export declare interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema {
+    conversation?: Conversation;
+}
+
+export declare interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema {
     conversation?: Conversation;
 }
 

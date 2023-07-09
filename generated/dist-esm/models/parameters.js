@@ -1,4 +1,4 @@
-import { PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper } from "../models/mappers";
+import { PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper, PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper } from "../models/mappers";
 export const contentType = {
     parameterPath: ["options", "contentType"],
     mapper: {
@@ -33,5 +33,9 @@ export const authorization = {
             name: "String"
         }
     }
+};
+export const body1 = {
+    parameterPath: ["options", "body"],
+    mapper: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper
 };
 //# sourceMappingURL=parameters.js.map

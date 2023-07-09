@@ -75,4 +75,19 @@ export const Message = {
         }
     }
 };
+export const PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema = {
+    type: {
+        name: "Composite",
+        className: "PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema",
+        modelProperties: {
+            conversation: {
+                serializedName: "conversation",
+                type: {
+                    name: "Composite",
+                    className: "Conversation"
+                }
+            }
+        }
+    }
+};
 //# sourceMappingURL=mappers.js.map

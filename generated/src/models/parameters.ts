@@ -1,5 +1,8 @@
 import { OperationParameter, OperationURLParameter } from "@azure/core-client";
-import { PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper } from "../models/mappers";
+import {
+  PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper,
+  PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper
+} from "../models/mappers";
 
 export const contentType: OperationParameter = {
   parameterPath: ["options", "contentType"],
@@ -38,4 +41,9 @@ export const authorization: OperationParameter = {
       name: "String"
     }
   }
+};
+
+export const body1: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper
 };
