@@ -21,7 +21,7 @@ export class ContextAPI extends coreClient.ServiceClient {
             : `${packageDetails}`;
         const optionsWithDefaults = Object.assign(Object.assign(Object.assign({}, defaults), options), { userAgentOptions: {
                 userAgentPrefix
-            }, endpoint: (_b = (_a = options.endpoint) !== null && _a !== void 0 ? _a : options.baseUri) !== null && _b !== void 0 ? _b : "https://api.getcontext.ai" });
+            }, endpoint: (_b = (_a = options.endpoint) !== null && _a !== void 0 ? _a : options.baseUri) !== null && _b !== void 0 ? _b : "https://api.context.ai" });
         super(optionsWithDefaults);
         let bearerTokenAuthenticationPolicyFound = false;
         if ((options === null || options === void 0 ? void 0 : options.pipeline) && options.pipeline.getOrderedPolicies().length > 0) {
@@ -45,7 +45,7 @@ export class ContextAPI extends coreClient.ServiceClient {
             }));
         }
         // Assigning values to Constant parameters
-        this.$host = options.$host || "https://api.getcontext.ai";
+        this.$host = options.$host || "https://api.context.ai";
         this.log = new LogImpl(this);
     }
 }

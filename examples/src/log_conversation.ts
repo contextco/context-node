@@ -5,7 +5,7 @@ const options: ContextAPIOptionalParams = {
 };
 const c = new ContextAPI(options);
 
-c.log.conversation({
+c.log.conversationUpsert({
   body: {
     conversation: {
       messages: [

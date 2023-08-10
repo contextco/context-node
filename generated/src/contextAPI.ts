@@ -32,8 +32,7 @@ export class ContextAPI extends coreClient.ServiceClient {
       userAgentOptions: {
         userAgentPrefix
       },
-      endpoint:
-        options.endpoint ?? options.baseUri ?? "https://api.getcontext.ai"
+      endpoint: options.endpoint ?? options.baseUri ?? "https://api.context.ai"
     };
     super(optionsWithDefaults);
 
@@ -70,7 +69,7 @@ export class ContextAPI extends coreClient.ServiceClient {
     }
 
     // Assigning values to Constant parameters
-    this.$host = options.$host || "https://api.getcontext.ai";
+    this.$host = options.$host || "https://api.context.ai";
     this.log = new LogImpl(this);
   }
 
