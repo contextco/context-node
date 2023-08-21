@@ -3,8 +3,8 @@
   "version": "0.1.5",
   "description": "Node SDK for the Context API",
   "main": "./build/index.js",
+  "module": "./build/index.esm.js",
   "types": "./build/ts/index.d.ts",
-  "type": "module",
   "scripts": {
     "build": "npm run build_generated && rollup -c rollup.config.js && npm run build_types",
     "prepack": "npm run build",
