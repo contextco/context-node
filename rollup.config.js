@@ -2,22 +2,24 @@ import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import cjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
-import dts from "rollup-plugin-dts";
+
+import pkg from './package.json';
 
 const config = [
   {
     input: 'src/index.ts',
-    output: {
-      dir: 'build',
-      format: 'es'
-    },
+    output: [
+      {
+        file: pkg.main,
+        format: 'cjs'
+      },
+      {
+        file: pkg.module,
+        format: 'es'
+      }
+    ],
     plugins: [typescript({ tsconfig: './tsconfig.json' }), nodeResolve(), cjs(), json()],
-  },
-  {
-    input: "build/ts/index.d.ts",
-    output: [{ file: "build/index.d.ts", format: "es" }],
-    plugins: [dts()],
-  },
+  }
 ]
 
 export default config;
