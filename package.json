@@ -1,12 +1,12 @@
 {
   "name": "@contextco/context-node",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Node SDK for the Context API",
   "main": "./build/index.js",
   "module": "./build/index.esm.js",
   "types": "./build/ts/index.d.ts",
   "scripts": {
-    "build": "npm run build_generated && rollup -c rollup.config.js && npm run build_types",
+    "build": "npm run build_generated && rollup --bundleConfigAsCjs -c rollup.config.js && npm run build_types",
     "prepack": "npm run build",
     "build_generated": "cd generated && npm run build",
     "build_types": "tsc --emitDeclarationOnly --declaration --project tsconfig.json"
