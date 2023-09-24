@@ -1,5 +1,5 @@
 {
-  "name": "context-generated",
+  "name": "@contextco/context-generated",
   "sdk-type": "mgmt",
   "author": "Microsoft Corporation",
   "description": "A generated SDK for ContextAPI.",
