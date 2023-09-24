@@ -1,7 +1,7 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.36.1",
+    "toolVersion": "7.37.0",
     "schemaVersion": 1011,
     "oldestForwardsCompatibleVersion": 1001,
     "tsdocConfig": {
@@ -161,20 +161,20 @@
     }
   },
   "kind": "Package",
-  "canonicalReference": "context-generated!",
+  "canonicalReference": "@contextco/context-generated!",
   "docComment": "",
-  "name": "context-generated",
+  "name": "@contextco/context-generated",
   "preserveMemberOrder": false,
   "members": [
     {
       "kind": "EntryPoint",
-      "canonicalReference": "context-generated!",
+      "canonicalReference": "@contextco/context-generated!",
       "name": "",
       "preserveMemberOrder": false,
       "members": [
         {
           "kind": "Class",
-          "canonicalReference": "context-generated!ContextAPI:class",
+          "canonicalReference": "@contextco/context-generated!ContextAPI:class",
           "docComment": "",
           "excerptTokens": [
             {
@@ -199,7 +199,7 @@
           "members": [
             {
               "kind": "Constructor",
-              "canonicalReference": "context-generated!ContextAPI:constructor(1)",
+              "canonicalReference": "@contextco/context-generated!ContextAPI:constructor(1)",
               "docComment": "/**\n * Initializes a new instance of the ContextAPI class.\n *\n * @param options - The parameter options\n */\n",
               "excerptTokens": [
                 {
@@ -209,7 +209,7 @@
                 {
                   "kind": "Reference",
                   "text": "ContextAPIOptionalParams",
-                  "canonicalReference": "context-generated!ContextAPIOptionalParams:interface"
+                  "canonicalReference": "@contextco/context-generated!ContextAPIOptionalParams:interface"
                 },
                 {
                   "kind": "Content",
@@ -232,7 +232,7 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "context-generated!ContextAPI#$host:member",
+              "canonicalReference": "@contextco/context-generated!ContextAPI#$host:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -262,7 +262,7 @@
             },
             {
               "kind": "Property",
-              "canonicalReference": "context-generated!ContextAPI#log:member",
+              "canonicalReference": "@contextco/context-generated!ContextAPI#log:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -272,7 +272,7 @@
                 {
                   "kind": "Reference",
                   "text": "Log",
-                  "canonicalReference": "context-generated!Log:interface"
+                  "canonicalReference": "@contextco/context-generated!Log:interface"
                 },
                 {
                   "kind": "Content",
@@ -300,7 +300,7 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "context-generated!ContextAPIOptionalParams:interface",
+          "canonicalReference": "@contextco/context-generated!ContextAPIOptionalParams:interface",
           "docComment": "/**\n * Optional parameters.\n */\n",
           "excerptTokens": [
             {
@@ -324,7 +324,7 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!ContextAPIOptionalParams#$host:member",
+              "canonicalReference": "@contextco/context-generated!ContextAPIOptionalParams#$host:member",
               "docComment": "/**\n * server parameter\n */\n",
               "excerptTokens": [
                 {
@@ -351,7 +351,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!ContextAPIOptionalParams#endpoint:member",
+              "canonicalReference": "@contextco/context-generated!ContextAPIOptionalParams#endpoint:member",
               "docComment": "/**\n * Overrides client endpoint.\n */\n",
               "excerptTokens": [
                 {
@@ -386,7 +386,7 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "context-generated!Conversation:interface",
+          "canonicalReference": "@contextco/context-generated!Conversation:interface",
           "docComment": "",
           "excerptTokens": [
             {
@@ -401,7 +401,7 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Conversation#messages:member",
+              "canonicalReference": "@contextco/context-generated!Conversation#messages:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -411,7 +411,7 @@
                 {
                   "kind": "Reference",
                   "text": "Message",
-                  "canonicalReference": "context-generated!Message:interface"
+                  "canonicalReference": "@contextco/context-generated!Message:interface"
                 },
                 {
                   "kind": "Content",
@@ -433,7 +433,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Conversation#metadata:member",
+              "canonicalReference": "@contextco/context-generated!Conversation#metadata:member",
               "docComment": "/**\n * Any object\n */\n",
               "excerptTokens": [
                 {
@@ -468,7 +468,7 @@
         },
         {
           "kind": "Enum",
-          "canonicalReference": "context-generated!KnownMessageRole:enum",
+          "canonicalReference": "@contextco/context-generated!KnownMessageRole:enum",
           "docComment": "/**\n * Known values of {@link MessageRole} that the service accepts.\n */\n",
           "excerptTokens": [
             {
@@ -483,7 +483,7 @@
           "members": [
             {
               "kind": "EnumMember",
-              "canonicalReference": "context-generated!KnownMessageRole.Assistant:member",
+              "canonicalReference": "@contextco/context-generated!KnownMessageRole.Assistant:member",
               "docComment": "/**\n * Assistant\n */\n",
               "excerptTokens": [
                 {
@@ -504,7 +504,7 @@
             },
             {
               "kind": "EnumMember",
-              "canonicalReference": "context-generated!KnownMessageRole.System:member",
+              "canonicalReference": "@contextco/context-generated!KnownMessageRole.System:member",
               "docComment": "/**\n * System\n */\n",
               "excerptTokens": [
                 {
@@ -525,7 +525,7 @@
             },
             {
               "kind": "EnumMember",
-              "canonicalReference": "context-generated!KnownMessageRole.User:member",
+              "canonicalReference": "@contextco/context-generated!KnownMessageRole.User:member",
               "docComment": "/**\n * User\n */\n",
               "excerptTokens": [
                 {
@@ -548,7 +548,7 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "context-generated!Log:interface",
+          "canonicalReference": "@contextco/context-generated!Log:interface",
           "docComment": "/**\n * Interface representing a Log.\n */\n",
           "excerptTokens": [
             {
@@ -563,7 +563,7 @@
           "members": [
             {
               "kind": "MethodSignature",
-              "canonicalReference": "context-generated!Log#conversation:member(1)",
+              "canonicalReference": "@contextco/context-generated!Log#conversation:member(1)",
               "docComment": "/**\n * Ingests a conversation\n *\n * @param options - The options parameters.\n */\n",
               "excerptTokens": [
                 {
@@ -573,7 +573,7 @@
                 {
                   "kind": "Reference",
                   "text": "LogConversationOptionalParams",
-                  "canonicalReference": "context-generated!LogConversationOptionalParams:interface"
+                  "canonicalReference": "@contextco/context-generated!LogConversationOptionalParams:interface"
                 },
                 {
                   "kind": "Content",
@@ -614,7 +614,7 @@
             },
             {
               "kind": "MethodSignature",
-              "canonicalReference": "context-generated!Log#conversationUpsert:member(1)",
+              "canonicalReference": "@contextco/context-generated!Log#conversationUpsert:member(1)",
               "docComment": "/**\n * Ingests or updates conversation\n *\n * @param options - The options parameters.\n */\n",
               "excerptTokens": [
                 {
@@ -624,7 +624,7 @@
                 {
                   "kind": "Reference",
                   "text": "LogConversationUpsertOptionalParams",
-                  "canonicalReference": "context-generated!LogConversationUpsertOptionalParams:interface"
+                  "canonicalReference": "@contextco/context-generated!LogConversationUpsertOptionalParams:interface"
                 },
                 {
                   "kind": "Content",
@@ -668,7 +668,7 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "context-generated!LogConversationOptionalParams:interface",
+          "canonicalReference": "@contextco/context-generated!LogConversationOptionalParams:interface",
           "docComment": "/**\n * Optional parameters.\n */\n",
           "excerptTokens": [
             {
@@ -692,7 +692,7 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!LogConversationOptionalParams#authorization:member",
+              "canonicalReference": "@contextco/context-generated!LogConversationOptionalParams#authorization:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -719,7 +719,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!LogConversationOptionalParams#body:member",
+              "canonicalReference": "@contextco/context-generated!LogConversationOptionalParams#body:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -729,7 +729,7 @@
                 {
                   "kind": "Reference",
                   "text": "PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema",
-                  "canonicalReference": "context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema:interface"
+                  "canonicalReference": "@contextco/context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema:interface"
                 },
                 {
                   "kind": "Content",
@@ -755,7 +755,7 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "context-generated!LogConversationUpsertOptionalParams:interface",
+          "canonicalReference": "@contextco/context-generated!LogConversationUpsertOptionalParams:interface",
           "docComment": "/**\n * Optional parameters.\n */\n",
           "excerptTokens": [
             {
@@ -779,7 +779,7 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!LogConversationUpsertOptionalParams#authorization:member",
+              "canonicalReference": "@contextco/context-generated!LogConversationUpsertOptionalParams#authorization:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -806,7 +806,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!LogConversationUpsertOptionalParams#body:member",
+              "canonicalReference": "@contextco/context-generated!LogConversationUpsertOptionalParams#body:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -816,7 +816,7 @@
                 {
                   "kind": "Reference",
                   "text": "PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema",
-                  "canonicalReference": "context-generated!PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema:interface"
+                  "canonicalReference": "@contextco/context-generated!PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema:interface"
                 },
                 {
                   "kind": "Content",
@@ -842,7 +842,7 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "context-generated!Message:interface",
+          "canonicalReference": "@contextco/context-generated!Message:interface",
           "docComment": "",
           "excerptTokens": [
             {
@@ -857,7 +857,7 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Message#eventTimestamp:member",
+              "canonicalReference": "@contextco/context-generated!Message#eventTimestamp:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -885,7 +885,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Message#message:member",
+              "canonicalReference": "@contextco/context-generated!Message#message:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -912,7 +912,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Message#rating:member",
+              "canonicalReference": "@contextco/context-generated!Message#rating:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -922,7 +922,7 @@
                 {
                   "kind": "Reference",
                   "text": "Rating",
-                  "canonicalReference": "context-generated!Rating:type"
+                  "canonicalReference": "@contextco/context-generated!Rating:type"
                 },
                 {
                   "kind": "Content",
@@ -940,7 +940,7 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Message#role:member",
+              "canonicalReference": "@contextco/context-generated!Message#role:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -950,7 +950,7 @@
                 {
                   "kind": "Reference",
                   "text": "MessageRole",
-                  "canonicalReference": "context-generated!MessageRole:type"
+                  "canonicalReference": "@contextco/context-generated!MessageRole:type"
                 },
                 {
                   "kind": "Content",
@@ -971,7 +971,7 @@
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "context-generated!MessageRole:type",
+          "canonicalReference": "@contextco/context-generated!MessageRole:type",
           "docComment": "/**\n * Defines values for MessageRole. \\ {@link KnownMessageRole} can be used interchangeably with MessageRole, this enum contains the known values that the service supports. ### Known values supported by the service **system** \\ **assistant** \\ **user**\n */\n",
           "excerptTokens": [
             {
@@ -997,7 +997,7 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema:interface",
+          "canonicalReference": "@contextco/context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema:interface",
           "docComment": "",
           "excerptTokens": [
             {
@@ -1012,7 +1012,7 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema#conversation:member",
+              "canonicalReference": "@contextco/context-generated!PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema#conversation:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -1022,7 +1022,7 @@
                 {
                   "kind": "Reference",
                   "text": "Conversation",
-                  "canonicalReference": "context-generated!Conversation:interface"
+                  "canonicalReference": "@contextco/context-generated!Conversation:interface"
                 },
                 {
                   "kind": "Content",
@@ -1043,7 +1043,7 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "context-generated!PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema:interface",
+          "canonicalReference": "@contextco/context-generated!PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema:interface",
           "docComment": "",
           "excerptTokens": [
             {
@@ -1058,7 +1058,7 @@
           "members": [
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema#conversation:member",
+              "canonicalReference": "@contextco/context-generated!PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema#conversation:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -1068,7 +1068,7 @@
                 {
                   "kind": "Reference",
                   "text": "Conversation",
-                  "canonicalReference": "context-generated!Conversation:interface"
+                  "canonicalReference": "@contextco/context-generated!Conversation:interface"
                 },
                 {
                   "kind": "Content",
@@ -1089,7 +1089,7 @@
         },
         {
           "kind": "TypeAlias",
-          "canonicalReference": "context-generated!Rating:type",
+          "canonicalReference": "@contextco/context-generated!Rating:type",
           "docComment": "/**\n * Defines values for Rating.\n */\n",
           "excerptTokens": [
             {
