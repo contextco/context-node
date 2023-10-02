@@ -1,5 +1,6 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
+import * as coreAuth from "@azure/core-auth";
 import { LogImpl } from "./operations";
 import { Log } from "./operationsInterfaces";
 import { ContextAPIOptionalParams } from "./models";
@@ -9,15 +10,24 @@ export class ContextAPI extends coreClient.ServiceClient {
 
   /**
    * Initializes a new instance of the ContextAPI class.
+   * @param credentials Subscription credentials which uniquely identify client subscription.
    * @param options The parameter options
    */
-  constructor(options?: ContextAPIOptionalParams) {
+  constructor(
+    credentials: coreAuth.TokenCredential,
+    options?: ContextAPIOptionalParams
+  ) {
+    if (credentials === undefined) {
+      throw new Error("'credentials' cannot be null");
+    }
+
     // Initializing default values for options
     if (!options) {
       options = {};
     }
     const defaults: ContextAPIOptionalParams = {
-      requestContentType: "application/json; charset=utf-8"
+      requestContentType: "application/json; charset=utf-8",
+      credential: credentials
     };
 
     const packageDetails = `azsdk-js-context-generated/1.0.0-beta.1`;
@@ -26,6 +36,9 @@ export class ContextAPI extends coreClient.ServiceClient {
         ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
         : `${packageDetails}`;
 
+    if (!options.credentialScopes) {
+      options.credentialScopes = ["https://management.azure.com/.default"];
+    }
     const optionsWithDefaults = {
       ...defaults,
       ...options,
@@ -56,7 +69,7 @@ export class ContextAPI extends coreClient.ServiceClient {
       });
       this.pipeline.addPolicy(
         coreRestPipeline.bearerTokenAuthenticationPolicy({
-          credential: options.credential,
+          credential: credentials,
           scopes:
             optionsWithDefaults.credentialScopes ??
             `${optionsWithDefaults.endpoint}/.default`,

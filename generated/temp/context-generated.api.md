@@ -4,13 +4,14 @@
 
 ```ts
 
+import * as coreAuth from '@azure/core-auth';
 import * as coreClient from '@azure/core-client';
 
 // @public (undocumented)
 export class ContextAPI extends coreClient.ServiceClient {
     // (undocumented)
     $host: string;
-    constructor(options?: ContextAPIOptionalParams);
+    constructor(credentials: coreAuth.TokenCredential, options?: ContextAPIOptionalParams);
     // (undocumented)
     log: Log;
 }
@@ -24,8 +25,12 @@ export interface ContextAPIOptionalParams extends coreClient.ServiceClientOption
 // @public (undocumented)
 export interface Conversation {
     // (undocumented)
-    messages?: Message[];
+    messages?: ConversationMessagesItem[];
     metadata?: Record<string, unknown>;
+}
+
+// @public (undocumented)
+export interface ConversationMessagesItem {
 }
 
 // @public
@@ -63,10 +68,13 @@ export interface Message {
     eventTimestamp?: Date;
     // (undocumented)
     message: string;
+    metadata?: Record<string, unknown>;
     // (undocumented)
     rating?: Rating;
     // (undocumented)
     role: MessageRole;
+    // (undocumented)
+    type?: "message";
 }
 
 // @public
@@ -86,6 +94,21 @@ export interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentAppl
 
 // @public
 export type Rating = -1 | 0 | 1;
+
+// @public (undocumented)
+export interface Tool {
+    // (undocumented)
+    eventTimestamp?: Date;
+    input?: Record<string, unknown>;
+    // (undocumented)
+    name: string;
+    // (undocumented)
+    observation?: string;
+    // (undocumented)
+    thought?: string;
+    // (undocumented)
+    type?: "tool";
+}
 
 // (No @packageDocumentation comment for this package)
 

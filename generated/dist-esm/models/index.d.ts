@@ -3,15 +3,29 @@ export interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicatio
     conversation?: Conversation;
 }
 export interface Conversation {
-    messages?: Message[];
+    messages?: ConversationMessagesItem[];
     /** Any object */
     metadata?: Record<string, unknown>;
 }
+export interface ConversationMessagesItem {
+}
 export interface Message {
+    type?: "message";
     role: MessageRole;
     message: string;
     eventTimestamp?: Date;
+    /** Any object */
+    metadata?: Record<string, unknown>;
     rating?: Rating;
+}
+export interface Tool {
+    type?: "tool";
+    name: string;
+    thought?: string;
+    /** Any object */
+    input?: Record<string, unknown>;
+    observation?: string;
+    eventTimestamp?: Date;
 }
 export interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema {
     conversation?: Conversation;

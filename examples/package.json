@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "./build/log_conversation.js",
-  "type": "module",
   "scripts": {
-    "build": "esbuild ./src/* --bundle --format=esm --platform=node --outdir=build"
+    "build": "esbuild ./src/* --bundle --format=cjs --platform=node --outdir=build"
   },
   "dependencies": {
     "@contextco/context-node": "file:.."

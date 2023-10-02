@@ -29,7 +29,7 @@ export const Conversation: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "Message"
+              className: "ConversationMessagesItem"
             }
           }
         }
@@ -45,11 +45,26 @@ export const Conversation: coreClient.CompositeMapper = {
   }
 };
 
+export const ConversationMessagesItem: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ConversationMessagesItem"
+  }
+};
+
 export const Message: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
     className: "Message",
     modelProperties: {
+      type: {
+        defaultValue: "message",
+        isConstant: true,
+        serializedName: "type",
+        type: {
+          name: "String"
+        }
+      },
       role: {
         serializedName: "role",
         required: true,
@@ -70,11 +85,67 @@ export const Message: coreClient.CompositeMapper = {
           name: "DateTime"
         }
       },
+      metadata: {
+        serializedName: "metadata",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
       rating: {
         serializedName: "rating",
         type: {
           name: "Enum",
           allowedValues: [-1, 0, 1]
+        }
+      }
+    }
+  }
+};
+
+export const Tool: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "Tool",
+    modelProperties: {
+      type: {
+        defaultValue: "tool",
+        isConstant: true,
+        serializedName: "type",
+        type: {
+          name: "String"
+        }
+      },
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      thought: {
+        serializedName: "thought",
+        type: {
+          name: "String"
+        }
+      },
+      input: {
+        serializedName: "input",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
+      observation: {
+        serializedName: "observation",
+        type: {
+          name: "String"
+        }
+      },
+      eventTimestamp: {
+        serializedName: "event_timestamp",
+        type: {
+          name: "DateTime"
         }
       }
     }
