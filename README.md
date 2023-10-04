@@ -63,8 +63,3 @@ generate-metadata: true
 use:
   - "@autorest/typescript@6.0.8"
 ```
-
-<!-- ``` yaml $(typescript)
-use:
-    - @autorest/typescript@6.0.9
-``` -->
