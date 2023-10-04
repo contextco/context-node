@@ -50,16 +50,9 @@ export const Message: coreClient.CompositeMapper = {
     name: "Composite",
     className: "Message",
     modelProperties: {
-      role: {
-        serializedName: "role",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      message: {
-        serializedName: "message",
-        required: true,
+      type: {
+        defaultValue: "message",
+        serializedName: "type",
         type: {
           name: "String"
         }
@@ -70,11 +63,55 @@ export const Message: coreClient.CompositeMapper = {
           name: "DateTime"
         }
       },
+      role: {
+        serializedName: "role",
+        type: {
+          name: "String"
+        }
+      },
+      message: {
+        serializedName: "message",
+        type: {
+          name: "String"
+        }
+      },
+      metadata: {
+        serializedName: "metadata",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
       rating: {
         serializedName: "rating",
         type: {
           name: "Enum",
           allowedValues: [-1, 0, 1]
+        }
+      },
+      name: {
+        serializedName: "name",
+        type: {
+          name: "String"
+        }
+      },
+      thought: {
+        serializedName: "thought",
+        type: {
+          name: "String"
+        }
+      },
+      input: {
+        serializedName: "input",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
+      observation: {
+        serializedName: "observation",
+        type: {
+          name: "String"
         }
       }
     }

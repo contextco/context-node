@@ -1,6 +1,6 @@
 {
   "name": "@contextco/context-node",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Node SDK for the Context API",
   "main": "./build/index.js",
   "module": "./build/index.esm.js",
@@ -12,7 +12,7 @@
     "build_types": "tsc --emitDeclarationOnly --declaration --project tsconfig.json"
   },
   "dependencies": {
-    "@contextco/context-generated": "^1.0.0-beta.1"
+    "@contextco/context-generated": "2.0.0"
   },
   "keywords": [
     "context",

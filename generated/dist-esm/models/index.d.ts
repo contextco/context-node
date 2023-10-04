@@ -8,14 +8,38 @@ export interface Conversation {
     metadata?: Record<string, unknown>;
 }
 export interface Message {
-    role: MessageRole;
-    message: string;
+    type?: MessageType;
     eventTimestamp?: Date;
+    role?: MessageRole;
+    message?: string;
+    /** Any object */
+    metadata?: Record<string, unknown>;
     rating?: Rating;
+    name?: string;
+    thought?: string;
+    /** Any object */
+    input?: Record<string, unknown>;
+    observation?: string;
 }
 export interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema {
     conversation?: Conversation;
 }
+/** Known values of {@link MessageType} that the service accepts. */
+export declare enum KnownMessageType {
+    /** Message */
+    Message = "message",
+    /** Tool */
+    Tool = "tool"
+}
+/**
+ * Defines values for MessageType. \
+ * {@link KnownMessageType} can be used interchangeably with MessageType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **message** \
+ * **tool**
+ */
+export type MessageType = string;
 /** Known values of {@link MessageRole} that the service accepts. */
 export declare enum KnownMessageRole {
     /** System */

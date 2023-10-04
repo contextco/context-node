@@ -34,6 +34,14 @@ export declare enum KnownMessageRole {
     User = "user"
 }
 
+/** Known values of {@link MessageType} that the service accepts. */
+export declare enum KnownMessageType {
+    /** Message */
+    Message = "message",
+    /** Tool */
+    Tool = "tool"
+}
+
 /** Interface representing a Log. */
 export declare interface Log {
     /**
@@ -61,10 +69,18 @@ export declare interface LogConversationUpsertOptionalParams extends coreClient.
 }
 
 export declare interface Message {
-    role: MessageRole;
-    message: string;
+    type?: MessageType;
     eventTimestamp?: Date;
+    role?: MessageRole;
+    message?: string;
+    /** Any object */
+    metadata?: Record<string, unknown>;
     rating?: Rating;
+    name?: string;
+    thought?: string;
+    /** Any object */
+    input?: Record<string, unknown>;
+    observation?: string;
 }
 
 /**
@@ -77,6 +93,16 @@ export declare interface Message {
  * **user**
  */
 export declare type MessageRole = string;
+
+/**
+ * Defines values for MessageType. \
+ * {@link KnownMessageType} can be used interchangeably with MessageType,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **message** \
+ * **tool**
+ */
+export declare type MessageType = string;
 
 export declare interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema {
     conversation?: Conversation;

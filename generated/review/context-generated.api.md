@@ -36,6 +36,12 @@ export enum KnownMessageRole {
 }
 
 // @public
+export enum KnownMessageType {
+    Message = "message",
+    Tool = "tool"
+}
+
+// @public
 export interface Log {
     conversation(options?: LogConversationOptionalParams): Promise<void>;
     conversationUpsert(options?: LogConversationUpsertOptionalParams): Promise<void>;
@@ -61,16 +67,29 @@ export interface LogConversationUpsertOptionalParams extends coreClient.Operatio
 export interface Message {
     // (undocumented)
     eventTimestamp?: Date;
+    input?: Record<string, unknown>;
     // (undocumented)
-    message: string;
+    message?: string;
+    metadata?: Record<string, unknown>;
+    // (undocumented)
+    name?: string;
+    // (undocumented)
+    observation?: string;
     // (undocumented)
     rating?: Rating;
     // (undocumented)
-    role: MessageRole;
+    role?: MessageRole;
+    // (undocumented)
+    thought?: string;
+    // (undocumented)
+    type?: MessageType;
 }
 
 // @public
 export type MessageRole = string;
+
+// @public
+export type MessageType = string;
 
 // @public (undocumented)
 export interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema {
