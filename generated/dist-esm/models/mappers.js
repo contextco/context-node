@@ -25,7 +25,7 @@ export const Conversation = {
                     element: {
                         type: {
                             name: "Composite",
-                            className: "ConversationMessagesItem"
+                            className: "Message"
                         }
                     }
                 }
@@ -40,12 +40,6 @@ export const Conversation = {
         }
     }
 };
-export const ConversationMessagesItem = {
-    type: {
-        name: "Composite",
-        className: "ConversationMessagesItem"
-    }
-};
 export const Message = {
     type: {
         name: "Composite",
@@ -53,22 +47,7 @@ export const Message = {
         modelProperties: {
             type: {
                 defaultValue: "message",
-                isConstant: true,
                 serializedName: "type",
-                type: {
-                    name: "String"
-                }
-            },
-            role: {
-                serializedName: "role",
-                required: true,
-                type: {
-                    name: "String"
-                }
-            },
-            message: {
-                serializedName: "message",
-                required: true,
                 type: {
                     name: "String"
                 }
@@ -77,6 +56,18 @@ export const Message = {
                 serializedName: "event_timestamp",
                 type: {
                     name: "DateTime"
+                }
+            },
+            role: {
+                serializedName: "role",
+                type: {
+                    name: "String"
+                }
+            },
+            message: {
+                serializedName: "message",
+                type: {
+                    name: "String"
                 }
             },
             metadata: {
@@ -92,26 +83,9 @@ export const Message = {
                     name: "Enum",
                     allowedValues: [-1, 0, 1]
                 }
-            }
-        }
-    }
-};
-export const Tool = {
-    type: {
-        name: "Composite",
-        className: "Tool",
-        modelProperties: {
-            type: {
-                defaultValue: "tool",
-                isConstant: true,
-                serializedName: "type",
-                type: {
-                    name: "String"
-                }
             },
             name: {
                 serializedName: "name",
-                required: true,
                 type: {
                     name: "String"
                 }
@@ -133,12 +107,6 @@ export const Tool = {
                 serializedName: "observation",
                 type: {
                     name: "String"
-                }
-            },
-            eventTimestamp: {
-                serializedName: "event_timestamp",
-                type: {
-                    name: "DateTime"
                 }
             }
         }

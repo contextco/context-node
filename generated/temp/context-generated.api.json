@@ -199,26 +199,12 @@
           "members": [
             {
               "kind": "Constructor",
-<<<<<<< HEAD
               "canonicalReference": "@contextco/context-generated!ContextAPI:constructor(1)",
               "docComment": "/**\n * Initializes a new instance of the ContextAPI class.\n *\n * @param options - The parameter options\n */\n",
-=======
-              "canonicalReference": "context-generated!ContextAPI:constructor(1)",
-              "docComment": "/**\n * Initializes a new instance of the ContextAPI class.\n *\n * @param credentials - Subscription credentials which uniquely identify client subscription.\n *\n * @param options - The parameter options\n */\n",
->>>>>>> 2419cfa (Add tooools)
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "constructor(credentials: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "coreAuth.TokenCredential",
-                  "canonicalReference": "@azure/core-auth!TokenCredential:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", options?: "
+                  "text": "constructor(options?: "
                 },
                 {
                   "kind": "Reference",
@@ -235,18 +221,10 @@
               "overloadIndex": 1,
               "parameters": [
                 {
-                  "parameterName": "credentials",
+                  "parameterName": "options",
                   "parameterTypeTokenRange": {
                     "startIndex": 1,
                     "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
                   },
                   "isOptional": true
                 }
@@ -432,13 +410,8 @@
                 },
                 {
                   "kind": "Reference",
-<<<<<<< HEAD
                   "text": "Message",
                   "canonicalReference": "@contextco/context-generated!Message:interface"
-=======
-                  "text": "ConversationMessagesItem",
-                  "canonicalReference": "context-generated!ConversationMessagesItem:interface"
->>>>>>> 2419cfa (Add tooools)
                 },
                 {
                   "kind": "Content",
@@ -491,23 +464,6 @@
               }
             }
           ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "context-generated!ConversationMessagesItem:interface",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface ConversationMessagesItem "
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "ConversationMessagesItem",
-          "preserveMemberOrder": false,
-          "members": [],
           "extendsTokenRanges": []
         },
         {
@@ -587,6 +543,65 @@
               },
               "releaseTag": "Public",
               "name": "User"
+            }
+          ]
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "@contextco/context-generated!KnownMessageType:enum",
+          "docComment": "/**\n * Known values of {@link MessageType} that the service accepts.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum KnownMessageType "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "KnownMessageType",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownMessageType.Message:member",
+              "docComment": "/**\n * Message\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Message = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"message\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Message"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownMessageType.Tool:member",
+              "docComment": "/**\n * Tool\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Tool = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"tool\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Tool"
             }
           ]
         },
@@ -929,12 +944,44 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Message#input:member",
+              "docComment": "/**\n * Any object\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "input?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, unknown>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "input",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "@contextco/context-generated!Message#message:member",
               "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "message: "
+                  "text": "message?: "
                 },
                 {
                   "kind": "Content",
@@ -946,7 +993,7 @@
                 }
               ],
               "isReadonly": false,
-              "isOptional": false,
+              "isOptional": true,
               "releaseTag": "Public",
               "name": "message",
               "propertyTypeTokenRange": {
@@ -956,10 +1003,7 @@
             },
             {
               "kind": "PropertySignature",
-<<<<<<< HEAD
-              "canonicalReference": "@contextco/context-generated!Message#rating:member",
-=======
-              "canonicalReference": "context-generated!Message#metadata:member",
+              "canonicalReference": "@contextco/context-generated!Message#metadata:member",
               "docComment": "/**\n * Any object\n */\n",
               "excerptTokens": [
                 {
@@ -991,8 +1035,61 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Message#rating:member",
->>>>>>> 2419cfa (Add tooools)
+              "canonicalReference": "@contextco/context-generated!Message#name:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "name?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Message#observation:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "observation?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "observation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Message#rating:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -1025,7 +1122,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "role: "
+                  "text": "role?: "
                 },
                 {
                   "kind": "Reference",
@@ -1038,7 +1135,7 @@
                 }
               ],
               "isReadonly": false,
-              "isOptional": false,
+              "isOptional": true,
               "releaseTag": "Public",
               "name": "role",
               "propertyTypeTokenRange": {
@@ -1048,7 +1145,34 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Message#type:member",
+              "canonicalReference": "@contextco/context-generated!Message#thought:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "thought?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "thought",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Message#type:member",
               "docComment": "",
               "excerptTokens": [
                 {
@@ -1056,8 +1180,9 @@
                   "text": "type?: "
                 },
                 {
-                  "kind": "Content",
-                  "text": "\"message\""
+                  "kind": "Reference",
+                  "text": "MessageType",
+                  "canonicalReference": "@contextco/context-generated!MessageType:type"
                 },
                 {
                   "kind": "Content",
@@ -1097,6 +1222,32 @@
           "fileUrlPath": "src/models/index.ts",
           "releaseTag": "Public",
           "name": "MessageRole",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@contextco/context-generated!MessageType:type",
+          "docComment": "/**\n * Defines values for MessageType. \\ {@link KnownMessageType} can be used interchangeably with MessageType, this enum contains the known values that the service supports. ### Known values supported by the service **message** \\ **tool**\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MessageType = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "MessageType",
           "typeTokenRange": {
             "startIndex": 1,
             "endIndex": 2
@@ -1219,192 +1370,6 @@
             "startIndex": 1,
             "endIndex": 2
           }
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "context-generated!Tool:interface",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface Tool "
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "Tool",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Tool#eventTimestamp:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "eventTimestamp?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Date",
-                  "canonicalReference": "!Date:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "eventTimestamp",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Tool#input:member",
-              "docComment": "/**\n * Any object\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "input?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Record",
-                  "canonicalReference": "!Record:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<string, unknown>"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "input",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Tool#name:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "name: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "name",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Tool#observation:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "observation?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "observation",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Tool#thought:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "thought?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "thought",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "context-generated!Tool#type:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "type?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "\"tool\""
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "type",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
         }
       ]
     }

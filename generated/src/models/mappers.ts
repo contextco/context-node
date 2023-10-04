@@ -29,7 +29,7 @@ export const Conversation: coreClient.CompositeMapper = {
           element: {
             type: {
               name: "Composite",
-              className: "ConversationMessagesItem"
+              className: "Message"
             }
           }
         }
@@ -45,13 +45,6 @@ export const Conversation: coreClient.CompositeMapper = {
   }
 };
 
-export const ConversationMessagesItem: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "ConversationMessagesItem"
-  }
-};
-
 export const Message: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -59,22 +52,7 @@ export const Message: coreClient.CompositeMapper = {
     modelProperties: {
       type: {
         defaultValue: "message",
-        isConstant: true,
         serializedName: "type",
-        type: {
-          name: "String"
-        }
-      },
-      role: {
-        serializedName: "role",
-        required: true,
-        type: {
-          name: "String"
-        }
-      },
-      message: {
-        serializedName: "message",
-        required: true,
         type: {
           name: "String"
         }
@@ -83,6 +61,18 @@ export const Message: coreClient.CompositeMapper = {
         serializedName: "event_timestamp",
         type: {
           name: "DateTime"
+        }
+      },
+      role: {
+        serializedName: "role",
+        type: {
+          name: "String"
+        }
+      },
+      message: {
+        serializedName: "message",
+        type: {
+          name: "String"
         }
       },
       metadata: {
@@ -98,27 +88,9 @@ export const Message: coreClient.CompositeMapper = {
           name: "Enum",
           allowedValues: [-1, 0, 1]
         }
-      }
-    }
-  }
-};
-
-export const Tool: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className: "Tool",
-    modelProperties: {
-      type: {
-        defaultValue: "tool",
-        isConstant: true,
-        serializedName: "type",
-        type: {
-          name: "String"
-        }
       },
       name: {
         serializedName: "name",
-        required: true,
         type: {
           name: "String"
         }
@@ -140,12 +112,6 @@ export const Tool: coreClient.CompositeMapper = {
         serializedName: "observation",
         type: {
           name: "String"
-        }
-      },
-      eventTimestamp: {
-        serializedName: "event_timestamp",
-        type: {
-          name: "DateTime"
         }
       }
     }

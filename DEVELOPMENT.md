@@ -4,13 +4,15 @@
 
 1. Generate new code from the OpenAPI Spec:
 
+   WARNING: 6.0.9 causes a breaking change with options parameter, use 6.0.8
+
    ```
    autorest README.md --input-file=/Users/alex/scratch/context/web/swagger/v1/swagger.yaml
    ```
 
 2. Fix the issue with credentials by editing the generated/src/contextAPI.ts, changing the credentials -> options.credential. This fixes https://github.com/Azure/autorest.typescript/issues/1724.
 
-3. Add the --bundleConfigAsCjs flag to the rollup stage of the generated typescript.
+3. Add the --bundleConfigAsCjs flag to the rollup stage of the generated typescript (package.json: scripts->build).
 
 4. Build and test a new version of the package:
    

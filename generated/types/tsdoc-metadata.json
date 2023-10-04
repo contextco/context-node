@@ -5,11 +5,7 @@
   "toolPackages": [
     {
       "packageName": "@microsoft/api-extractor",
-<<<<<<< HEAD
-      "packageVersion": "7.37.0"
-=======
       "packageVersion": "7.38.0"
->>>>>>> 2419cfa (Add tooools)
     }
   ]
 }

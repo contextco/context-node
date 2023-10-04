@@ -4,14 +4,13 @@
 
 ```ts
 
-import * as coreAuth from '@azure/core-auth';
 import * as coreClient from '@azure/core-client';
 
 // @public (undocumented)
 export class ContextAPI extends coreClient.ServiceClient {
     // (undocumented)
     $host: string;
-    constructor(credentials: coreAuth.TokenCredential, options?: ContextAPIOptionalParams);
+    constructor(options?: ContextAPIOptionalParams);
     // (undocumented)
     log: Log;
 }
@@ -25,12 +24,8 @@ export interface ContextAPIOptionalParams extends coreClient.ServiceClientOption
 // @public (undocumented)
 export interface Conversation {
     // (undocumented)
-    messages?: ConversationMessagesItem[];
+    messages?: Message[];
     metadata?: Record<string, unknown>;
-}
-
-// @public (undocumented)
-export interface ConversationMessagesItem {
 }
 
 // @public
@@ -38,6 +33,12 @@ export enum KnownMessageRole {
     Assistant = "assistant",
     System = "system",
     User = "user"
+}
+
+// @public
+export enum KnownMessageType {
+    Message = "message",
+    Tool = "tool"
 }
 
 // @public
@@ -66,19 +67,29 @@ export interface LogConversationUpsertOptionalParams extends coreClient.Operatio
 export interface Message {
     // (undocumented)
     eventTimestamp?: Date;
+    input?: Record<string, unknown>;
     // (undocumented)
-    message: string;
+    message?: string;
     metadata?: Record<string, unknown>;
+    // (undocumented)
+    name?: string;
+    // (undocumented)
+    observation?: string;
     // (undocumented)
     rating?: Rating;
     // (undocumented)
-    role: MessageRole;
+    role?: MessageRole;
     // (undocumented)
-    type?: "message";
+    thought?: string;
+    // (undocumented)
+    type?: MessageType;
 }
 
 // @public
 export type MessageRole = string;
+
+// @public
+export type MessageType = string;
 
 // @public (undocumented)
 export interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema {
@@ -94,21 +105,6 @@ export interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentAppl
 
 // @public
 export type Rating = -1 | 0 | 1;
-
-// @public (undocumented)
-export interface Tool {
-    // (undocumented)
-    eventTimestamp?: Date;
-    input?: Record<string, unknown>;
-    // (undocumented)
-    name: string;
-    // (undocumented)
-    observation?: string;
-    // (undocumented)
-    thought?: string;
-    // (undocumented)
-    type?: "tool";
-}
 
 // (No @packageDocumentation comment for this package)
 

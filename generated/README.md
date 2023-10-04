@@ -4,7 +4,7 @@ This package contains an isomorphic SDK (runs both in Node.js and in browsers) f
 
 
 
-[Package (NPM)](https://www.npmjs.com/package/context-generated) |
+[Package (NPM)](https://www.npmjs.com/package/@contextco/context-generated) |
 [Samples](https://github.com/Azure-Samples/azure-samples-js-management)
 
 ## Getting started
@@ -17,12 +17,12 @@ This package contains an isomorphic SDK (runs both in Node.js and in browsers) f
 See our [support policy](https://github.com/Azure/azure-sdk-for-js/blob/main/SUPPORT.md) for more details.
 
 
-### Install the `context-generated` package
+### Install the `@contextco/context-generated` package
 
 Install the ContextApi client library for JavaScript with `npm`:
 
 ```bash
-npm install context-generated
+npm install @contextco/context-generated
 ```
 
 
