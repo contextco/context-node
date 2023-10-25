@@ -1,6 +1,15 @@
 import * as coreClient from "@azure/core-client";
+export declare const ConversationResponse: coreClient.CompositeMapper;
+export declare const Topic: coreClient.CompositeMapper;
+export declare const MessageResponse: coreClient.CompositeMapper;
+export declare const PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper;
 export declare const PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper;
 export declare const Conversation: coreClient.CompositeMapper;
 export declare const Message: coreClient.CompositeMapper;
 export declare const PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper;
+export declare const Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper;
+export declare const TopicWithSamples: coreClient.CompositeMapper;
+export declare const Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper;
+export declare const Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics: coreClient.CompositeMapper;
+export declare const Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper;
 //# sourceMappingURL=mappers.d.ts.map

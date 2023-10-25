@@ -1,6 +1,6 @@
 import * as coreClient from "@azure/core-client";
-import { Log } from "./operationsInterfaces";
-import { ContextAPIOptionalParams } from "./models";
+import { Log, Suggested } from "./operationsInterfaces";
+import { ContextAPIOptionalParams, ConversationOptionalParams, ConversationOperationResponse, ConversationsOptionalParams, ConversationsResponse } from "./models";
 export declare class ContextAPI extends coreClient.ServiceClient {
     $host: string;
     /**
@@ -8,6 +8,18 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      * @param options The parameter options
      */
     constructor(options?: ContextAPIOptionalParams);
+    /**
+     * Returns conversation details
+     * @param id
+     * @param options The options parameters.
+     */
+    conversation(id: string, options?: ConversationOptionalParams): Promise<ConversationOperationResponse>;
+    /**
+     * Returns list of conversations
+     * @param options The options parameters.
+     */
+    conversations(options?: ConversationsOptionalParams): Promise<ConversationsResponse>;
     log: Log;
+    suggested: Suggested;
 }
 //# sourceMappingURL=contextAPI.d.ts.map

@@ -11,8 +11,12 @@ export class ContextAPI extends coreClient.ServiceClient {
     // (undocumented)
     $host: string;
     constructor(options?: ContextAPIOptionalParams);
+    conversation(id: string, options?: ConversationOptionalParams): Promise<ConversationOperationResponse>;
+    conversations(options?: ConversationsOptionalParams): Promise<ConversationsResponse>;
     // (undocumented)
     log: Log;
+    // (undocumented)
+    suggested: Suggested;
 }
 
 // @public
@@ -25,7 +29,69 @@ export interface ContextAPIOptionalParams extends coreClient.ServiceClientOption
 export interface Conversation {
     // (undocumented)
     messages?: Message[];
-    metadata?: Record<string, unknown>;
+    metadata?: {
+        [propertyName: string]: string;
+    };
+}
+
+// @public
+export type ConversationOperationResponse = ConversationResponse;
+
+// @public
+export interface ConversationOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+}
+
+// @public (undocumented)
+export interface ConversationResponse {
+    // (undocumented)
+    id: string;
+    // (undocumented)
+    messages: MessageResponse[];
+    metadata: {
+        [propertyName: string]: string;
+    };
+    // (undocumented)
+    sentimentTrend: ConversationSentimentTrend;
+    // (undocumented)
+    suggestedTopics: Topic[];
+    // (undocumented)
+    topics: Topic[];
+}
+
+// @public
+export type ConversationSentimentTrend = string;
+
+// @public
+export interface ConversationsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    endTime?: string;
+    startTime?: string;
+}
+
+// @public
+export type ConversationsResponse = PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export enum KnownConversationSentimentTrend {
+    Down = "down",
+    Flat = "flat",
+    Up = "up"
+}
+
+// @public
+export enum KnownMessageParamsRole {
+    Assistant = "assistant",
+    System = "system",
+    User = "user"
+}
+
+// @public
+export enum KnownMessageParamsType {
+    Message = "message",
+    Tool = "tool"
 }
 
 // @public
@@ -70,7 +136,9 @@ export interface Message {
     input?: Record<string, unknown>;
     // (undocumented)
     message?: string;
-    metadata?: Record<string, unknown>;
+    metadata?: {
+        [propertyName: string]: string;
+    };
     // (undocumented)
     name?: string;
     // (undocumented)
@@ -78,9 +146,42 @@ export interface Message {
     // (undocumented)
     rating?: Rating;
     // (undocumented)
-    role?: MessageRole;
+    role?: MessageParamsRole;
     // (undocumented)
     thought?: string;
+    // (undocumented)
+    type?: MessageParamsType;
+}
+
+// @public
+export type MessageParamsRole = string;
+
+// @public
+export type MessageParamsType = string;
+
+// @public (undocumented)
+export interface MessageResponse {
+    // (undocumented)
+    eventTimestamp?: Date;
+    // (undocumented)
+    language: string;
+    // (undocumented)
+    message: string;
+    metadata?: {
+        [propertyName: string]: string;
+    };
+    // (undocumented)
+    rating: Rating;
+    // (undocumented)
+    role: MessageRole;
+    // (undocumented)
+    sentiment: number;
+    // (undocumented)
+    suggestedTopics?: Topic[];
+    // (undocumented)
+    topics: Topic[];
+    // (undocumented)
+    translation?: string;
     // (undocumented)
     type?: MessageType;
 }
@@ -90,6 +191,44 @@ export type MessageRole = string;
 
 // @public
 export type MessageType = string;
+
+// @public (undocumented)
+export interface Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    statistics: Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics;
+    // (undocumented)
+    topic: Topic;
+}
+
+// @public (undocumented)
+export interface Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics {
+    // (undocumented)
+    assistantMessageCount: number;
+    // (undocumented)
+    conversationCount: number;
+    // (undocumented)
+    meanSentiment: number;
+    // (undocumented)
+    meanUserRating: number;
+    // (undocumented)
+    userMessageCount: number;
+}
+
+// @public (undocumented)
+export interface Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    conversations: ConversationResponse[];
+    // (undocumented)
+    count: number;
+}
+
+// @public (undocumented)
+export interface Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    count: number;
+    // (undocumented)
+    topics: TopicWithSamples[];
+}
 
 // @public (undocumented)
 export interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema {
@@ -103,8 +242,68 @@ export interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentAppl
     conversation?: Conversation;
 }
 
+// @public (undocumented)
+export interface PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    conversations: ConversationResponse[];
+    // (undocumented)
+    count: number;
+}
+
 // @public
 export type Rating = -1 | 0 | 1;
+
+// @public
+export interface Suggested {
+    topicConversations(id: string, options?: SuggestedTopicConversationsOptionalParams): Promise<SuggestedTopicConversationsResponse>;
+    topics(options?: SuggestedTopicsOptionalParams): Promise<SuggestedTopicsResponse>;
+    topicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
+}
+
+// @public
+export interface SuggestedTopicConversationsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+}
+
+// @public
+export type SuggestedTopicConversationsResponse = Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export interface SuggestedTopicsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+}
+
+// @public
+export type SuggestedTopicsResponse = Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export interface SuggestedTopicStatisticsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+}
+
+// @public
+export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
+
+// @public (undocumented)
+export interface Topic {
+    // (undocumented)
+    id: string;
+    // (undocumented)
+    name: string;
+}
+
+// @public (undocumented)
+export interface TopicWithSamples {
+    // (undocumented)
+    conversationsSample: ConversationResponse[];
+    // (undocumented)
+    id: string;
+    // (undocumented)
+    name: string;
+}
 
 // (No @packageDocumentation comment for this package)
 

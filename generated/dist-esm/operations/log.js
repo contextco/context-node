@@ -33,7 +33,7 @@ const conversationOperationSpec = {
     responses: { 201: {} },
     requestBody: Parameters.body,
     urlParameters: [Parameters.$host],
-    headerParameters: [Parameters.contentType, Parameters.authorization],
+    headerParameters: [Parameters.authorization, Parameters.contentType],
     mediaType: "json",
     serializer
 };
@@ -43,7 +43,7 @@ const conversationUpsertOperationSpec = {
     responses: { 201: {} },
     requestBody: Parameters.body1,
     urlParameters: [Parameters.$host],
-    headerParameters: [Parameters.contentType, Parameters.authorization],
+    headerParameters: [Parameters.authorization, Parameters.contentType],
     mediaType: "json",
     serializer
 };

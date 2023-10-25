@@ -1,18 +1,14 @@
 import { PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper, PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper } from "../models/mappers";
-export const contentType = {
-    parameterPath: ["options", "contentType"],
+export const accept = {
+    parameterPath: "accept",
     mapper: {
         defaultValue: "application/json",
         isConstant: true,
-        serializedName: "Content-Type",
+        serializedName: "Accept",
         type: {
             name: "String"
         }
     }
-};
-export const body = {
-    parameterPath: ["options", "body"],
-    mapper: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper
 };
 export const $host = {
     parameterPath: "$host",
@@ -33,6 +29,49 @@ export const authorization = {
             name: "String"
         }
     }
+};
+export const id = {
+    parameterPath: "id",
+    mapper: {
+        serializedName: "id",
+        required: true,
+        type: {
+            name: "String"
+        }
+    }
+};
+export const startTime = {
+    parameterPath: ["options", "startTime"],
+    mapper: {
+        serializedName: "start_time",
+        type: {
+            name: "String"
+        }
+    }
+};
+export const endTime = {
+    parameterPath: ["options", "endTime"],
+    mapper: {
+        serializedName: "end_time",
+        type: {
+            name: "String"
+        }
+    }
+};
+export const contentType = {
+    parameterPath: ["options", "contentType"],
+    mapper: {
+        defaultValue: "application/json",
+        isConstant: true,
+        serializedName: "Content-Type",
+        type: {
+            name: "String"
+        }
+    }
+};
+export const body = {
+    parameterPath: ["options", "body"],
+    mapper: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper
 };
 export const body1 = {
     parameterPath: ["options", "body"],
