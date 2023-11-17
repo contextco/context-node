@@ -5,7 +5,9 @@ import * as Parameters from "../models/parameters";
 import { ContextAPI } from "../contextAPI";
 import {
   LogConversationOptionalParams,
-  LogConversationUpsertOptionalParams
+  LogConversationUpsertOptionalParams,
+  LogConversationThreadOptionalParams,
+  LogConversationThreadResponse
 } from "../models";
 
 /** Class containing Log operations. */
@@ -43,6 +45,19 @@ export class LogImpl implements Log {
       conversationUpsertOperationSpec
     );
   }
+
+  /**
+   * Ingests or updates a thread
+   * @param options The options parameters.
+   */
+  conversationThread(
+    options?: LogConversationThreadOptionalParams
+  ): Promise<LogConversationThreadResponse> {
+    return this.client.sendOperationRequest(
+      { options },
+      conversationThreadOperationSpec
+    );
+  }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
@@ -53,7 +68,7 @@ const conversationOperationSpec: coreClient.OperationSpec = {
   responses: { 201: {} },
   requestBody: Parameters.body,
   urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.contentType, Parameters.authorization],
+  headerParameters: [Parameters.authorization, Parameters.contentType],
   mediaType: "json",
   serializer
 };
@@ -63,7 +78,26 @@ const conversationUpsertOperationSpec: coreClient.OperationSpec = {
   responses: { 201: {} },
   requestBody: Parameters.body1,
   urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.contentType, Parameters.authorization],
+  headerParameters: [Parameters.authorization, Parameters.contentType],
+  mediaType: "json",
+  serializer
+};
+const conversationThreadOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/log/conversation/thread",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper:
+        Mappers.PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema
+    }
+  },
+  requestBody: Parameters.body2,
+  urlParameters: [Parameters.$host],
+  headerParameters: [
+    Parameters.accept,
+    Parameters.authorization,
+    Parameters.contentType
+  ],
   mediaType: "json",
   serializer
 };

@@ -1,3 +1,13 @@
+/** Known values of {@link ConversationSentimentTrend} that the service accepts. */
+export var KnownConversationSentimentTrend;
+(function (KnownConversationSentimentTrend) {
+    /** Up */
+    KnownConversationSentimentTrend["Up"] = "up";
+    /** Flat */
+    KnownConversationSentimentTrend["Flat"] = "flat";
+    /** Down */
+    KnownConversationSentimentTrend["Down"] = "down";
+})(KnownConversationSentimentTrend || (KnownConversationSentimentTrend = {}));
 /** Known values of {@link MessageType} that the service accepts. */
 export var KnownMessageType;
 (function (KnownMessageType) {
@@ -16,4 +26,22 @@ export var KnownMessageRole;
     /** User */
     KnownMessageRole["User"] = "user";
 })(KnownMessageRole || (KnownMessageRole = {}));
+/** Known values of {@link MessageParamsRole} that the service accepts. */
+export var KnownMessageParamsRole;
+(function (KnownMessageParamsRole) {
+    /** System */
+    KnownMessageParamsRole["System"] = "system";
+    /** Assistant */
+    KnownMessageParamsRole["Assistant"] = "assistant";
+    /** User */
+    KnownMessageParamsRole["User"] = "user";
+})(KnownMessageParamsRole || (KnownMessageParamsRole = {}));
+/** Known values of {@link MessageParamsType} that the service accepts. */
+export var KnownMessageParamsType;
+(function (KnownMessageParamsType) {
+    /** Message */
+    KnownMessageParamsType["Message"] = "message";
+    /** Tool */
+    KnownMessageParamsType["Tool"] = "tool";
+})(KnownMessageParamsType || (KnownMessageParamsType = {}));
 //# sourceMappingURL=index.js.map

@@ -1,6 +1,8 @@
 import {
   LogConversationOptionalParams,
-  LogConversationUpsertOptionalParams
+  LogConversationUpsertOptionalParams,
+  LogConversationThreadOptionalParams,
+  LogConversationThreadResponse
 } from "../models";
 
 /** Interface representing a Log. */
@@ -17,4 +19,11 @@ export interface Log {
   conversationUpsert(
     options?: LogConversationUpsertOptionalParams
   ): Promise<void>;
+  /**
+   * Ingests or updates a thread
+   * @param options The options parameters.
+   */
+  conversationThread(
+    options?: LogConversationThreadOptionalParams
+  ): Promise<LogConversationThreadResponse>;
 }

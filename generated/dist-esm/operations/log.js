@@ -24,6 +24,13 @@ export class LogImpl {
     conversationUpsert(options) {
         return this.client.sendOperationRequest({ options }, conversationUpsertOperationSpec);
     }
+    /**
+     * Ingests or updates a thread
+     * @param options The options parameters.
+     */
+    conversationThread(options) {
+        return this.client.sendOperationRequest({ options }, conversationThreadOperationSpec);
+    }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
@@ -33,7 +40,7 @@ const conversationOperationSpec = {
     responses: { 201: {} },
     requestBody: Parameters.body,
     urlParameters: [Parameters.$host],
-    headerParameters: [Parameters.contentType, Parameters.authorization],
+    headerParameters: [Parameters.authorization, Parameters.contentType],
     mediaType: "json",
     serializer
 };
@@ -43,7 +50,25 @@ const conversationUpsertOperationSpec = {
     responses: { 201: {} },
     requestBody: Parameters.body1,
     urlParameters: [Parameters.$host],
-    headerParameters: [Parameters.contentType, Parameters.authorization],
+    headerParameters: [Parameters.authorization, Parameters.contentType],
+    mediaType: "json",
+    serializer
+};
+const conversationThreadOperationSpec = {
+    path: "/api/v1/log/conversation/thread",
+    httpMethod: "POST",
+    responses: {
+        201: {
+            bodyMapper: Mappers.PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema
+        }
+    },
+    requestBody: Parameters.body2,
+    urlParameters: [Parameters.$host],
+    headerParameters: [
+        Parameters.accept,
+        Parameters.authorization,
+        Parameters.contentType
+    ],
     mediaType: "json",
     serializer
 };

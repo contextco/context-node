@@ -1,8 +1,32 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
-import { LogImpl } from "./operations";
-import { Log } from "./operationsInterfaces";
-import { ContextAPIOptionalParams } from "./models";
+import {
+  ConversationOperationsImpl,
+  EstimatedImpl,
+  LogImpl,
+  SuggestedImpl
+} from "./operations";
+import {
+  ConversationOperations,
+  Estimated,
+  Log,
+  Suggested
+} from "./operationsInterfaces";
+import * as Parameters from "./models/parameters";
+import * as Mappers from "./models/mappers";
+import {
+  ContextAPIOptionalParams,
+  SentimentOptionalParams,
+  SentimentResponse,
+  RatingOptionalParams,
+  RatingResponse,
+  VolumeOptionalParams,
+  VolumeResponse,
+  ConversationOptionalParams,
+  ConversationOperationResponse,
+  ConversationsOptionalParams,
+  ConversationsResponse
+} from "./models";
 
 export class ContextAPI extends coreClient.ServiceClient {
   $host: string;
@@ -70,8 +94,155 @@ export class ContextAPI extends coreClient.ServiceClient {
 
     // Assigning values to Constant parameters
     this.$host = options.$host || "https://api.context.ai";
+    this.conversationOperations = new ConversationOperationsImpl(this);
+    this.estimated = new EstimatedImpl(this);
     this.log = new LogImpl(this);
+    this.suggested = new SuggestedImpl(this);
   }
 
+  /**
+   * Returns sentiment details
+   * @param options The options parameters.
+   */
+  sentiment(options?: SentimentOptionalParams): Promise<SentimentResponse> {
+    return this.sendOperationRequest({ options }, sentimentOperationSpec);
+  }
+
+  /**
+   * Returns rating details
+   * @param options The options parameters.
+   */
+  rating(options?: RatingOptionalParams): Promise<RatingResponse> {
+    return this.sendOperationRequest({ options }, ratingOperationSpec);
+  }
+
+  /**
+   * Returns volume details
+   * @param options The options parameters.
+   */
+  volume(options?: VolumeOptionalParams): Promise<VolumeResponse> {
+    return this.sendOperationRequest({ options }, volumeOperationSpec);
+  }
+
+  /**
+   * Returns conversation details
+   * @param id
+   * @param options The options parameters.
+   */
+  conversation(
+    id: string,
+    options?: ConversationOptionalParams
+  ): Promise<ConversationOperationResponse> {
+    return this.sendOperationRequest(
+      { id, options },
+      conversationOperationSpec
+    );
+  }
+
+  /**
+   * Returns list of conversations
+   * @param options The options parameters.
+   */
+  conversations(
+    options?: ConversationsOptionalParams
+  ): Promise<ConversationsResponse> {
+    return this.sendOperationRequest({ options }, conversationsOperationSpec);
+  }
+
+  conversationOperations: ConversationOperations;
+  estimated: Estimated;
   log: Log;
+  suggested: Suggested;
 }
+// Operation Specifications
+const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
+
+const sentimentOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/conversations/series/sentiment",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths1AqjttjApiV1ConversationsSeriesSentimentGetResponses200ContentApplicationJsonSchema
+    }
+  },
+  queryParameters: [
+    Parameters.tenantId,
+    Parameters.startTime,
+    Parameters.endTime,
+    Parameters.period
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
+const ratingOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/conversations/series/rating",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentApplicationJsonSchema
+    }
+  },
+  queryParameters: [
+    Parameters.tenantId,
+    Parameters.startTime,
+    Parameters.endTime,
+    Parameters.period
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
+const volumeOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/conversations/series/volume",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths1Ola7DlApiV1ConversationsSeriesVolumeGetResponses200ContentApplicationJsonSchema
+    }
+  },
+  queryParameters: [
+    Parameters.tenantId,
+    Parameters.startTime,
+    Parameters.endTime,
+    Parameters.period
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
+const conversationOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/conversations/{id}",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper: Mappers.ConversationResponse
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
+const conversationsOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/conversations",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema
+    }
+  },
+  queryParameters: [
+    Parameters.startTime,
+    Parameters.endTime,
+    Parameters.page,
+    Parameters.perPage,
+    Parameters.tenantId1
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
