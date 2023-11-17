@@ -1,17 +1,7 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
-import {
-  ConversationOperationsImpl,
-  EstimatedImpl,
-  LogImpl,
-  SuggestedImpl
-} from "./operations";
-import {
-  ConversationOperations,
-  Estimated,
-  Log,
-  Suggested
-} from "./operationsInterfaces";
+import { ConversationOperationsImpl, LogImpl } from "./operations";
+import { ConversationOperations, Log } from "./operationsInterfaces";
 import * as Parameters from "./models/parameters";
 import * as Mappers from "./models/mappers";
 import {
@@ -20,12 +10,20 @@ import {
   SentimentResponse,
   RatingOptionalParams,
   RatingResponse,
+  EstimatedCostOptionalParams,
+  EstimatedCostResponse,
   VolumeOptionalParams,
   VolumeResponse,
   ConversationOptionalParams,
   ConversationOperationResponse,
   ConversationsOptionalParams,
-  ConversationsResponse
+  ConversationsResponse,
+  SuggestedTopicsOptionalParams,
+  SuggestedTopicsResponse,
+  SuggestedTopicConversationsOptionalParams,
+  SuggestedTopicConversationsResponse,
+  SuggestedTopicStatisticsOptionalParams,
+  SuggestedTopicStatisticsResponse
 } from "./models";
 
 export class ContextAPI extends coreClient.ServiceClient {
@@ -95,9 +93,7 @@ export class ContextAPI extends coreClient.ServiceClient {
     // Assigning values to Constant parameters
     this.$host = options.$host || "https://api.context.ai";
     this.conversationOperations = new ConversationOperationsImpl(this);
-    this.estimated = new EstimatedImpl(this);
     this.log = new LogImpl(this);
-    this.suggested = new SuggestedImpl(this);
   }
 
   /**
@@ -114,6 +110,16 @@ export class ContextAPI extends coreClient.ServiceClient {
    */
   rating(options?: RatingOptionalParams): Promise<RatingResponse> {
     return this.sendOperationRequest({ options }, ratingOperationSpec);
+  }
+
+  /**
+   * Returns estimated cost details
+   * @param options The options parameters.
+   */
+  estimatedCost(
+    options?: EstimatedCostOptionalParams
+  ): Promise<EstimatedCostResponse> {
+    return this.sendOperationRequest({ options }, estimatedCostOperationSpec);
   }
 
   /**
@@ -149,10 +155,48 @@ export class ContextAPI extends coreClient.ServiceClient {
     return this.sendOperationRequest({ options }, conversationsOperationSpec);
   }
 
+  /**
+   * Returns suggested topics details
+   * @param options The options parameters.
+   */
+  suggestedTopics(
+    options?: SuggestedTopicsOptionalParams
+  ): Promise<SuggestedTopicsResponse> {
+    return this.sendOperationRequest({ options }, suggestedTopicsOperationSpec);
+  }
+
+  /**
+   * Returns statistics of selected topic
+   * @param id
+   * @param options The options parameters.
+   */
+  suggestedTopicConversations(
+    id: string,
+    options?: SuggestedTopicConversationsOptionalParams
+  ): Promise<SuggestedTopicConversationsResponse> {
+    return this.sendOperationRequest(
+      { id, options },
+      suggestedTopicConversationsOperationSpec
+    );
+  }
+
+  /**
+   * Returns a list of conversations matching given topic
+   * @param id
+   * @param options The options parameters.
+   */
+  suggestedTopicStatistics(
+    id: string,
+    options?: SuggestedTopicStatisticsOptionalParams
+  ): Promise<SuggestedTopicStatisticsResponse> {
+    return this.sendOperationRequest(
+      { id, options },
+      suggestedTopicStatisticsOperationSpec
+    );
+  }
+
   conversationOperations: ConversationOperations;
-  estimated: Estimated;
   log: Log;
-  suggested: Suggested;
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
@@ -183,6 +227,25 @@ const ratingOperationSpec: coreClient.OperationSpec = {
     200: {
       bodyMapper:
         Mappers.PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentApplicationJsonSchema
+    }
+  },
+  queryParameters: [
+    Parameters.tenantId,
+    Parameters.startTime,
+    Parameters.endTime,
+    Parameters.period
+  ],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
+const estimatedCostOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/conversations/series/estimated_cost",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema
     }
   },
   queryParameters: [
@@ -243,6 +306,52 @@ const conversationsOperationSpec: coreClient.OperationSpec = {
     Parameters.tenantId1
   ],
   urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
+const suggestedTopicsOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/topic_suggestions",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema
+    }
+  },
+  queryParameters: [Parameters.page, Parameters.perPage],
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
+const suggestedTopicConversationsOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/topic_suggestions/{id}/statistics",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema
+    }
+  },
+  urlParameters: [Parameters.$host, Parameters.id],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
+const suggestedTopicStatisticsOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/topic_suggestions/{id}/conversations",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema
+    }
+  },
+  queryParameters: [
+    Parameters.startTime,
+    Parameters.endTime,
+    Parameters.page,
+    Parameters.perPage
+  ],
+  urlParameters: [Parameters.$host, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.authorization],
   serializer
 };

@@ -277,6 +277,20 @@ export interface RatingOptionalParams extends coreClient.OperationOptions {
 /** Contains response data for the rating operation. */
 export type RatingResponse = PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentApplicationJsonSchema;
 /** Optional parameters. */
+export interface EstimatedCostOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    /** Filter by tenant id.<br /> */
+    tenantId?: string;
+    /** Limits scope to data that occurred after given time.<br />Must be ISO 8601. Defaults to the beginning of 6 days ago.<br /> */
+    startTime?: string;
+    /** Limits scope to data that occurred before given time.<br />Must be ISO 8601. Defaults to now.<br /> */
+    endTime?: string;
+    /** Period to group data by. Defaults to day. Options are: day, week, month.<br /> */
+    period?: string;
+}
+/** Contains response data for the estimatedCost operation. */
+export type EstimatedCostResponse = Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema;
+/** Optional parameters. */
 export interface VolumeOptionalParams extends coreClient.OperationOptions {
     authorization?: string;
     /** Filter by tenant id.<br /> */
@@ -313,19 +327,35 @@ export interface ConversationsOptionalParams extends coreClient.OperationOptions
 /** Contains response data for the conversations operation. */
 export type ConversationsResponse = PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema;
 /** Optional parameters. */
-export interface EstimatedCostOptionalParams extends coreClient.OperationOptions {
+export interface SuggestedTopicsOptionalParams extends coreClient.OperationOptions {
     authorization?: string;
-    /** Filter by tenant id.<br /> */
-    tenantId?: string;
-    /** Limits scope to data that occurred after given time.<br />Must be ISO 8601. Defaults to the beginning of 6 days ago.<br /> */
-    startTime?: string;
-    /** Limits scope to data that occurred before given time.<br />Must be ISO 8601. Defaults to now.<br /> */
-    endTime?: string;
-    /** Period to group data by. Defaults to day. Options are: day, week, month.<br /> */
-    period?: string;
+    /** Page number of results to return. Defaults to 1.<br /> */
+    page?: number;
+    /** Number of results to return per page. Defaults to 20.<br /> */
+    perPage?: number;
 }
-/** Contains response data for the cost operation. */
-export type EstimatedCostResponse = Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema;
+/** Contains response data for the suggestedTopics operation. */
+export type SuggestedTopicsResponse = Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema;
+/** Optional parameters. */
+export interface SuggestedTopicConversationsOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+}
+/** Contains response data for the suggestedTopicConversations operation. */
+export type SuggestedTopicConversationsResponse = Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema;
+/** Optional parameters. */
+export interface SuggestedTopicStatisticsOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    /** Limits returned conversations to those that occurred after given time.<br />Must be ISO 8601. Defaults to the beginning of 6 days ago.<br /> */
+    startTime?: string;
+    /** Limits returned conversations to those that occurred before given time.<br />Must be ISO 8601. Defaults to now.<br /> */
+    endTime?: string;
+    /** Page number of results to return. Defaults to 1.<br /> */
+    page?: number;
+    /** Number of results to return per page. Defaults to 20.<br /> */
+    perPage?: number;
+}
+/** Contains response data for the suggestedTopicStatistics operation. */
+export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
 /** Optional parameters. */
 export interface LogConversationOptionalParams extends coreClient.OperationOptions {
     authorization?: string;
@@ -343,36 +373,6 @@ export interface LogConversationThreadOptionalParams extends coreClient.Operatio
 }
 /** Contains response data for the conversationThread operation. */
 export type LogConversationThreadResponse = PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema;
-/** Optional parameters. */
-export interface SuggestedTopicsOptionalParams extends coreClient.OperationOptions {
-    authorization?: string;
-    /** Page number of results to return. Defaults to 1.<br /> */
-    page?: number;
-    /** Number of results to return per page. Defaults to 20.<br /> */
-    perPage?: number;
-}
-/** Contains response data for the topics operation. */
-export type SuggestedTopicsResponse = Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema;
-/** Optional parameters. */
-export interface SuggestedTopicConversationsOptionalParams extends coreClient.OperationOptions {
-    authorization?: string;
-}
-/** Contains response data for the topicConversations operation. */
-export type SuggestedTopicConversationsResponse = Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema;
-/** Optional parameters. */
-export interface SuggestedTopicStatisticsOptionalParams extends coreClient.OperationOptions {
-    authorization?: string;
-    /** Limits returned conversations to those that occurred after given time.<br />Must be ISO 8601. Defaults to the beginning of 6 days ago.<br /> */
-    startTime?: string;
-    /** Limits returned conversations to those that occurred before given time.<br />Must be ISO 8601. Defaults to now.<br /> */
-    endTime?: string;
-    /** Page number of results to return. Defaults to 1.<br /> */
-    page?: number;
-    /** Number of results to return per page. Defaults to 20.<br /> */
-    perPage?: number;
-}
-/** Contains response data for the topicStatistics operation. */
-export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
 /** Optional parameters. */
 export interface ContextAPIOptionalParams extends coreClient.ServiceClientOptions {
     /** server parameter */

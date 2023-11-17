@@ -18,6 +18,11 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      */
     rating(options?: RatingOptionalParams): Promise<RatingResponse>;
     /**
+     * Returns estimated cost details
+     * @param options The options parameters.
+     */
+    estimatedCost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
+    /**
      * Returns volume details
      * @param options The options parameters.
      */
@@ -33,10 +38,25 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     conversations(options?: ConversationsOptionalParams): Promise<ConversationsResponse>;
+    /**
+     * Returns suggested topics details
+     * @param options The options parameters.
+     */
+    suggestedTopics(options?: SuggestedTopicsOptionalParams): Promise<SuggestedTopicsResponse>;
+    /**
+     * Returns statistics of selected topic
+     * @param id
+     * @param options The options parameters.
+     */
+    suggestedTopicConversations(id: string, options?: SuggestedTopicConversationsOptionalParams): Promise<SuggestedTopicConversationsResponse>;
+    /**
+     * Returns a list of conversations matching given topic
+     * @param id
+     * @param options The options parameters.
+     */
+    suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
     conversationOperations: ConversationOperations;
-    estimated: Estimated;
     log: Log;
-    suggested: Suggested;
 }
 
 /** Optional parameters. */
@@ -121,15 +141,6 @@ export declare interface ConversationsOptionalParams extends coreClient.Operatio
 /** Contains response data for the conversations operation. */
 export declare type ConversationsResponse = PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema;
 
-/** Interface representing a Estimated. */
-export declare interface Estimated {
-    /**
-     * Returns estimated cost details
-     * @param options The options parameters.
-     */
-    cost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
-}
-
 /** Optional parameters. */
 export declare interface EstimatedCostOptionalParams extends coreClient.OperationOptions {
     authorization?: string;
@@ -143,7 +154,7 @@ export declare interface EstimatedCostOptionalParams extends coreClient.Operatio
     period?: string;
 }
 
-/** Contains response data for the cost operation. */
+/** Contains response data for the estimatedCost operation. */
 export declare type EstimatedCostResponse = Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema;
 
 /** Known values of {@link ConversationSentimentTrend} that the service accepts. */
@@ -445,33 +456,12 @@ export declare interface SeriesItem {
     };
 }
 
-/** Interface representing a Suggested. */
-export declare interface Suggested {
-    /**
-     * Returns suggested topics details
-     * @param options The options parameters.
-     */
-    topics(options?: SuggestedTopicsOptionalParams): Promise<SuggestedTopicsResponse>;
-    /**
-     * Returns statistics of selected topic
-     * @param id
-     * @param options The options parameters.
-     */
-    topicConversations(id: string, options?: SuggestedTopicConversationsOptionalParams): Promise<SuggestedTopicConversationsResponse>;
-    /**
-     * Returns a list of conversations matching given topic
-     * @param id
-     * @param options The options parameters.
-     */
-    topicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
-}
-
 /** Optional parameters. */
 export declare interface SuggestedTopicConversationsOptionalParams extends coreClient.OperationOptions {
     authorization?: string;
 }
 
-/** Contains response data for the topicConversations operation. */
+/** Contains response data for the suggestedTopicConversations operation. */
 export declare type SuggestedTopicConversationsResponse = Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
@@ -483,7 +473,7 @@ export declare interface SuggestedTopicsOptionalParams extends coreClient.Operat
     perPage?: number;
 }
 
-/** Contains response data for the topics operation. */
+/** Contains response data for the suggestedTopics operation. */
 export declare type SuggestedTopicsResponse = Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
@@ -499,7 +489,7 @@ export declare interface SuggestedTopicStatisticsOptionalParams extends coreClie
     perPage?: number;
 }
 
-/** Contains response data for the topicStatistics operation. */
+/** Contains response data for the suggestedTopicStatistics operation. */
 export declare type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
 
 export declare interface Thread {

@@ -15,14 +15,14 @@ export class ContextAPI extends coreClient.ServiceClient {
     // (undocumented)
     conversationOperations: ConversationOperations;
     conversations(options?: ConversationsOptionalParams): Promise<ConversationsResponse>;
-    // (undocumented)
-    estimated: Estimated;
+    estimatedCost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
     // (undocumented)
     log: Log;
     rating(options?: RatingOptionalParams): Promise<RatingResponse>;
     sentiment(options?: SentimentOptionalParams): Promise<SentimentResponse>;
-    // (undocumented)
-    suggested: Suggested;
+    suggestedTopicConversations(id: string, options?: SuggestedTopicConversationsOptionalParams): Promise<SuggestedTopicConversationsResponse>;
+    suggestedTopics(options?: SuggestedTopicsOptionalParams): Promise<SuggestedTopicsResponse>;
+    suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
     volume(options?: VolumeOptionalParams): Promise<VolumeResponse>;
 }
 
@@ -97,11 +97,6 @@ export interface ConversationsOptionalParams extends coreClient.OperationOptions
 
 // @public
 export type ConversationsResponse = PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema;
-
-// @public
-export interface Estimated {
-    cost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
-}
 
 // @public
 export interface EstimatedCostOptionalParams extends coreClient.OperationOptions {
@@ -438,13 +433,6 @@ export interface SeriesItem {
     };
     // (undocumented)
     name: string;
-}
-
-// @public
-export interface Suggested {
-    topicConversations(id: string, options?: SuggestedTopicConversationsOptionalParams): Promise<SuggestedTopicConversationsResponse>;
-    topics(options?: SuggestedTopicsOptionalParams): Promise<SuggestedTopicsResponse>;
-    topicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
 }
 
 // @public

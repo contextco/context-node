@@ -434,35 +434,67 @@
               "name": "conversations"
             },
             {
-              "kind": "Property",
-              "canonicalReference": "@contextco/context-generated!ContextAPI#estimated:member",
-              "docComment": "",
+              "kind": "Method",
+              "canonicalReference": "@contextco/context-generated!ContextAPI#estimatedCost:member(1)",
+              "docComment": "/**\n * Returns estimated cost details\n *\n * @param options - The options parameters.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "estimated: "
+                  "text": "estimatedCost(options?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "Estimated",
-                  "canonicalReference": "@contextco/context-generated!Estimated:interface"
+                  "text": "EstimatedCostOptionalParams",
+                  "canonicalReference": "@contextco/context-generated!EstimatedCostOptionalParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EstimatedCostResponse",
+                  "canonicalReference": "@contextco/context-generated!EstimatedCostResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
                 },
                 {
                   "kind": "Content",
                   "text": ";"
                 }
               ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "estimated",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
               "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
               "isProtected": false,
-              "isAbstract": false
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "estimatedCost"
             },
             {
               "kind": "Property",
@@ -622,35 +654,225 @@
               "name": "sentiment"
             },
             {
-              "kind": "Property",
-              "canonicalReference": "@contextco/context-generated!ContextAPI#suggested:member",
-              "docComment": "",
+              "kind": "Method",
+              "canonicalReference": "@contextco/context-generated!ContextAPI#suggestedTopicConversations:member(1)",
+              "docComment": "/**\n * Returns statistics of selected topic\n *\n * @param id - \n *\n * @param options - The options parameters.\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "suggested: "
+                  "text": "suggestedTopicConversations(id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", options?: "
                 },
                 {
                   "kind": "Reference",
-                  "text": "Suggested",
-                  "canonicalReference": "@contextco/context-generated!Suggested:interface"
+                  "text": "SuggestedTopicConversationsOptionalParams",
+                  "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsOptionalParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SuggestedTopicConversationsResponse",
+                  "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
                 },
                 {
                   "kind": "Content",
                   "text": ";"
                 }
               ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "suggested",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              },
               "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
               "isProtected": false,
-              "isAbstract": false
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "suggestedTopicConversations"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@contextco/context-generated!ContextAPI#suggestedTopics:member(1)",
+              "docComment": "/**\n * Returns suggested topics details\n *\n * @param options - The options parameters.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "suggestedTopics(options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SuggestedTopicsOptionalParams",
+                  "canonicalReference": "@contextco/context-generated!SuggestedTopicsOptionalParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SuggestedTopicsResponse",
+                  "canonicalReference": "@contextco/context-generated!SuggestedTopicsResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "suggestedTopics"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@contextco/context-generated!ContextAPI#suggestedTopicStatistics:member(1)",
+              "docComment": "/**\n * Returns a list of conversations matching given topic\n *\n * @param id - \n *\n * @param options - The options parameters.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "suggestedTopicStatistics(id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SuggestedTopicStatisticsOptionalParams",
+                  "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsOptionalParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "SuggestedTopicStatisticsResponse",
+                  "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "suggestedTopicStatistics"
             },
             {
               "kind": "Method",
@@ -1580,84 +1802,6 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "@contextco/context-generated!Estimated:interface",
-          "docComment": "/**\n * Interface representing a Estimated.\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface Estimated "
-            }
-          ],
-          "fileUrlPath": "src/operationsInterfaces/estimated.ts",
-          "releaseTag": "Public",
-          "name": "Estimated",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "MethodSignature",
-              "canonicalReference": "@contextco/context-generated!Estimated#cost:member(1)",
-              "docComment": "/**\n * Returns estimated cost details\n *\n * @param options - The options parameters.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "cost(options?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EstimatedCostOptionalParams",
-                  "canonicalReference": "@contextco/context-generated!EstimatedCostOptionalParams:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "EstimatedCostResponse",
-                  "canonicalReference": "@contextco/context-generated!EstimatedCostResponse:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isOptional": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": true
-                }
-              ],
-              "name": "cost"
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
           "canonicalReference": "@contextco/context-generated!EstimatedCostOptionalParams:interface",
           "docComment": "/**\n * Optional parameters.\n */\n",
           "excerptTokens": [
@@ -1826,7 +1970,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "@contextco/context-generated!EstimatedCostResponse:type",
-          "docComment": "/**\n * Contains response data for the cost operation.\n */\n",
+          "docComment": "/**\n * Contains response data for the estimatedCost operation.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -5468,236 +5612,6 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "@contextco/context-generated!Suggested:interface",
-          "docComment": "/**\n * Interface representing a Suggested.\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface Suggested "
-            }
-          ],
-          "fileUrlPath": "src/operationsInterfaces/suggested.ts",
-          "releaseTag": "Public",
-          "name": "Suggested",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "MethodSignature",
-              "canonicalReference": "@contextco/context-generated!Suggested#topicConversations:member(1)",
-              "docComment": "/**\n * Returns statistics of selected topic\n *\n * @param id - \n *\n * @param options - The options parameters.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "topicConversations(id: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", options?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicConversationsOptionalParams",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsOptionalParams:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicConversationsResponse",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsResponse:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isOptional": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 9
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "id",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": true
-                }
-              ],
-              "name": "topicConversations"
-            },
-            {
-              "kind": "MethodSignature",
-              "canonicalReference": "@contextco/context-generated!Suggested#topics:member(1)",
-              "docComment": "/**\n * Returns suggested topics details\n *\n * @param options - The options parameters.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "topics(options?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicsOptionalParams",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicsOptionalParams:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicsResponse",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicsResponse:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isOptional": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": true
-                }
-              ],
-              "name": "topics"
-            },
-            {
-              "kind": "MethodSignature",
-              "canonicalReference": "@contextco/context-generated!Suggested#topicStatistics:member(1)",
-              "docComment": "/**\n * Returns a list of conversations matching given topic\n *\n * @param id - \n *\n * @param options - The options parameters.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "topicStatistics(id: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", options?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicStatisticsOptionalParams",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsOptionalParams:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicStatisticsResponse",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsResponse:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isOptional": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 9
-              },
-              "releaseTag": "Public",
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "id",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": true
-                }
-              ],
-              "name": "topicStatistics"
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
           "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsOptionalParams:interface",
           "docComment": "/**\n * Optional parameters.\n */\n",
           "excerptTokens": [
@@ -5758,7 +5672,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsResponse:type",
-          "docComment": "/**\n * Contains response data for the topicConversations operation.\n */\n",
+          "docComment": "/**\n * Contains response data for the suggestedTopicConversations operation.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -5898,7 +5812,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "@contextco/context-generated!SuggestedTopicsResponse:type",
-          "docComment": "/**\n * Contains response data for the topics operation.\n */\n",
+          "docComment": "/**\n * Contains response data for the suggestedTopics operation.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -6092,7 +6006,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsResponse:type",
-          "docComment": "/**\n * Contains response data for the topicStatistics operation.\n */\n",
+          "docComment": "/**\n * Contains response data for the suggestedTopicStatistics operation.\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
