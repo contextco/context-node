@@ -11,8 +11,19 @@ export class ContextAPI extends coreClient.ServiceClient {
     // (undocumented)
     $host: string;
     constructor(options?: ContextAPIOptionalParams);
+    conversation(id: string, options?: ConversationOptionalParams): Promise<ConversationOperationResponse>;
+    // (undocumented)
+    conversationOperations: ConversationOperations;
+    conversations(options?: ConversationsOptionalParams): Promise<ConversationsResponse>;
+    estimatedCost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
     // (undocumented)
     log: Log;
+    rating(options?: RatingOptionalParams): Promise<RatingResponse>;
+    sentiment(options?: SentimentOptionalParams): Promise<SentimentResponse>;
+    suggestedTopicConversations(id: string, options?: SuggestedTopicConversationsOptionalParams): Promise<SuggestedTopicConversationsResponse>;
+    suggestedTopics(options?: SuggestedTopicsOptionalParams): Promise<SuggestedTopicsResponse>;
+    suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
+    volume(options?: VolumeOptionalParams): Promise<VolumeResponse>;
 }
 
 // @public
@@ -25,7 +36,99 @@ export interface ContextAPIOptionalParams extends coreClient.ServiceClientOption
 export interface Conversation {
     // (undocumented)
     messages?: Message[];
-    metadata?: Record<string, unknown>;
+    metadata?: {
+        [propertyName: string]: string;
+    };
+}
+
+// @public
+export type ConversationOperationResponse = ConversationResponse;
+
+// @public
+export interface ConversationOperations {
+    series(options?: ConversationSeriesOptionalParams): Promise<ConversationSeriesResponse>;
+}
+
+// @public
+export interface ConversationOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+}
+
+// @public (undocumented)
+export interface ConversationResponse {
+    // (undocumented)
+    id: string;
+    // (undocumented)
+    messages: MessageResponse[];
+    metadata: {
+        [propertyName: string]: string;
+    };
+    // (undocumented)
+    sentimentTrend: ConversationSentimentTrend;
+    // (undocumented)
+    suggestedTopics: Topic[];
+    // (undocumented)
+    topics: Topic[];
+}
+
+// @public
+export type ConversationSentimentTrend = string;
+
+// @public
+export interface ConversationSeriesOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+}
+
+// @public
+export type ConversationSeriesResponse = PathsPixtmzApiV1ConversationsSeriesGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export interface ConversationsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    endTime?: string;
+    page?: number;
+    perPage?: number;
+    startTime?: string;
+    tenantId?: number;
+}
+
+// @public
+export type ConversationsResponse = PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export interface EstimatedCostOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    endTime?: string;
+    period?: string;
+    startTime?: string;
+    tenantId?: string;
+}
+
+// @public
+export type EstimatedCostResponse = Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export enum KnownConversationSentimentTrend {
+    Down = "down",
+    Flat = "flat",
+    Up = "up"
+}
+
+// @public
+export enum KnownMessageParamsRole {
+    Assistant = "assistant",
+    System = "system",
+    User = "user"
+}
+
+// @public
+export enum KnownMessageParamsType {
+    Message = "message",
+    Tool = "tool"
 }
 
 // @public
@@ -44,6 +147,7 @@ export enum KnownMessageType {
 // @public
 export interface Log {
     conversation(options?: LogConversationOptionalParams): Promise<void>;
+    conversationThread(options?: LogConversationThreadOptionalParams): Promise<LogConversationThreadResponse>;
     conversationUpsert(options?: LogConversationUpsertOptionalParams): Promise<void>;
 }
 
@@ -54,6 +158,17 @@ export interface LogConversationOptionalParams extends coreClient.OperationOptio
     // (undocumented)
     body?: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema;
 }
+
+// @public
+export interface LogConversationThreadOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    // (undocumented)
+    body?: Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema;
+}
+
+// @public
+export type LogConversationThreadResponse = PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema;
 
 // @public
 export interface LogConversationUpsertOptionalParams extends coreClient.OperationOptions {
@@ -70,7 +185,9 @@ export interface Message {
     input?: Record<string, unknown>;
     // (undocumented)
     message?: string;
-    metadata?: Record<string, unknown>;
+    metadata?: {
+        [propertyName: string]: string;
+    };
     // (undocumented)
     name?: string;
     // (undocumented)
@@ -78,9 +195,42 @@ export interface Message {
     // (undocumented)
     rating?: Rating;
     // (undocumented)
-    role?: MessageRole;
+    role?: MessageParamsRole;
     // (undocumented)
     thought?: string;
+    // (undocumented)
+    type?: MessageParamsType;
+}
+
+// @public
+export type MessageParamsRole = string;
+
+// @public
+export type MessageParamsType = string;
+
+// @public (undocumented)
+export interface MessageResponse {
+    // (undocumented)
+    eventTimestamp?: Date;
+    // (undocumented)
+    language: string;
+    // (undocumented)
+    message: string;
+    metadata?: {
+        [propertyName: string]: string;
+    };
+    // (undocumented)
+    rating: Rating;
+    // (undocumented)
+    role: MessageRole;
+    // (undocumented)
+    sentiment: number;
+    // (undocumented)
+    suggestedTopics?: Topic[];
+    // (undocumented)
+    topics: Topic[];
+    // (undocumented)
+    translation?: string;
     // (undocumented)
     type?: MessageType;
 }
@@ -92,9 +242,131 @@ export type MessageRole = string;
 export type MessageType = string;
 
 // @public (undocumented)
+export interface Pagination {
+    // (undocumented)
+    currentPage: number;
+    // (undocumented)
+    nextPage: number | null;
+    // (undocumented)
+    pageCount: number;
+    // (undocumented)
+    perPage: number;
+    // (undocumented)
+    previousPage: number | null;
+    // (undocumented)
+    totalRecords: number;
+}
+
+// @public (undocumented)
+export interface Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    statistics: Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics;
+    // (undocumented)
+    topic: Topic;
+}
+
+// @public (undocumented)
+export interface Paths1AqjttjApiV1ConversationsSeriesSentimentGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    endTime: string;
+    // (undocumented)
+    period: string;
+    // (undocumented)
+    series: SeriesItem[];
+    // (undocumented)
+    startTime: string;
+    // (undocumented)
+    type: string;
+}
+
+// @public (undocumented)
+export interface Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    endTime: string;
+    // (undocumented)
+    period: string;
+    // (undocumented)
+    series: SeriesItem[];
+    // (undocumented)
+    startTime: string;
+    // (undocumented)
+    type: string;
+}
+
+// @public (undocumented)
+export interface Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics {
+    // (undocumented)
+    assistantMessageCount: number;
+    // (undocumented)
+    conversationCount: number;
+    // (undocumented)
+    meanSentiment: number;
+    // (undocumented)
+    meanUserRating: number;
+    // (undocumented)
+    userMessageCount: number;
+}
+
+// @public (undocumented)
+export interface Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchemaPropertiesData {
+    // (undocumented)
+    id?: string;
+}
+
+// @public (undocumented)
+export interface Paths1Ola7DlApiV1ConversationsSeriesVolumeGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    endTime: string;
+    // (undocumented)
+    period: string;
+    // (undocumented)
+    series: SeriesItem[];
+    // (undocumented)
+    startTime: string;
+    // (undocumented)
+    type: string;
+}
+
+// @public (undocumented)
+export interface Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema {
+    // (undocumented)
+    conversation?: Thread;
+}
+
+// @public (undocumented)
+export interface Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    conversations: ConversationResponse[];
+    // (undocumented)
+    pagination: Pagination;
+}
+
+// @public (undocumented)
+export interface Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    pagination: Pagination;
+    // (undocumented)
+    topics: TopicWithSamples[];
+}
+
+// @public (undocumented)
+export interface PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema {
+    // (undocumented)
+    data?: Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchemaPropertiesData;
+    // (undocumented)
+    status?: string;
+}
+
+// @public (undocumented)
 export interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema {
     // (undocumented)
     conversation?: Conversation;
+}
+
+// @public (undocumented)
+export interface PathsPixtmzApiV1ConversationsSeriesGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    available: string[];
 }
 
 // @public (undocumented)
@@ -103,8 +375,140 @@ export interface PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentAppl
     conversation?: Conversation;
 }
 
+// @public (undocumented)
+export interface PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    endTime: string;
+    // (undocumented)
+    period: string;
+    // (undocumented)
+    series: SeriesItem[];
+    // (undocumented)
+    startTime: string;
+    // (undocumented)
+    type: string;
+}
+
+// @public (undocumented)
+export interface PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema {
+    // (undocumented)
+    conversations: ConversationResponse[];
+    // (undocumented)
+    pagination: Pagination;
+}
+
 // @public
 export type Rating = -1 | 0 | 1;
+
+// @public
+export interface RatingOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    endTime?: string;
+    period?: string;
+    startTime?: string;
+    tenantId?: string;
+}
+
+// @public
+export type RatingResponse = PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export interface SentimentOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    endTime?: string;
+    period?: string;
+    startTime?: string;
+    tenantId?: string;
+}
+
+// @public
+export type SentimentResponse = Paths1AqjttjApiV1ConversationsSeriesSentimentGetResponses200ContentApplicationJsonSchema;
+
+// @public (undocumented)
+export interface SeriesItem {
+    data: {
+        [propertyName: string]: number | null;
+    };
+    // (undocumented)
+    name: string;
+}
+
+// @public
+export interface SuggestedTopicConversationsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+}
+
+// @public
+export type SuggestedTopicConversationsResponse = Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export interface SuggestedTopicsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    page?: number;
+    perPage?: number;
+}
+
+// @public
+export type SuggestedTopicsResponse = Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export interface SuggestedTopicStatisticsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    endTime?: string;
+    page?: number;
+    perPage?: number;
+    startTime?: string;
+}
+
+// @public
+export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
+
+// @public (undocumented)
+export interface Thread {
+    // (undocumented)
+    id?: string;
+    // (undocumented)
+    messages: Message[];
+    metadata?: {
+        [propertyName: string]: string;
+    };
+}
+
+// @public (undocumented)
+export interface Topic {
+    // (undocumented)
+    id: string;
+    // (undocumented)
+    name: string;
+}
+
+// @public (undocumented)
+export interface TopicWithSamples {
+    // (undocumented)
+    conversationsSample: ConversationResponse[];
+    // (undocumented)
+    id: string;
+    // (undocumented)
+    name: string;
+}
+
+// @public
+export interface VolumeOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    endTime?: string;
+    period?: string;
+    startTime?: string;
+    tenantId?: string;
+}
+
+// @public
+export type VolumeResponse = Paths1Ola7DlApiV1ConversationsSeriesVolumeGetResponses200ContentApplicationJsonSchema;
 
 // (No @packageDocumentation comment for this package)
 

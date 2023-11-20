@@ -1,0 +1,1 @@
+{"version":3,"file":"conversationOperations.d.ts","sourceRoot":"","sources":["../../src/operationsInterfaces/conversationOperations.ts"],"names":[],"mappings":"AAAA,OAAO,EACL,gCAAgC,EAChC,0BAA0B,EAC3B,MAAM,WAAW,CAAC;AAEnB,uDAAuD;AACvD,MAAM,WAAW,sBAAsB;IACrC;;;OAGG;IACH,MAAM,CACJ,OAAO,CAAC,EAAE,gCAAgC,GACzC,OAAO,CAAC,0BAA0B,CAAC,CAAC;CACxC"}

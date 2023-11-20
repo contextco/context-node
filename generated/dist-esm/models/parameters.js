@@ -1,18 +1,14 @@
-import { PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper, PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper } from "../models/mappers";
-export const contentType = {
-    parameterPath: ["options", "contentType"],
+import { PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper, PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper, Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema as Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper } from "../models/mappers";
+export const accept = {
+    parameterPath: "accept",
     mapper: {
         defaultValue: "application/json",
         isConstant: true,
-        serializedName: "Content-Type",
+        serializedName: "Accept",
         type: {
             name: "String"
         }
     }
-};
-export const body = {
-    parameterPath: ["options", "body"],
-    mapper: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper
 };
 export const $host = {
     parameterPath: "$host",
@@ -34,8 +30,100 @@ export const authorization = {
         }
     }
 };
+export const tenantId = {
+    parameterPath: ["options", "tenantId"],
+    mapper: {
+        serializedName: "tenant_id",
+        type: {
+            name: "String"
+        }
+    }
+};
+export const startTime = {
+    parameterPath: ["options", "startTime"],
+    mapper: {
+        serializedName: "start_time",
+        type: {
+            name: "String"
+        }
+    }
+};
+export const endTime = {
+    parameterPath: ["options", "endTime"],
+    mapper: {
+        serializedName: "end_time",
+        type: {
+            name: "String"
+        }
+    }
+};
+export const period = {
+    parameterPath: ["options", "period"],
+    mapper: {
+        serializedName: "period",
+        type: {
+            name: "String"
+        }
+    }
+};
+export const id = {
+    parameterPath: "id",
+    mapper: {
+        serializedName: "id",
+        required: true,
+        type: {
+            name: "String"
+        }
+    }
+};
+export const page = {
+    parameterPath: ["options", "page"],
+    mapper: {
+        serializedName: "page",
+        type: {
+            name: "Number"
+        }
+    }
+};
+export const perPage = {
+    parameterPath: ["options", "perPage"],
+    mapper: {
+        serializedName: "per_page",
+        type: {
+            name: "Number"
+        }
+    }
+};
+export const tenantId1 = {
+    parameterPath: ["options", "tenantId"],
+    mapper: {
+        serializedName: "tenant_id",
+        type: {
+            name: "Number"
+        }
+    }
+};
+export const contentType = {
+    parameterPath: ["options", "contentType"],
+    mapper: {
+        defaultValue: "application/json",
+        isConstant: true,
+        serializedName: "Content-Type",
+        type: {
+            name: "String"
+        }
+    }
+};
+export const body = {
+    parameterPath: ["options", "body"],
+    mapper: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper
+};
 export const body1 = {
     parameterPath: ["options", "body"],
     mapper: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper
+};
+export const body2 = {
+    parameterPath: ["options", "body"],
+    mapper: Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper
 };
 //# sourceMappingURL=parameters.js.map
