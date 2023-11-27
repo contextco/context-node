@@ -749,6 +749,117 @@ export const Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplic
   }
 };
 
+export const TestSetParams: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "TestSetParams",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      testCases: {
+        serializedName: "test_cases",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "TestCase"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const TestCase: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "TestCase",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      model: {
+        serializedName: "model",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      messages: {
+        serializedName: "messages",
+        required: true,
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "TestCaseMessage"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const TestCaseMessage: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "TestCaseMessage",
+    modelProperties: {
+      message: {
+        serializedName: "message",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      role: {
+        serializedName: "role",
+        required: true,
+        type: {
+          name: "String"
+        }
+      }
+    }
+  }
+};
+
+export const TestSet: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "TestSet",
+    modelProperties: {
+      name: {
+        serializedName: "name",
+        required: true,
+        type: {
+          name: "String"
+        }
+      },
+      versionId: {
+        serializedName: "version_id",
+        required: true,
+        type: {
+          name: "Number"
+        }
+      }
+    }
+  }
+};
+
 export const Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
   type: {
     name: "Composite",

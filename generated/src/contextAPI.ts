@@ -1,11 +1,13 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
-import { ConversationOperationsImpl, LogImpl } from "./operations";
-import { ConversationOperations, Log } from "./operationsInterfaces";
+import { LogImpl, TestImpl } from "./operations";
+import { Log, Test } from "./operationsInterfaces";
 import * as Parameters from "./models/parameters";
 import * as Mappers from "./models/mappers";
 import {
   ContextAPIOptionalParams,
+  ConversationSeriesOptionalParams,
+  ConversationSeriesResponse,
   SentimentOptionalParams,
   SentimentResponse,
   RatingOptionalParams,
@@ -92,8 +94,21 @@ export class ContextAPI extends coreClient.ServiceClient {
 
     // Assigning values to Constant parameters
     this.$host = options.$host || "https://api.context.ai";
-    this.conversationOperations = new ConversationOperationsImpl(this);
     this.log = new LogImpl(this);
+    this.test = new TestImpl(this);
+  }
+
+  /**
+   * Returns index of series
+   * @param options The options parameters.
+   */
+  conversationSeries(
+    options?: ConversationSeriesOptionalParams
+  ): Promise<ConversationSeriesResponse> {
+    return this.sendOperationRequest(
+      { options },
+      conversationSeriesOperationSpec
+    );
   }
 
   /**
@@ -195,12 +210,25 @@ export class ContextAPI extends coreClient.ServiceClient {
     );
   }
 
-  conversationOperations: ConversationOperations;
   log: Log;
+  test: Test;
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
 
+const conversationSeriesOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/conversations/series",
+  httpMethod: "GET",
+  responses: {
+    200: {
+      bodyMapper:
+        Mappers.PathsPixtmzApiV1ConversationsSeriesGetResponses200ContentApplicationJsonSchema
+    }
+  },
+  urlParameters: [Parameters.$host],
+  headerParameters: [Parameters.accept, Parameters.authorization],
+  serializer
+};
 const sentimentOperationSpec: coreClient.OperationSpec = {
   path: "/api/v1/conversations/series/sentiment",
   httpMethod: "GET",

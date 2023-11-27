@@ -1,0 +1,1 @@
+{"version":3,"file":"test.d.ts","sourceRoot":"","sources":["../../src/operationsInterfaces/test.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,sBAAsB,EAAE,gBAAgB,EAAE,MAAM,WAAW,CAAC;AAErE,qCAAqC;AACrC,MAAM,WAAW,IAAI;IACnB;;;OAGG;IACH,IAAI,CAAC,OAAO,CAAC,EAAE,sBAAsB,GAAG,OAAO,CAAC,gBAAgB,CAAC,CAAC;CACnE"}

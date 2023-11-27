@@ -127,6 +127,23 @@ export interface PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApp
 export interface Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchemaPropertiesData {
     id?: string;
 }
+export interface TestSetParams {
+    name: string;
+    testCases: TestCase[];
+}
+export interface TestCase {
+    name: string;
+    model: string;
+    messages: TestCaseMessage[];
+}
+export interface TestCaseMessage {
+    message: string;
+    role: TestCaseMessageRole;
+}
+export interface TestSet {
+    name: string;
+    versionId: number;
+}
 export interface Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema {
     topics: TopicWithSamples[];
     pagination: Pagination;
@@ -240,13 +257,32 @@ export declare enum KnownMessageParamsType {
  * **tool**
  */
 export type MessageParamsType = string;
+/** Known values of {@link TestCaseMessageRole} that the service accepts. */
+export declare enum KnownTestCaseMessageRole {
+    /** System */
+    System = "system",
+    /** Assistant */
+    Assistant = "assistant",
+    /** User */
+    User = "user"
+}
+/**
+ * Defines values for TestCaseMessageRole. \
+ * {@link KnownTestCaseMessageRole} can be used interchangeably with TestCaseMessageRole,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **system** \
+ * **assistant** \
+ * **user**
+ */
+export type TestCaseMessageRole = string;
 /** Defines values for Rating. */
 export type Rating = -1 | 0 | 1;
 /** Optional parameters. */
 export interface ConversationSeriesOptionalParams extends coreClient.OperationOptions {
     authorization?: string;
 }
-/** Contains response data for the series operation. */
+/** Contains response data for the conversationSeries operation. */
 export type ConversationSeriesResponse = PathsPixtmzApiV1ConversationsSeriesGetResponses200ContentApplicationJsonSchema;
 /** Optional parameters. */
 export interface SentimentOptionalParams extends coreClient.OperationOptions {
@@ -373,6 +409,15 @@ export interface LogConversationThreadOptionalParams extends coreClient.Operatio
 }
 /** Contains response data for the conversationThread operation. */
 export type LogConversationThreadResponse = PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema;
+/** Optional parameters. */
+export interface TestSetsOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    body?: TestSetParams;
+    /** If none, all test cases will be replaced with the ones provided in the request.<br />If prior_version, only the test cases with the same name will be replaced and new test cases will be appended.<br /> */
+    copyTestCasesFrom?: string;
+}
+/** Contains response data for the sets operation. */
+export type TestSetsResponse = TestSet;
 /** Optional parameters. */
 export interface ContextAPIOptionalParams extends coreClient.ServiceClientOptions {
     /** server parameter */

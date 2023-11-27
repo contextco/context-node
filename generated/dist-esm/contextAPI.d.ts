@@ -1,6 +1,6 @@
 import * as coreClient from "@azure/core-client";
-import { ConversationOperations, Log } from "./operationsInterfaces";
-import { ContextAPIOptionalParams, SentimentOptionalParams, SentimentResponse, RatingOptionalParams, RatingResponse, EstimatedCostOptionalParams, EstimatedCostResponse, VolumeOptionalParams, VolumeResponse, ConversationOptionalParams, ConversationOperationResponse, ConversationsOptionalParams, ConversationsResponse, SuggestedTopicsOptionalParams, SuggestedTopicsResponse, SuggestedTopicConversationsOptionalParams, SuggestedTopicConversationsResponse, SuggestedTopicStatisticsOptionalParams, SuggestedTopicStatisticsResponse } from "./models";
+import { Log, Test } from "./operationsInterfaces";
+import { ContextAPIOptionalParams, ConversationSeriesOptionalParams, ConversationSeriesResponse, SentimentOptionalParams, SentimentResponse, RatingOptionalParams, RatingResponse, EstimatedCostOptionalParams, EstimatedCostResponse, VolumeOptionalParams, VolumeResponse, ConversationOptionalParams, ConversationOperationResponse, ConversationsOptionalParams, ConversationsResponse, SuggestedTopicsOptionalParams, SuggestedTopicsResponse, SuggestedTopicConversationsOptionalParams, SuggestedTopicConversationsResponse, SuggestedTopicStatisticsOptionalParams, SuggestedTopicStatisticsResponse } from "./models";
 export declare class ContextAPI extends coreClient.ServiceClient {
     $host: string;
     /**
@@ -8,6 +8,11 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      * @param options The parameter options
      */
     constructor(options?: ContextAPIOptionalParams);
+    /**
+     * Returns index of series
+     * @param options The options parameters.
+     */
+    conversationSeries(options?: ConversationSeriesOptionalParams): Promise<ConversationSeriesResponse>;
     /**
      * Returns sentiment details
      * @param options The options parameters.
@@ -56,7 +61,7 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
-    conversationOperations: ConversationOperations;
     log: Log;
+    test: Test;
 }
 //# sourceMappingURL=contextAPI.d.ts.map
