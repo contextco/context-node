@@ -6,7 +6,8 @@ import {
 import {
   PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper,
   PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper,
-  Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema as Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper
+  Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema as Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper,
+  TestSetParams as TestSetParamsMapper
 } from "../models/mappers";
 
 export const accept: OperationParameter = {
@@ -149,4 +150,19 @@ export const body1: OperationParameter = {
 export const body2: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper
+};
+
+export const body3: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: TestSetParamsMapper
+};
+
+export const copyTestCasesFrom: OperationQueryParameter = {
+  parameterPath: ["options", "copyTestCasesFrom"],
+  mapper: {
+    serializedName: "copy_test_cases_from",
+    type: {
+      name: "String"
+    }
+  }
 };

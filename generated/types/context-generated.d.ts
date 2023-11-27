@@ -8,6 +8,11 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      */
     constructor(options?: ContextAPIOptionalParams);
     /**
+     * Returns index of series
+     * @param options The options parameters.
+     */
+    conversationSeries(options?: ConversationSeriesOptionalParams): Promise<ConversationSeriesResponse>;
+    /**
      * Returns sentiment details
      * @param options The options parameters.
      */
@@ -55,8 +60,8 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
-    conversationOperations: ConversationOperations;
     log: Log;
+    test: Test;
 }
 
 /** Optional parameters. */
@@ -77,15 +82,6 @@ export declare interface Conversation {
 
 /** Contains response data for the conversation operation. */
 export declare type ConversationOperationResponse = ConversationResponse;
-
-/** Interface representing a ConversationOperations. */
-export declare interface ConversationOperations {
-    /**
-     * Returns index of series
-     * @param options The options parameters.
-     */
-    series(options?: ConversationSeriesOptionalParams): Promise<ConversationSeriesResponse>;
-}
 
 /** Optional parameters. */
 export declare interface ConversationOptionalParams extends coreClient.OperationOptions {
@@ -120,7 +116,7 @@ export declare interface ConversationSeriesOptionalParams extends coreClient.Ope
     authorization?: string;
 }
 
-/** Contains response data for the series operation. */
+/** Contains response data for the conversationSeries operation. */
 export declare type ConversationSeriesResponse = PathsPixtmzApiV1ConversationsSeriesGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
@@ -201,6 +197,16 @@ export declare enum KnownMessageType {
     Message = "message",
     /** Tool */
     Tool = "tool"
+}
+
+/** Known values of {@link TestCaseMessageRole} that the service accepts. */
+export declare enum KnownTestCaseMessageRole {
+    /** System */
+    System = "system",
+    /** Assistant */
+    Assistant = "assistant",
+    /** User */
+    User = "user"
 }
 
 /** Interface representing a Log. */
@@ -491,6 +497,58 @@ export declare interface SuggestedTopicStatisticsOptionalParams extends coreClie
 
 /** Contains response data for the suggestedTopicStatistics operation. */
 export declare type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
+
+/** Interface representing a Test. */
+export declare interface Test {
+    /**
+     * Returns test set and version details
+     * @param options The options parameters.
+     */
+    sets(options?: TestSetsOptionalParams): Promise<TestSetsResponse>;
+}
+
+export declare interface TestCase {
+    name: string;
+    model: string;
+    messages: TestCaseMessage[];
+}
+
+export declare interface TestCaseMessage {
+    message: string;
+    role: TestCaseMessageRole;
+}
+
+/**
+ * Defines values for TestCaseMessageRole. \
+ * {@link KnownTestCaseMessageRole} can be used interchangeably with TestCaseMessageRole,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **system** \
+ * **assistant** \
+ * **user**
+ */
+export declare type TestCaseMessageRole = string;
+
+export declare interface TestSet {
+    name: string;
+    versionId: number;
+}
+
+export declare interface TestSetParams {
+    name: string;
+    testCases: TestCase[];
+}
+
+/** Optional parameters. */
+export declare interface TestSetsOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    body?: TestSetParams;
+    /** If none, all test cases will be replaced with the ones provided in the request.<br />If prior_version, only the test cases with the same name will be replaced and new test cases will be appended.<br /> */
+    copyTestCasesFrom?: string;
+}
+
+/** Contains response data for the sets operation. */
+export declare type TestSetsResponse = TestSet;
 
 export declare interface Thread {
     id?: string;

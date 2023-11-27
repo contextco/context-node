@@ -12,9 +12,8 @@ export class ContextAPI extends coreClient.ServiceClient {
     $host: string;
     constructor(options?: ContextAPIOptionalParams);
     conversation(id: string, options?: ConversationOptionalParams): Promise<ConversationOperationResponse>;
-    // (undocumented)
-    conversationOperations: ConversationOperations;
     conversations(options?: ConversationsOptionalParams): Promise<ConversationsResponse>;
+    conversationSeries(options?: ConversationSeriesOptionalParams): Promise<ConversationSeriesResponse>;
     estimatedCost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
     // (undocumented)
     log: Log;
@@ -23,6 +22,8 @@ export class ContextAPI extends coreClient.ServiceClient {
     suggestedTopicConversations(id: string, options?: SuggestedTopicConversationsOptionalParams): Promise<SuggestedTopicConversationsResponse>;
     suggestedTopics(options?: SuggestedTopicsOptionalParams): Promise<SuggestedTopicsResponse>;
     suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
+    // (undocumented)
+    test: Test;
     volume(options?: VolumeOptionalParams): Promise<VolumeResponse>;
 }
 
@@ -43,11 +44,6 @@ export interface Conversation {
 
 // @public
 export type ConversationOperationResponse = ConversationResponse;
-
-// @public
-export interface ConversationOperations {
-    series(options?: ConversationSeriesOptionalParams): Promise<ConversationSeriesResponse>;
-}
 
 // @public
 export interface ConversationOptionalParams extends coreClient.OperationOptions {
@@ -142,6 +138,13 @@ export enum KnownMessageRole {
 export enum KnownMessageType {
     Message = "message",
     Tool = "tool"
+}
+
+// @public
+export enum KnownTestCaseMessageRole {
+    Assistant = "assistant",
+    System = "system",
+    User = "user"
 }
 
 // @public
@@ -467,6 +470,60 @@ export interface SuggestedTopicStatisticsOptionalParams extends coreClient.Opera
 
 // @public
 export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
+
+// @public
+export interface Test {
+    sets(options?: TestSetsOptionalParams): Promise<TestSetsResponse>;
+}
+
+// @public (undocumented)
+export interface TestCase {
+    // (undocumented)
+    messages: TestCaseMessage[];
+    // (undocumented)
+    model: string;
+    // (undocumented)
+    name: string;
+}
+
+// @public (undocumented)
+export interface TestCaseMessage {
+    // (undocumented)
+    message: string;
+    // (undocumented)
+    role: TestCaseMessageRole;
+}
+
+// @public
+export type TestCaseMessageRole = string;
+
+// @public (undocumented)
+export interface TestSet {
+    // (undocumented)
+    name: string;
+    // (undocumented)
+    versionId: number;
+}
+
+// @public (undocumented)
+export interface TestSetParams {
+    // (undocumented)
+    name: string;
+    // (undocumented)
+    testCases: TestCase[];
+}
+
+// @public
+export interface TestSetsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    // (undocumented)
+    body?: TestSetParams;
+    copyTestCasesFrom?: string;
+}
+
+// @public
+export type TestSetsResponse = TestSet;
 
 // @public (undocumented)
 export interface Thread {

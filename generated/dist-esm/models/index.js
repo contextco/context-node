@@ -44,4 +44,14 @@ export var KnownMessageParamsType;
     /** Tool */
     KnownMessageParamsType["Tool"] = "tool";
 })(KnownMessageParamsType || (KnownMessageParamsType = {}));
+/** Known values of {@link TestCaseMessageRole} that the service accepts. */
+export var KnownTestCaseMessageRole;
+(function (KnownTestCaseMessageRole) {
+    /** System */
+    KnownTestCaseMessageRole["System"] = "system";
+    /** Assistant */
+    KnownTestCaseMessageRole["Assistant"] = "assistant";
+    /** User */
+    KnownTestCaseMessageRole["User"] = "user";
+})(KnownTestCaseMessageRole || (KnownTestCaseMessageRole = {}));
 //# sourceMappingURL=index.js.map

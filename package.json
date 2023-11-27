@@ -12,7 +12,7 @@
     "build_types": "tsc --emitDeclarationOnly --declaration --project tsconfig.json"
   },
   "dependencies": {
-    "@contextco/context-generated": "4.0.0"
+    "@contextco/context-generated": "5.0.0"
   },
   "keywords": [
     "context",
