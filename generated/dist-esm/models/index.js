@@ -54,4 +54,12 @@ export var KnownTestCaseMessageRole;
     /** User */
     KnownTestCaseMessageRole["User"] = "user";
 })(KnownTestCaseMessageRole || (KnownTestCaseMessageRole = {}));
+/** Known values of {@link TestCaseFrom} that the service accepts. */
+export var KnownTestCaseFrom;
+(function (KnownTestCaseFrom) {
+    /** None */
+    KnownTestCaseFrom["None"] = "none";
+    /** PriorVersion */
+    KnownTestCaseFrom["PriorVersion"] = "prior_version";
+})(KnownTestCaseFrom || (KnownTestCaseFrom = {}));
 //# sourceMappingURL=index.js.map

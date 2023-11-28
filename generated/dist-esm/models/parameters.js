@@ -1,4 +1,4 @@
-import { PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper, PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper, Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema as Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper, TestSetParams as TestSetParamsMapper } from "../models/mappers";
+import { PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper, PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper, Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema as Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper, TestSet as TestSetMapper } from "../models/mappers";
 export const accept = {
     parameterPath: "accept",
     mapper: {
@@ -128,7 +128,7 @@ export const body2 = {
 };
 export const body3 = {
     parameterPath: ["options", "body"],
-    mapper: TestSetParamsMapper
+    mapper: TestSetMapper
 };
 export const copyTestCasesFrom = {
     parameterPath: ["options", "copyTestCasesFrom"],

@@ -12,7 +12,8 @@
     "build_types": "tsc --emitDeclarationOnly --declaration --project tsconfig.json"
   },
   "dependencies": {
-    "@contextco/context-generated": "5.0.0"
+    "@azure/core-auth": "^1.5.0",
+    "@contextco/context-generated": "6.0.0"
   },
   "keywords": [
     "context",

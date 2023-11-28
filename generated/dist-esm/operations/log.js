@@ -31,6 +31,13 @@ export class LogImpl {
     conversationThread(options) {
         return this.client.sendOperationRequest({ options }, conversationThreadOperationSpec);
     }
+    /**
+     * Returns test set and version details
+     * @param options The options parameters.
+     */
+    testSets(options) {
+        return this.client.sendOperationRequest({ options }, testSetsOperationSpec);
+    }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
@@ -63,6 +70,25 @@ const conversationThreadOperationSpec = {
         }
     },
     requestBody: Parameters.body2,
+    urlParameters: [Parameters.$host],
+    headerParameters: [
+        Parameters.accept,
+        Parameters.authorization,
+        Parameters.contentType
+    ],
+    mediaType: "json",
+    serializer
+};
+const testSetsOperationSpec = {
+    path: "/api/v1/test_sets",
+    httpMethod: "POST",
+    responses: {
+        201: {
+            bodyMapper: Mappers.TestSetParams
+        }
+    },
+    requestBody: Parameters.body3,
+    queryParameters: [Parameters.copyTestCasesFrom],
     urlParameters: [Parameters.$host],
     headerParameters: [
         Parameters.accept,

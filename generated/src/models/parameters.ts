@@ -7,7 +7,7 @@ import {
   PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper,
   PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper,
   Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema as Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper,
-  TestSetParams as TestSetParamsMapper
+  TestSet as TestSetMapper
 } from "../models/mappers";
 
 export const accept: OperationParameter = {
@@ -154,7 +154,7 @@ export const body2: OperationParameter = {
 
 export const body3: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: TestSetParamsMapper
+  mapper: TestSetMapper
 };
 
 export const copyTestCasesFrom: OperationQueryParameter = {

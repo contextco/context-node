@@ -1,5 +1,5 @@
 import * as coreClient from "@azure/core-client";
-import { Log, Test } from "./operationsInterfaces";
+import { Log } from "./operationsInterfaces";
 import { ContextAPIOptionalParams, ConversationSeriesOptionalParams, ConversationSeriesResponse, SentimentOptionalParams, SentimentResponse, RatingOptionalParams, RatingResponse, EstimatedCostOptionalParams, EstimatedCostResponse, VolumeOptionalParams, VolumeResponse, ConversationOptionalParams, ConversationOperationResponse, ConversationsOptionalParams, ConversationsResponse, SuggestedTopicsOptionalParams, SuggestedTopicsResponse, SuggestedTopicConversationsOptionalParams, SuggestedTopicConversationsResponse, SuggestedTopicStatisticsOptionalParams, SuggestedTopicStatisticsResponse } from "./models";
 export declare class ContextAPI extends coreClient.ServiceClient {
     $host: string;
@@ -62,6 +62,5 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      */
     suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
     log: Log;
-    test: Test;
 }
 //# sourceMappingURL=contextAPI.d.ts.map

@@ -61,7 +61,6 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      */
     suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
     log: Log;
-    test: Test;
 }
 
 /** Optional parameters. */
@@ -199,6 +198,14 @@ export declare enum KnownMessageType {
     Tool = "tool"
 }
 
+/** Known values of {@link TestCaseFrom} that the service accepts. */
+export declare enum KnownTestCaseFrom {
+    /** None */
+    None = "none",
+    /** PriorVersion */
+    PriorVersion = "prior_version"
+}
+
 /** Known values of {@link TestCaseMessageRole} that the service accepts. */
 export declare enum KnownTestCaseMessageRole {
     /** System */
@@ -226,6 +233,11 @@ export declare interface Log {
      * @param options The options parameters.
      */
     conversationThread(options?: LogConversationThreadOptionalParams): Promise<LogConversationThreadResponse>;
+    /**
+     * Returns test set and version details
+     * @param options The options parameters.
+     */
+    testSets(options?: LogTestSetsOptionalParams): Promise<LogTestSetsResponse>;
 }
 
 /** Optional parameters. */
@@ -248,6 +260,17 @@ export declare interface LogConversationUpsertOptionalParams extends coreClient.
     authorization?: string;
     body?: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema;
 }
+
+/** Optional parameters. */
+export declare interface LogTestSetsOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    body?: TestSet;
+    /** If none, all test cases will be replaced with the ones provided in the request.<br />If prior_version, only the test cases with the same name will be replaced and new test cases will be appended.<br /> */
+    copyTestCasesFrom?: string;
+}
+
+/** Contains response data for the testSets operation. */
+export declare type LogTestSetsResponse = TestSetParams;
 
 export declare interface Message {
     role?: MessageParamsRole;
@@ -498,20 +521,21 @@ export declare interface SuggestedTopicStatisticsOptionalParams extends coreClie
 /** Contains response data for the suggestedTopicStatistics operation. */
 export declare type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
 
-/** Interface representing a Test. */
-export declare interface Test {
-    /**
-     * Returns test set and version details
-     * @param options The options parameters.
-     */
-    sets(options?: TestSetsOptionalParams): Promise<TestSetsResponse>;
-}
-
 export declare interface TestCase {
     name: string;
     model: string;
     messages: TestCaseMessage[];
 }
+
+/**
+ * Defines values for TestCaseFrom. \
+ * {@link KnownTestCaseFrom} can be used interchangeably with TestCaseFrom,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **none** \
+ * **prior_version**
+ */
+export declare type TestCaseFrom = string;
 
 export declare interface TestCaseMessage {
     message: string;
@@ -531,24 +555,13 @@ export declare type TestCaseMessageRole = string;
 
 export declare interface TestSet {
     name: string;
-    versionId: number;
+    testCases: TestCase[];
 }
 
 export declare interface TestSetParams {
     name: string;
-    testCases: TestCase[];
+    versionId: number;
 }
-
-/** Optional parameters. */
-export declare interface TestSetsOptionalParams extends coreClient.OperationOptions {
-    authorization?: string;
-    body?: TestSetParams;
-    /** If none, all test cases will be replaced with the ones provided in the request.<br />If prior_version, only the test cases with the same name will be replaced and new test cases will be appended.<br /> */
-    copyTestCasesFrom?: string;
-}
-
-/** Contains response data for the sets operation. */
-export declare type TestSetsResponse = TestSet;
 
 export declare interface Thread {
     id?: string;

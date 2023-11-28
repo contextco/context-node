@@ -135,7 +135,7 @@ export interface Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentAp
   id?: string;
 }
 
-export interface TestSetParams {
+export interface TestSet {
   name: string;
   testCases: TestCase[];
 }
@@ -151,7 +151,7 @@ export interface TestCaseMessage {
   role: TestCaseMessageRole;
 }
 
-export interface TestSet {
+export interface TestSetParams {
   name: string;
   versionId: number;
 }
@@ -304,6 +304,24 @@ export enum KnownTestCaseMessageRole {
  * **user**
  */
 export type TestCaseMessageRole = string;
+
+/** Known values of {@link TestCaseFrom} that the service accepts. */
+export enum KnownTestCaseFrom {
+  /** None */
+  None = "none",
+  /** PriorVersion */
+  PriorVersion = "prior_version"
+}
+
+/**
+ * Defines values for TestCaseFrom. \
+ * {@link KnownTestCaseFrom} can be used interchangeably with TestCaseFrom,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **none** \
+ * **prior_version**
+ */
+export type TestCaseFrom = string;
 /** Defines values for Rating. */
 export type Rating = -1 | 0 | 1;
 
@@ -473,15 +491,15 @@ export interface LogConversationThreadOptionalParams
 export type LogConversationThreadResponse = PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface TestSetsOptionalParams extends coreClient.OperationOptions {
+export interface LogTestSetsOptionalParams extends coreClient.OperationOptions {
   authorization?: string;
-  body?: TestSetParams;
+  body?: TestSet;
   /** If none, all test cases will be replaced with the ones provided in the request.<br />If prior_version, only the test cases with the same name will be replaced and new test cases will be appended.<br /> */
   copyTestCasesFrom?: string;
 }
 
-/** Contains response data for the sets operation. */
-export type TestSetsResponse = TestSet;
+/** Contains response data for the testSets operation. */
+export type LogTestSetsResponse = TestSetParams;
 
 /** Optional parameters. */
 export interface ContextAPIOptionalParams

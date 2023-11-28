@@ -749,10 +749,10 @@ export const Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplic
   }
 };
 
-export const TestSetParams: coreClient.CompositeMapper = {
+export const TestSet: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "TestSetParams",
+    className: "TestSet",
     modelProperties: {
       name: {
         serializedName: "name",
@@ -837,10 +837,10 @@ export const TestCaseMessage: coreClient.CompositeMapper = {
   }
 };
 
-export const TestSet: coreClient.CompositeMapper = {
+export const TestSetParams: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
-    className: "TestSet",
+    className: "TestSetParams",
     modelProperties: {
       name: {
         serializedName: "name",

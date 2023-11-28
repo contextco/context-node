@@ -2,7 +2,9 @@ import {
   LogConversationOptionalParams,
   LogConversationUpsertOptionalParams,
   LogConversationThreadOptionalParams,
-  LogConversationThreadResponse
+  LogConversationThreadResponse,
+  LogTestSetsOptionalParams,
+  LogTestSetsResponse
 } from "../models";
 
 /** Interface representing a Log. */
@@ -26,4 +28,9 @@ export interface Log {
   conversationThread(
     options?: LogConversationThreadOptionalParams
   ): Promise<LogConversationThreadResponse>;
+  /**
+   * Returns test set and version details
+   * @param options The options parameters.
+   */
+  testSets(options?: LogTestSetsOptionalParams): Promise<LogTestSetsResponse>;
 }
