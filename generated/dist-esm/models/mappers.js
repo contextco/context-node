@@ -716,10 +716,10 @@ export const Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplic
         }
     }
 };
-export const TestSetParams = {
+export const TestSet = {
     type: {
         name: "Composite",
-        className: "TestSetParams",
+        className: "TestSet",
         modelProperties: {
             name: {
                 serializedName: "name",
@@ -801,10 +801,10 @@ export const TestCaseMessage = {
         }
     }
 };
-export const TestSet = {
+export const TestSetParams = {
     type: {
         name: "Composite",
-        className: "TestSet",
+        className: "TestSetParams",
         modelProperties: {
             name: {
                 serializedName: "name",

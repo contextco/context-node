@@ -22,8 +22,6 @@ export class ContextAPI extends coreClient.ServiceClient {
     suggestedTopicConversations(id: string, options?: SuggestedTopicConversationsOptionalParams): Promise<SuggestedTopicConversationsResponse>;
     suggestedTopics(options?: SuggestedTopicsOptionalParams): Promise<SuggestedTopicsResponse>;
     suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
-    // (undocumented)
-    test: Test;
     volume(options?: VolumeOptionalParams): Promise<VolumeResponse>;
 }
 
@@ -141,6 +139,12 @@ export enum KnownMessageType {
 }
 
 // @public
+export enum KnownTestCaseFrom {
+    None = "none",
+    PriorVersion = "prior_version"
+}
+
+// @public
 export enum KnownTestCaseMessageRole {
     Assistant = "assistant",
     System = "system",
@@ -152,6 +156,7 @@ export interface Log {
     conversation(options?: LogConversationOptionalParams): Promise<void>;
     conversationThread(options?: LogConversationThreadOptionalParams): Promise<LogConversationThreadResponse>;
     conversationUpsert(options?: LogConversationUpsertOptionalParams): Promise<void>;
+    testSets(options?: LogTestSetsOptionalParams): Promise<LogTestSetsResponse>;
 }
 
 // @public
@@ -180,6 +185,18 @@ export interface LogConversationUpsertOptionalParams extends coreClient.Operatio
     // (undocumented)
     body?: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema;
 }
+
+// @public
+export interface LogTestSetsOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    // (undocumented)
+    body?: TestSet;
+    copyTestCasesFrom?: string;
+}
+
+// @public
+export type LogTestSetsResponse = TestSetParams;
 
 // @public (undocumented)
 export interface Message {
@@ -471,11 +488,6 @@ export interface SuggestedTopicStatisticsOptionalParams extends coreClient.Opera
 // @public
 export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
 
-// @public
-export interface Test {
-    sets(options?: TestSetsOptionalParams): Promise<TestSetsResponse>;
-}
-
 // @public (undocumented)
 export interface TestCase {
     // (undocumented)
@@ -485,6 +497,9 @@ export interface TestCase {
     // (undocumented)
     name: string;
 }
+
+// @public
+export type TestCaseFrom = string;
 
 // @public (undocumented)
 export interface TestCaseMessage {
@@ -502,7 +517,7 @@ export interface TestSet {
     // (undocumented)
     name: string;
     // (undocumented)
-    versionId: number;
+    testCases: TestCase[];
 }
 
 // @public (undocumented)
@@ -510,20 +525,8 @@ export interface TestSetParams {
     // (undocumented)
     name: string;
     // (undocumented)
-    testCases: TestCase[];
+    versionId: number;
 }
-
-// @public
-export interface TestSetsOptionalParams extends coreClient.OperationOptions {
-    // (undocumented)
-    authorization?: string;
-    // (undocumented)
-    body?: TestSetParams;
-    copyTestCasesFrom?: string;
-}
-
-// @public
-export type TestSetsResponse = TestSet;
 
 // @public (undocumented)
 export interface Thread {

@@ -1,7 +1,7 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
-import { LogImpl, TestImpl } from "./operations";
-import { Log, Test } from "./operationsInterfaces";
+import { LogImpl } from "./operations";
+import { Log } from "./operationsInterfaces";
 import * as Parameters from "./models/parameters";
 import * as Mappers from "./models/mappers";
 import {
@@ -95,7 +95,6 @@ export class ContextAPI extends coreClient.ServiceClient {
     // Assigning values to Constant parameters
     this.$host = options.$host || "https://api.context.ai";
     this.log = new LogImpl(this);
-    this.test = new TestImpl(this);
   }
 
   /**
@@ -211,7 +210,6 @@ export class ContextAPI extends coreClient.ServiceClient {
   }
 
   log: Log;
-  test: Test;
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);

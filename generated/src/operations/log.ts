@@ -7,7 +7,9 @@ import {
   LogConversationOptionalParams,
   LogConversationUpsertOptionalParams,
   LogConversationThreadOptionalParams,
-  LogConversationThreadResponse
+  LogConversationThreadResponse,
+  LogTestSetsOptionalParams,
+  LogTestSetsResponse
 } from "../models";
 
 /** Class containing Log operations. */
@@ -58,6 +60,14 @@ export class LogImpl implements Log {
       conversationThreadOperationSpec
     );
   }
+
+  /**
+   * Returns test set and version details
+   * @param options The options parameters.
+   */
+  testSets(options?: LogTestSetsOptionalParams): Promise<LogTestSetsResponse> {
+    return this.client.sendOperationRequest({ options }, testSetsOperationSpec);
+  }
 }
 // Operation Specifications
 const serializer = coreClient.createSerializer(Mappers, /* isXml */ false);
@@ -92,6 +102,25 @@ const conversationThreadOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body2,
+  urlParameters: [Parameters.$host],
+  headerParameters: [
+    Parameters.accept,
+    Parameters.authorization,
+    Parameters.contentType
+  ],
+  mediaType: "json",
+  serializer
+};
+const testSetsOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/test_sets",
+  httpMethod: "POST",
+  responses: {
+    201: {
+      bodyMapper: Mappers.TestSetParams
+    }
+  },
+  requestBody: Parameters.body3,
+  queryParameters: [Parameters.copyTestCasesFrom],
   urlParameters: [Parameters.$host],
   headerParameters: [
     Parameters.accept,

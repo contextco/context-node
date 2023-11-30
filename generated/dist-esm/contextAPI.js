@@ -1,6 +1,6 @@
 import * as coreClient from "@azure/core-client";
 import * as coreRestPipeline from "@azure/core-rest-pipeline";
-import { LogImpl, TestImpl } from "./operations";
+import { LogImpl } from "./operations";
 import * as Parameters from "./models/parameters";
 import * as Mappers from "./models/mappers";
 export class ContextAPI extends coreClient.ServiceClient {
@@ -49,7 +49,6 @@ export class ContextAPI extends coreClient.ServiceClient {
         // Assigning values to Constant parameters
         this.$host = options.$host || "https://api.context.ai";
         this.log = new LogImpl(this);
-        this.test = new TestImpl(this);
     }
     /**
      * Returns index of series
