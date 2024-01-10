@@ -1,4 +1,4 @@
-import { PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper, PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper, Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema as Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper, TestSet as TestSetMapper } from "../models/mappers";
+import { VersionRunParams as VersionRunParamsMapper, PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper, PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper, Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema as Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper, TestSet as TestSetMapper } from "../models/mappers";
 export const accept = {
     parameterPath: "accept",
     mapper: {
@@ -116,17 +116,21 @@ export const contentType = {
 };
 export const body = {
     parameterPath: ["options", "body"],
-    mapper: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper
+    mapper: VersionRunParamsMapper
 };
 export const body1 = {
     parameterPath: ["options", "body"],
-    mapper: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper
+    mapper: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper
 };
 export const body2 = {
     parameterPath: ["options", "body"],
-    mapper: Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper
+    mapper: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper
 };
 export const body3 = {
+    parameterPath: ["options", "body"],
+    mapper: Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper
+};
+export const body4 = {
     parameterPath: ["options", "body"],
     mapper: TestSetMapper
 };

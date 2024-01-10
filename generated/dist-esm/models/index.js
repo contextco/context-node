@@ -26,6 +26,40 @@ export var KnownMessageRole;
     /** User */
     KnownMessageRole["User"] = "user";
 })(KnownMessageRole || (KnownMessageRole = {}));
+/** Known values of {@link EvaluationsRunResponseStatus} that the service accepts. */
+export var KnownEvaluationsRunResponseStatus;
+(function (KnownEvaluationsRunResponseStatus) {
+    /** Pending */
+    KnownEvaluationsRunResponseStatus["Pending"] = "pending";
+    /** Running */
+    KnownEvaluationsRunResponseStatus["Running"] = "running";
+    /** Completed */
+    KnownEvaluationsRunResponseStatus["Completed"] = "completed";
+    /** Errored */
+    KnownEvaluationsRunResponseStatus["Errored"] = "errored";
+})(KnownEvaluationsRunResponseStatus || (KnownEvaluationsRunResponseStatus = {}));
+/** Known values of {@link TestCaseMessageRole} that the service accepts. */
+export var KnownTestCaseMessageRole;
+(function (KnownTestCaseMessageRole) {
+    /** System */
+    KnownTestCaseMessageRole["System"] = "system";
+    /** Assistant */
+    KnownTestCaseMessageRole["Assistant"] = "assistant";
+    /** User */
+    KnownTestCaseMessageRole["User"] = "user";
+})(KnownTestCaseMessageRole || (KnownTestCaseMessageRole = {}));
+/** Known values of {@link EvaluationOutcome} that the service accepts. */
+export var KnownEvaluationOutcome;
+(function (KnownEvaluationOutcome) {
+    /** Negative */
+    KnownEvaluationOutcome["Negative"] = "negative";
+    /** Positive */
+    KnownEvaluationOutcome["Positive"] = "positive";
+    /** Inconclusive */
+    KnownEvaluationOutcome["Inconclusive"] = "inconclusive";
+    /** PartiallyPassed */
+    KnownEvaluationOutcome["PartiallyPassed"] = "partially_passed";
+})(KnownEvaluationOutcome || (KnownEvaluationOutcome = {}));
 /** Known values of {@link MessageParamsRole} that the service accepts. */
 export var KnownMessageParamsRole;
 (function (KnownMessageParamsRole) {
@@ -44,16 +78,6 @@ export var KnownMessageParamsType;
     /** Tool */
     KnownMessageParamsType["Tool"] = "tool";
 })(KnownMessageParamsType || (KnownMessageParamsType = {}));
-/** Known values of {@link TestCaseMessageRole} that the service accepts. */
-export var KnownTestCaseMessageRole;
-(function (KnownTestCaseMessageRole) {
-    /** System */
-    KnownTestCaseMessageRole["System"] = "system";
-    /** Assistant */
-    KnownTestCaseMessageRole["Assistant"] = "assistant";
-    /** User */
-    KnownTestCaseMessageRole["User"] = "user";
-})(KnownTestCaseMessageRole || (KnownTestCaseMessageRole = {}));
 /** Known values of {@link TestCaseFrom} that the service accepts. */
 export var KnownTestCaseFrom;
 (function (KnownTestCaseFrom) {

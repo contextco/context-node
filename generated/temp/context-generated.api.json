@@ -1,7 +1,7 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.38.3",
+    "toolVersion": "7.39.1",
     "schemaVersion": 1011,
     "oldestForwardsCompatibleVersion": 1001,
     "tsdocConfig": {
@@ -527,6 +527,37 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "estimatedCost"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@contextco/context-generated!ContextAPI#evaluations:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "evaluations: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Evaluations",
+                  "canonicalReference": "@contextco/context-generated!Evaluations:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "evaluations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
             },
             {
               "kind": "Property",
@@ -1949,6 +1980,922 @@
           }
         },
         {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!Evaluation:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Evaluation "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "Evaluation",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Evaluation#evaluatorName:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "evaluatorName: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "evaluatorName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Evaluation#outcome:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "outcome: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EvaluationOutcome",
+                  "canonicalReference": "@contextco/context-generated!EvaluationOutcome:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "outcome",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Evaluation#reasoning:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "reasoning?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "reasoning",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@contextco/context-generated!EvaluationOutcome:type",
+          "docComment": "/**\n * Defines values for EvaluationOutcome. \\ {@link KnownEvaluationOutcome} can be used interchangeably with EvaluationOutcome, this enum contains the known values that the service supports. ### Known values supported by the service **negative** \\ **positive** \\ **inconclusive** \\ **partially_passed**\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type EvaluationOutcome = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationOutcome",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!Evaluations:interface",
+          "docComment": "/**\n * Interface representing a Evaluations.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Evaluations "
+            }
+          ],
+          "fileUrlPath": "src/operationsInterfaces/evaluations.ts",
+          "releaseTag": "Public",
+          "name": "Evaluations",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@contextco/context-generated!Evaluations#result:member(1)",
+              "docComment": "/**\n * Polls a test run for updates and results\n *\n * @param id - \n *\n * @param options - The options parameters.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "result(id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EvaluationsResultOptionalParams",
+                  "canonicalReference": "@contextco/context-generated!EvaluationsResultOptionalParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EvaluationsResultResponse",
+                  "canonicalReference": "@contextco/context-generated!EvaluationsResultResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "id",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "name": "result"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@contextco/context-generated!Evaluations#run:member(1)",
+              "docComment": "/**\n * Submits a test run request\n *\n * @param options - The options parameters.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "run(options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EvaluationsRunOptionalParams",
+                  "canonicalReference": "@contextco/context-generated!EvaluationsRunOptionalParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EvaluationsRunOperationResponse",
+                  "canonicalReference": "@contextco/context-generated!EvaluationsRunOperationResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "name": "run"
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!EvaluationsResultOptionalParams:interface",
+          "docComment": "/**\n * Optional parameters.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface EvaluationsResultOptionalParams extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "coreClient.OperationOptions",
+              "canonicalReference": "@azure/core-client!OperationOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationsResultOptionalParams",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsResultOptionalParams#authorization:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "authorization?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "authorization",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@contextco/context-generated!EvaluationsResultResponse:type",
+          "docComment": "/**\n * Contains response data for the result operation.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type EvaluationsResultResponse = "
+            },
+            {
+              "kind": "Reference",
+              "text": "EvaluationsRunResponse",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponse:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationsResultResponse",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@contextco/context-generated!EvaluationsRunOperationResponse:type",
+          "docComment": "/**\n * Contains response data for the run operation.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type EvaluationsRunOperationResponse = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema",
+              "canonicalReference": "@contextco/context-generated!Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationsRunOperationResponse",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!EvaluationsRunOptionalParams:interface",
+          "docComment": "/**\n * Optional parameters.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface EvaluationsRunOptionalParams extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "coreClient.OperationOptions",
+              "canonicalReference": "@azure/core-client!OperationOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationsRunOptionalParams",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunOptionalParams#authorization:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "authorization?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "authorization",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunOptionalParams#body:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "body?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VersionRunParams",
+                  "canonicalReference": "@contextco/context-generated!VersionRunParams:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "body",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!EvaluationsRunResponse:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface EvaluationsRunResponse "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationsRunResponse",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponse#details:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "details: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EvaluationsRunResponseDetails",
+                  "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseDetails:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "details",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponse#id:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponse#progress:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "progress: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EvaluationsRunResponseProgress",
+                  "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseProgress:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "progress",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponse#results:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "results?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TestCaseRun",
+                  "canonicalReference": "@contextco/context-generated!TestCaseRun:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "results",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponse#startedAt:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "startedAt?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "startedAt",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponse#status:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "status: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "EvaluationsRunResponseStatus",
+                  "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseStatus:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "status",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseDetails:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface EvaluationsRunResponseDetails "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationsRunResponseDetails",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseDetails#testSetName:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "testSetName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "testSetName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseDetails#version:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "version?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "version",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseProgress:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface EvaluationsRunResponseProgress "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationsRunResponseProgress",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseProgress#completed:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "completed?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "completed",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseProgress#pending:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "pending?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "pending",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@contextco/context-generated!EvaluationsRunResponseStatus:type",
+          "docComment": "/**\n * Defines values for EvaluationsRunResponseStatus. \\ {@link KnownEvaluationsRunResponseStatus} can be used interchangeably with EvaluationsRunResponseStatus, this enum contains the known values that the service supports. ### Known values supported by the service **pending** \\ **running** \\ **completed** \\ **errored**\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type EvaluationsRunResponseStatus = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationsRunResponseStatus",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!Evaluator:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Evaluator "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "Evaluator",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Evaluator#evaluator:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "evaluator?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "evaluator",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Evaluator#options:member",
+              "docComment": "/**\n * Any object\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, unknown>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "options",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
           "kind": "Enum",
           "canonicalReference": "@contextco/context-generated!KnownConversationSentimentTrend:enum",
           "docComment": "/**\n * Known values of {@link ConversationSentimentTrend} that the service accepts.\n */\n",
@@ -2025,6 +2972,208 @@
               },
               "releaseTag": "Public",
               "name": "Up"
+            }
+          ]
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "@contextco/context-generated!KnownEvaluationOutcome:enum",
+          "docComment": "/**\n * Known values of {@link EvaluationOutcome} that the service accepts.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum KnownEvaluationOutcome "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "KnownEvaluationOutcome",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownEvaluationOutcome.Inconclusive:member",
+              "docComment": "/**\n * Inconclusive\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Inconclusive = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"inconclusive\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Inconclusive"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownEvaluationOutcome.Negative:member",
+              "docComment": "/**\n * Negative\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Negative = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"negative\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Negative"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownEvaluationOutcome.PartiallyPassed:member",
+              "docComment": "/**\n * PartiallyPassed\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "PartiallyPassed = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"partially_passed\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "PartiallyPassed"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownEvaluationOutcome.Positive:member",
+              "docComment": "/**\n * Positive\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Positive = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"positive\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Positive"
+            }
+          ]
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "@contextco/context-generated!KnownEvaluationsRunResponseStatus:enum",
+          "docComment": "/**\n * Known values of {@link EvaluationsRunResponseStatus} that the service accepts.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum KnownEvaluationsRunResponseStatus "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "KnownEvaluationsRunResponseStatus",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownEvaluationsRunResponseStatus.Completed:member",
+              "docComment": "/**\n * Completed\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Completed = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"completed\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Completed"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownEvaluationsRunResponseStatus.Errored:member",
+              "docComment": "/**\n * Errored\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Errored = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"errored\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Errored"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownEvaluationsRunResponseStatus.Pending:member",
+              "docComment": "/**\n * Pending\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Pending = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"pending\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Pending"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownEvaluationsRunResponseStatus.Running:member",
+              "docComment": "/**\n * Running\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Running = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"running\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Running"
             }
           ]
         },
@@ -4100,6 +5249,51 @@
         },
         {
           "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData#runId:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "runId?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "runId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
           "canonicalReference": "@contextco/context-generated!Paths1AqjttjApiV1ConversationsSeriesSentimentGetResponses200ContentApplicationJsonSchema:interface",
           "docComment": "",
           "excerptTokens": [
@@ -4967,6 +6161,79 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema#data:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "data?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData",
+                  "canonicalReference": "@contextco/context-generated!Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "data",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema#status:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "status?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "status",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
               }
             }
           ],
@@ -6341,6 +7608,38 @@
           "members": [
             {
               "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestCase#evaluators:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "evaluators?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Evaluator",
+                  "canonicalReference": "@contextco/context-generated!Evaluator:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "evaluators",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "@contextco/context-generated!TestCase#messages:member",
               "docComment": "",
               "excerptTokens": [
@@ -6423,6 +7722,115 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!TestCaseDetails:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface TestCaseDetails "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "TestCaseDetails",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestCaseDetails#input:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "input: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TestCaseMessage",
+                  "canonicalReference": "@contextco/context-generated!TestCaseMessage:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "input",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestCaseDetails#name:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "name: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestCaseDetails#output:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "output: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TestCaseMessage",
+                  "canonicalReference": "@contextco/context-generated!TestCaseMessage:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "output",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
               }
             }
           ],
@@ -6555,6 +7963,84 @@
         },
         {
           "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!TestCaseRun:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface TestCaseRun "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "TestCaseRun",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestCaseRun#evaluations:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "evaluations: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Evaluation",
+                  "canonicalReference": "@contextco/context-generated!Evaluation:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "evaluations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestCaseRun#testCase:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "testCase: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TestCaseDetails",
+                  "canonicalReference": "@contextco/context-generated!TestCaseDetails:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "testCase",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
           "canonicalReference": "@contextco/context-generated!TestSet:interface",
           "docComment": "",
           "excerptTokens": [
@@ -6568,6 +8054,38 @@
           "name": "TestSet",
           "preserveMemberOrder": false,
           "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestSet#evaluators:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "evaluators?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Evaluator",
+                  "canonicalReference": "@contextco/context-generated!Evaluator:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "evaluators",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
             {
               "kind": "PropertySignature",
               "canonicalReference": "@contextco/context-generated!TestSet#name:member",
@@ -6974,6 +8492,78 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!VersionRunParams:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface VersionRunParams "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "VersionRunParams",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!VersionRunParams#testSetName:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "testSetName: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "testSetName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!VersionRunParams#version:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "version: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "version",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
