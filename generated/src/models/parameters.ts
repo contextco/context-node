@@ -4,6 +4,7 @@ import {
   OperationQueryParameter
 } from "@azure/core-client";
 import {
+  VersionRunParams as VersionRunParamsMapper,
   PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema as PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper,
   PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema as PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper,
   Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema as Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper,
@@ -139,20 +140,25 @@ export const contentType: OperationParameter = {
 
 export const body: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper: VersionRunParamsMapper
 };
 
 export const body1: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
 export const body2: OperationParameter = {
   parameterPath: ["options", "body"],
-  mapper: Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper
+  mapper: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchemaMapper
 };
 
 export const body3: OperationParameter = {
+  parameterPath: ["options", "body"],
+  mapper: Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchemaMapper
+};
+
+export const body4: OperationParameter = {
   parameterPath: ["options", "body"],
   mapper: TestSetMapper
 };

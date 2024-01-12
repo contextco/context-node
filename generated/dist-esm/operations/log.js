@@ -45,7 +45,7 @@ const conversationOperationSpec = {
     path: "/api/v1/log/conversation",
     httpMethod: "POST",
     responses: { 201: {} },
-    requestBody: Parameters.body,
+    requestBody: Parameters.body1,
     urlParameters: [Parameters.$host],
     headerParameters: [Parameters.authorization, Parameters.contentType],
     mediaType: "json",
@@ -55,7 +55,7 @@ const conversationUpsertOperationSpec = {
     path: "/api/v1/log/conversation/upsert",
     httpMethod: "POST",
     responses: { 201: {} },
-    requestBody: Parameters.body1,
+    requestBody: Parameters.body2,
     urlParameters: [Parameters.$host],
     headerParameters: [Parameters.authorization, Parameters.contentType],
     mediaType: "json",
@@ -69,7 +69,7 @@ const conversationThreadOperationSpec = {
             bodyMapper: Mappers.PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema
         }
     },
-    requestBody: Parameters.body2,
+    requestBody: Parameters.body3,
     urlParameters: [Parameters.$host],
     headerParameters: [
         Parameters.accept,
@@ -87,7 +87,7 @@ const testSetsOperationSpec = {
             bodyMapper: Mappers.TestSetParams
         }
     },
-    requestBody: Parameters.body3,
+    requestBody: Parameters.body4,
     queryParameters: [Parameters.copyTestCasesFrom],
     urlParameters: [Parameters.$host],
     headerParameters: [

@@ -16,6 +16,8 @@ export class ContextAPI extends coreClient.ServiceClient {
     conversationSeries(options?: ConversationSeriesOptionalParams): Promise<ConversationSeriesResponse>;
     estimatedCost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
     // (undocumented)
+    evaluations: Evaluations;
+    // (undocumented)
     log: Log;
     rating(options?: RatingOptionalParams): Promise<RatingResponse>;
     sentiment(options?: SentimentOptionalParams): Promise<SentimentResponse>;
@@ -105,11 +107,108 @@ export interface EstimatedCostOptionalParams extends coreClient.OperationOptions
 // @public
 export type EstimatedCostResponse = Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema;
 
+// @public (undocumented)
+export interface Evaluation {
+    // (undocumented)
+    evaluatorName: string;
+    // (undocumented)
+    outcome: EvaluationOutcome;
+    // (undocumented)
+    reasoning?: string;
+}
+
+// @public
+export type EvaluationOutcome = string;
+
+// @public
+export interface Evaluations {
+    result(id: string, options?: EvaluationsResultOptionalParams): Promise<EvaluationsResultResponse>;
+    run(options?: EvaluationsRunOptionalParams): Promise<EvaluationsRunOperationResponse>;
+}
+
+// @public
+export interface EvaluationsResultOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+}
+
+// @public
+export type EvaluationsResultResponse = EvaluationsRunResponse;
+
+// @public
+export type EvaluationsRunOperationResponse = Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema;
+
+// @public
+export interface EvaluationsRunOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    // (undocumented)
+    body?: VersionRunParams;
+}
+
+// @public (undocumented)
+export interface EvaluationsRunResponse {
+    // (undocumented)
+    details: EvaluationsRunResponseDetails;
+    // (undocumented)
+    id: string;
+    // (undocumented)
+    progress: EvaluationsRunResponseProgress;
+    // (undocumented)
+    results?: TestCaseRun[];
+    // (undocumented)
+    startedAt?: Date;
+    // (undocumented)
+    status: EvaluationsRunResponseStatus;
+}
+
+// @public (undocumented)
+export interface EvaluationsRunResponseDetails {
+    // (undocumented)
+    testSetName?: string;
+    // (undocumented)
+    version?: number;
+}
+
+// @public (undocumented)
+export interface EvaluationsRunResponseProgress {
+    // (undocumented)
+    completed?: number;
+    // (undocumented)
+    pending?: number;
+}
+
+// @public
+export type EvaluationsRunResponseStatus = string;
+
+// @public (undocumented)
+export interface Evaluator {
+    // (undocumented)
+    evaluator?: string;
+    options?: Record<string, unknown>;
+}
+
 // @public
 export enum KnownConversationSentimentTrend {
     Down = "down",
     Flat = "flat",
     Up = "up"
+}
+
+// @public
+export enum KnownEvaluationOutcome {
+    Inconclusive = "inconclusive",
+    Negative = "negative",
+    PartiallyPassed = "partially_passed",
+    Positive = "positive"
+}
+
+// @public
+export enum KnownEvaluationsRunResponseStatus {
+    Completed = "completed",
+    Errored = "errored",
+    Pending = "pending",
+    Running = "running"
 }
 
 // @public
@@ -286,6 +385,12 @@ export interface Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200Con
 }
 
 // @public (undocumented)
+export interface Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData {
+    // (undocumented)
+    runId?: string;
+}
+
+// @public (undocumented)
 export interface Paths1AqjttjApiV1ConversationsSeriesSentimentGetResponses200ContentApplicationJsonSchema {
     // (undocumented)
     endTime: string;
@@ -367,6 +472,14 @@ export interface Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicat
     pagination: Pagination;
     // (undocumented)
     topics: TopicWithSamples[];
+}
+
+// @public (undocumented)
+export interface Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema {
+    // (undocumented)
+    data?: Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData;
+    // (undocumented)
+    status?: string;
 }
 
 // @public (undocumented)
@@ -491,11 +604,23 @@ export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestions
 // @public (undocumented)
 export interface TestCase {
     // (undocumented)
+    evaluators?: Evaluator[];
+    // (undocumented)
     messages: TestCaseMessage[];
     // (undocumented)
     model: string;
     // (undocumented)
     name: string;
+}
+
+// @public (undocumented)
+export interface TestCaseDetails {
+    // (undocumented)
+    input: TestCaseMessage[];
+    // (undocumented)
+    name: string;
+    // (undocumented)
+    output: TestCaseMessage[];
 }
 
 // @public
@@ -513,7 +638,17 @@ export interface TestCaseMessage {
 export type TestCaseMessageRole = string;
 
 // @public (undocumented)
+export interface TestCaseRun {
+    // (undocumented)
+    evaluations: Evaluation[];
+    // (undocumented)
+    testCase: TestCaseDetails;
+}
+
+// @public (undocumented)
 export interface TestSet {
+    // (undocumented)
+    evaluators?: Evaluator[];
     // (undocumented)
     name: string;
     // (undocumented)
@@ -555,6 +690,14 @@ export interface TopicWithSamples {
     id: string;
     // (undocumented)
     name: string;
+}
+
+// @public (undocumented)
+export interface VersionRunParams {
+    // (undocumented)
+    testSetName: string;
+    // (undocumented)
+    version: number;
 }
 
 // @public

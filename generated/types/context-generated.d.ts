@@ -60,6 +60,7 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
+    evaluations: Evaluations;
     log: Log;
 }
 
@@ -152,6 +153,93 @@ export declare interface EstimatedCostOptionalParams extends coreClient.Operatio
 /** Contains response data for the estimatedCost operation. */
 export declare type EstimatedCostResponse = Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema;
 
+export declare interface Evaluation {
+    evaluatorName: string;
+    outcome: EvaluationOutcome;
+    reasoning?: string;
+}
+
+/**
+ * Defines values for EvaluationOutcome. \
+ * {@link KnownEvaluationOutcome} can be used interchangeably with EvaluationOutcome,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **negative** \
+ * **positive** \
+ * **inconclusive** \
+ * **partially_passed**
+ */
+export declare type EvaluationOutcome = string;
+
+/** Interface representing a Evaluations. */
+export declare interface Evaluations {
+    /**
+     * Submits a test run request
+     * @param options The options parameters.
+     */
+    run(options?: EvaluationsRunOptionalParams): Promise<EvaluationsRunOperationResponse>;
+    /**
+     * Polls a test run for updates and results
+     * @param id
+     * @param options The options parameters.
+     */
+    result(id: string, options?: EvaluationsResultOptionalParams): Promise<EvaluationsResultResponse>;
+}
+
+/** Optional parameters. */
+export declare interface EvaluationsResultOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+}
+
+/** Contains response data for the result operation. */
+export declare type EvaluationsResultResponse = EvaluationsRunResponse;
+
+/** Contains response data for the run operation. */
+export declare type EvaluationsRunOperationResponse = Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema;
+
+/** Optional parameters. */
+export declare interface EvaluationsRunOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    body?: VersionRunParams;
+}
+
+export declare interface EvaluationsRunResponse {
+    id: string;
+    status: EvaluationsRunResponseStatus;
+    progress: EvaluationsRunResponseProgress;
+    startedAt?: Date;
+    details: EvaluationsRunResponseDetails;
+    results?: TestCaseRun[];
+}
+
+export declare interface EvaluationsRunResponseDetails {
+    testSetName?: string;
+    version?: number;
+}
+
+export declare interface EvaluationsRunResponseProgress {
+    completed?: number;
+    pending?: number;
+}
+
+/**
+ * Defines values for EvaluationsRunResponseStatus. \
+ * {@link KnownEvaluationsRunResponseStatus} can be used interchangeably with EvaluationsRunResponseStatus,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **pending** \
+ * **running** \
+ * **completed** \
+ * **errored**
+ */
+export declare type EvaluationsRunResponseStatus = string;
+
+export declare interface Evaluator {
+    evaluator?: string;
+    /** Any object */
+    options?: Record<string, unknown>;
+}
+
 /** Known values of {@link ConversationSentimentTrend} that the service accepts. */
 export declare enum KnownConversationSentimentTrend {
     /** Up */
@@ -160,6 +248,30 @@ export declare enum KnownConversationSentimentTrend {
     Flat = "flat",
     /** Down */
     Down = "down"
+}
+
+/** Known values of {@link EvaluationOutcome} that the service accepts. */
+export declare enum KnownEvaluationOutcome {
+    /** Negative */
+    Negative = "negative",
+    /** Positive */
+    Positive = "positive",
+    /** Inconclusive */
+    Inconclusive = "inconclusive",
+    /** PartiallyPassed */
+    PartiallyPassed = "partially_passed"
+}
+
+/** Known values of {@link EvaluationsRunResponseStatus} that the service accepts. */
+export declare enum KnownEvaluationsRunResponseStatus {
+    /** Pending */
+    Pending = "pending",
+    /** Running */
+    Running = "running",
+    /** Completed */
+    Completed = "completed",
+    /** Errored */
+    Errored = "errored"
 }
 
 /** Known values of {@link MessageParamsRole} that the service accepts. */
@@ -362,6 +474,10 @@ export declare interface Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetRespons
     statistics: Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics;
 }
 
+export declare interface Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData {
+    runId?: string;
+}
+
 export declare interface Paths1AqjttjApiV1ConversationsSeriesSentimentGetResponses200ContentApplicationJsonSchema {
     series: SeriesItem[];
     type: string;
@@ -410,6 +526,11 @@ export declare interface Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResp
 export declare interface Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema {
     topics: TopicWithSamples[];
     pagination: Pagination;
+}
+
+export declare interface Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema {
+    status?: string;
+    data?: Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData;
 }
 
 export declare interface PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema {
@@ -525,6 +646,13 @@ export declare interface TestCase {
     name: string;
     model: string;
     messages: TestCaseMessage[];
+    evaluators?: Evaluator[];
+}
+
+export declare interface TestCaseDetails {
+    name: string;
+    input: TestCaseMessage[];
+    output: TestCaseMessage[];
 }
 
 /**
@@ -553,9 +681,15 @@ export declare interface TestCaseMessage {
  */
 export declare type TestCaseMessageRole = string;
 
+export declare interface TestCaseRun {
+    testCase: TestCaseDetails;
+    evaluations: Evaluation[];
+}
+
 export declare interface TestSet {
     name: string;
     testCases: TestCase[];
+    evaluators?: Evaluator[];
 }
 
 export declare interface TestSetParams {
@@ -581,6 +715,11 @@ export declare interface TopicWithSamples {
     id: string;
     name: string;
     conversationsSample: ConversationResponse[];
+}
+
+export declare interface VersionRunParams {
+    testSetName: string;
+    version: number;
 }
 
 /** Optional parameters. */

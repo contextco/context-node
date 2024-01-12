@@ -80,6 +80,51 @@ export interface Pagination {
     nextPage: number | null;
     pageCount: number;
 }
+export interface VersionRunParams {
+    testSetName: string;
+    version: number;
+}
+export interface Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema {
+    status?: string;
+    data?: Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData;
+}
+export interface Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData {
+    runId?: string;
+}
+export interface EvaluationsRunResponse {
+    id: string;
+    status: EvaluationsRunResponseStatus;
+    progress: EvaluationsRunResponseProgress;
+    startedAt?: Date;
+    details: EvaluationsRunResponseDetails;
+    results?: TestCaseRun[];
+}
+export interface EvaluationsRunResponseProgress {
+    completed?: number;
+    pending?: number;
+}
+export interface EvaluationsRunResponseDetails {
+    testSetName?: string;
+    version?: number;
+}
+export interface TestCaseRun {
+    testCase: TestCaseDetails;
+    evaluations: Evaluation[];
+}
+export interface TestCaseDetails {
+    name: string;
+    input: TestCaseMessage[];
+    output: TestCaseMessage[];
+}
+export interface TestCaseMessage {
+    message: string;
+    role: TestCaseMessageRole;
+}
+export interface Evaluation {
+    evaluatorName: string;
+    outcome: EvaluationOutcome;
+    reasoning?: string;
+}
 export interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema {
     conversation?: Conversation;
 }
@@ -130,15 +175,18 @@ export interface Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentAp
 export interface TestSet {
     name: string;
     testCases: TestCase[];
+    evaluators?: Evaluator[];
 }
 export interface TestCase {
     name: string;
     model: string;
     messages: TestCaseMessage[];
+    evaluators?: Evaluator[];
 }
-export interface TestCaseMessage {
-    message: string;
-    role: TestCaseMessageRole;
+export interface Evaluator {
+    evaluator?: string;
+    /** Any object */
+    options?: Record<string, unknown>;
 }
 export interface TestSetParams {
     name: string;
@@ -222,6 +270,69 @@ export declare enum KnownMessageRole {
  * **user**
  */
 export type MessageRole = string;
+/** Known values of {@link EvaluationsRunResponseStatus} that the service accepts. */
+export declare enum KnownEvaluationsRunResponseStatus {
+    /** Pending */
+    Pending = "pending",
+    /** Running */
+    Running = "running",
+    /** Completed */
+    Completed = "completed",
+    /** Errored */
+    Errored = "errored"
+}
+/**
+ * Defines values for EvaluationsRunResponseStatus. \
+ * {@link KnownEvaluationsRunResponseStatus} can be used interchangeably with EvaluationsRunResponseStatus,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **pending** \
+ * **running** \
+ * **completed** \
+ * **errored**
+ */
+export type EvaluationsRunResponseStatus = string;
+/** Known values of {@link TestCaseMessageRole} that the service accepts. */
+export declare enum KnownTestCaseMessageRole {
+    /** System */
+    System = "system",
+    /** Assistant */
+    Assistant = "assistant",
+    /** User */
+    User = "user"
+}
+/**
+ * Defines values for TestCaseMessageRole. \
+ * {@link KnownTestCaseMessageRole} can be used interchangeably with TestCaseMessageRole,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **system** \
+ * **assistant** \
+ * **user**
+ */
+export type TestCaseMessageRole = string;
+/** Known values of {@link EvaluationOutcome} that the service accepts. */
+export declare enum KnownEvaluationOutcome {
+    /** Negative */
+    Negative = "negative",
+    /** Positive */
+    Positive = "positive",
+    /** Inconclusive */
+    Inconclusive = "inconclusive",
+    /** PartiallyPassed */
+    PartiallyPassed = "partially_passed"
+}
+/**
+ * Defines values for EvaluationOutcome. \
+ * {@link KnownEvaluationOutcome} can be used interchangeably with EvaluationOutcome,
+ *  this enum contains the known values that the service supports.
+ * ### Known values supported by the service
+ * **negative** \
+ * **positive** \
+ * **inconclusive** \
+ * **partially_passed**
+ */
+export type EvaluationOutcome = string;
 /** Known values of {@link MessageParamsRole} that the service accepts. */
 export declare enum KnownMessageParamsRole {
     /** System */
@@ -257,25 +368,6 @@ export declare enum KnownMessageParamsType {
  * **tool**
  */
 export type MessageParamsType = string;
-/** Known values of {@link TestCaseMessageRole} that the service accepts. */
-export declare enum KnownTestCaseMessageRole {
-    /** System */
-    System = "system",
-    /** Assistant */
-    Assistant = "assistant",
-    /** User */
-    User = "user"
-}
-/**
- * Defines values for TestCaseMessageRole. \
- * {@link KnownTestCaseMessageRole} can be used interchangeably with TestCaseMessageRole,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **system** \
- * **assistant** \
- * **user**
- */
-export type TestCaseMessageRole = string;
 /** Known values of {@link TestCaseFrom} that the service accepts. */
 export declare enum KnownTestCaseFrom {
     /** None */
@@ -408,6 +500,19 @@ export interface SuggestedTopicStatisticsOptionalParams extends coreClient.Opera
 }
 /** Contains response data for the suggestedTopicStatistics operation. */
 export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
+/** Optional parameters. */
+export interface EvaluationsRunOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    body?: VersionRunParams;
+}
+/** Contains response data for the run operation. */
+export type EvaluationsRunOperationResponse = Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema;
+/** Optional parameters. */
+export interface EvaluationsResultOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+}
+/** Contains response data for the result operation. */
+export type EvaluationsResultResponse = EvaluationsRunResponse;
 /** Optional parameters. */
 export interface LogConversationOptionalParams extends coreClient.OperationOptions {
     authorization?: string;

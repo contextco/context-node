@@ -503,6 +503,276 @@ export const Pagination = {
         }
     }
 };
+export const VersionRunParams = {
+    type: {
+        name: "Composite",
+        className: "VersionRunParams",
+        modelProperties: {
+            testSetName: {
+                serializedName: "test_set_name",
+                required: true,
+                type: {
+                    name: "String"
+                }
+            },
+            version: {
+                serializedName: "version",
+                required: true,
+                type: {
+                    name: "Number"
+                }
+            }
+        }
+    }
+};
+export const Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema = {
+    type: {
+        name: "Composite",
+        className: "Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema",
+        modelProperties: {
+            status: {
+                serializedName: "status",
+                type: {
+                    name: "String"
+                }
+            },
+            data: {
+                serializedName: "data",
+                type: {
+                    name: "Composite",
+                    className: "Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData"
+                }
+            }
+        }
+    }
+};
+export const Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData = {
+    type: {
+        name: "Composite",
+        className: "Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData",
+        modelProperties: {
+            runId: {
+                serializedName: "run_id",
+                type: {
+                    name: "String"
+                }
+            }
+        }
+    }
+};
+export const EvaluationsRunResponse = {
+    type: {
+        name: "Composite",
+        className: "EvaluationsRunResponse",
+        modelProperties: {
+            id: {
+                serializedName: "id",
+                required: true,
+                type: {
+                    name: "String"
+                }
+            },
+            status: {
+                serializedName: "status",
+                required: true,
+                type: {
+                    name: "String"
+                }
+            },
+            progress: {
+                serializedName: "progress",
+                type: {
+                    name: "Composite",
+                    className: "EvaluationsRunResponseProgress"
+                }
+            },
+            startedAt: {
+                serializedName: "started_at",
+                type: {
+                    name: "DateTime"
+                }
+            },
+            details: {
+                serializedName: "details",
+                type: {
+                    name: "Composite",
+                    className: "EvaluationsRunResponseDetails"
+                }
+            },
+            results: {
+                serializedName: "results",
+                type: {
+                    name: "Sequence",
+                    element: {
+                        type: {
+                            name: "Composite",
+                            className: "TestCaseRun"
+                        }
+                    }
+                }
+            }
+        }
+    }
+};
+export const EvaluationsRunResponseProgress = {
+    type: {
+        name: "Composite",
+        className: "EvaluationsRunResponseProgress",
+        modelProperties: {
+            completed: {
+                serializedName: "completed",
+                type: {
+                    name: "Number"
+                }
+            },
+            pending: {
+                serializedName: "pending",
+                type: {
+                    name: "Number"
+                }
+            }
+        }
+    }
+};
+export const EvaluationsRunResponseDetails = {
+    type: {
+        name: "Composite",
+        className: "EvaluationsRunResponseDetails",
+        modelProperties: {
+            testSetName: {
+                serializedName: "test_set_name",
+                type: {
+                    name: "String"
+                }
+            },
+            version: {
+                serializedName: "version",
+                type: {
+                    name: "Number"
+                }
+            }
+        }
+    }
+};
+export const TestCaseRun = {
+    type: {
+        name: "Composite",
+        className: "TestCaseRun",
+        modelProperties: {
+            testCase: {
+                serializedName: "test_case",
+                type: {
+                    name: "Composite",
+                    className: "TestCaseDetails"
+                }
+            },
+            evaluations: {
+                serializedName: "evaluations",
+                required: true,
+                type: {
+                    name: "Sequence",
+                    element: {
+                        type: {
+                            name: "Composite",
+                            className: "Evaluation"
+                        }
+                    }
+                }
+            }
+        }
+    }
+};
+export const TestCaseDetails = {
+    type: {
+        name: "Composite",
+        className: "TestCaseDetails",
+        modelProperties: {
+            name: {
+                serializedName: "name",
+                required: true,
+                type: {
+                    name: "String"
+                }
+            },
+            input: {
+                serializedName: "input",
+                required: true,
+                type: {
+                    name: "Sequence",
+                    element: {
+                        type: {
+                            name: "Composite",
+                            className: "TestCaseMessage"
+                        }
+                    }
+                }
+            },
+            output: {
+                serializedName: "output",
+                required: true,
+                type: {
+                    name: "Sequence",
+                    element: {
+                        type: {
+                            name: "Composite",
+                            className: "TestCaseMessage"
+                        }
+                    }
+                }
+            }
+        }
+    }
+};
+export const TestCaseMessage = {
+    type: {
+        name: "Composite",
+        className: "TestCaseMessage",
+        modelProperties: {
+            message: {
+                serializedName: "message",
+                required: true,
+                type: {
+                    name: "String"
+                }
+            },
+            role: {
+                serializedName: "role",
+                required: true,
+                type: {
+                    name: "String"
+                }
+            }
+        }
+    }
+};
+export const Evaluation = {
+    type: {
+        name: "Composite",
+        className: "Evaluation",
+        modelProperties: {
+            evaluatorName: {
+                serializedName: "evaluator_name",
+                required: true,
+                type: {
+                    name: "String"
+                }
+            },
+            outcome: {
+                serializedName: "outcome",
+                required: true,
+                type: {
+                    name: "String"
+                }
+            },
+            reasoning: {
+                serializedName: "reasoning",
+                type: {
+                    name: "String"
+                }
+            }
+        }
+    }
+};
 export const PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema = {
     type: {
         name: "Composite",
@@ -740,6 +1010,18 @@ export const TestSet = {
                         }
                     }
                 }
+            },
+            evaluators: {
+                serializedName: "evaluators",
+                type: {
+                    name: "Sequence",
+                    element: {
+                        type: {
+                            name: "Composite",
+                            className: "Evaluator"
+                        }
+                    }
+                }
             }
         }
     }
@@ -775,27 +1057,38 @@ export const TestCase = {
                         }
                     }
                 }
+            },
+            evaluators: {
+                serializedName: "evaluators",
+                type: {
+                    name: "Sequence",
+                    element: {
+                        type: {
+                            name: "Composite",
+                            className: "Evaluator"
+                        }
+                    }
+                }
             }
         }
     }
 };
-export const TestCaseMessage = {
+export const Evaluator = {
     type: {
         name: "Composite",
-        className: "TestCaseMessage",
+        className: "Evaluator",
         modelProperties: {
-            message: {
-                serializedName: "message",
-                required: true,
+            evaluator: {
+                serializedName: "evaluator",
                 type: {
                     name: "String"
                 }
             },
-            role: {
-                serializedName: "role",
-                required: true,
+            options: {
+                serializedName: "options",
                 type: {
-                    name: "String"
+                    name: "Dictionary",
+                    value: { type: { name: "any" } }
                 }
             }
         }

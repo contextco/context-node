@@ -15,5 +15,6 @@ export declare const body: OperationParameter;
 export declare const body1: OperationParameter;
 export declare const body2: OperationParameter;
 export declare const body3: OperationParameter;
+export declare const body4: OperationParameter;
 export declare const copyTestCasesFrom: OperationQueryParameter;
 //# sourceMappingURL=parameters.d.ts.map
