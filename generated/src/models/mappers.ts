@@ -1087,9 +1087,15 @@ export const TestCase: coreClient.CompositeMapper = {
       },
       model: {
         serializedName: "model",
-        required: true,
         type: {
           name: "String"
+        }
+      },
+      modelConfig: {
+        serializedName: "model_config",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
         }
       },
       messages: {
@@ -1103,6 +1109,12 @@ export const TestCase: coreClient.CompositeMapper = {
               className: "TestCaseMessage"
             }
           }
+        }
+      },
+      pregeneratedResponse: {
+        serializedName: "pregenerated_response",
+        type: {
+          name: "String"
         }
       },
       evaluators: {

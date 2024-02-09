@@ -179,8 +179,11 @@ export interface TestSet {
 }
 export interface TestCase {
     name: string;
-    model: string;
+    model?: string;
+    /** Any object */
+    modelConfig?: Record<string, unknown>;
     messages: TestCaseMessage[];
+    pregeneratedResponse?: string;
     evaluators?: Evaluator[];
 }
 export interface Evaluator {

@@ -1040,9 +1040,15 @@ export const TestCase = {
             },
             model: {
                 serializedName: "model",
-                required: true,
                 type: {
                     name: "String"
+                }
+            },
+            modelConfig: {
+                serializedName: "model_config",
+                type: {
+                    name: "Dictionary",
+                    value: { type: { name: "any" } }
                 }
             },
             messages: {
@@ -1056,6 +1062,12 @@ export const TestCase = {
                             className: "TestCaseMessage"
                         }
                     }
+                }
+            },
+            pregeneratedResponse: {
+                serializedName: "pregenerated_response",
+                type: {
+                    name: "String"
                 }
             },
             evaluators: {

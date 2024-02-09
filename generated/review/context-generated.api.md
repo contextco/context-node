@@ -608,9 +608,12 @@ export interface TestCase {
     // (undocumented)
     messages: TestCaseMessage[];
     // (undocumented)
-    model: string;
+    model?: string;
+    modelConfig?: Record<string, unknown>;
     // (undocumented)
     name: string;
+    // (undocumented)
+    pregeneratedResponse?: string;
 }
 
 // @public (undocumented)

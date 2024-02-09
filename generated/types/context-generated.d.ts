@@ -644,8 +644,11 @@ export declare type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSug
 
 export declare interface TestCase {
     name: string;
-    model: string;
+    model?: string;
+    /** Any object */
+    modelConfig?: Record<string, unknown>;
     messages: TestCaseMessage[];
+    pregeneratedResponse?: string;
     evaluators?: Evaluator[];
 }
 
