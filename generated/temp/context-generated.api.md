@@ -36,6 +36,8 @@ export interface ContextAPIOptionalParams extends coreClient.ServiceClientOption
 // @public (undocumented)
 export interface Conversation {
     // (undocumented)
+    feedback?: string;
+    // (undocumented)
     messages?: Message[];
     metadata?: {
         [propertyName: string]: string;
@@ -608,9 +610,12 @@ export interface TestCase {
     // (undocumented)
     messages: TestCaseMessage[];
     // (undocumented)
-    model: string;
+    model?: string;
+    modelConfig?: Record<string, unknown>;
     // (undocumented)
     name: string;
+    // (undocumented)
+    pregeneratedResponse?: string;
 }
 
 // @public (undocumented)
@@ -660,11 +665,13 @@ export interface TestSetParams {
     // (undocumented)
     name: string;
     // (undocumented)
-    versionId: number;
+    version: number;
 }
 
 // @public (undocumented)
 export interface Thread {
+    // (undocumented)
+    feedback?: string;
     // (undocumented)
     id?: string;
     // (undocumented)

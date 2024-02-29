@@ -845,6 +845,12 @@ export const Conversation: coreClient.CompositeMapper = {
           name: "Dictionary",
           value: { type: { name: "String" } }
         }
+      },
+      feedback: {
+        serializedName: "feedback",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -987,6 +993,12 @@ export const Thread: coreClient.CompositeMapper = {
           name: "Dictionary",
           value: { type: { name: "String" } }
         }
+      },
+      feedback: {
+        serializedName: "feedback",
+        type: {
+          name: "String"
+        }
       }
     }
   }
@@ -1087,9 +1099,15 @@ export const TestCase: coreClient.CompositeMapper = {
       },
       model: {
         serializedName: "model",
-        required: true,
         type: {
           name: "String"
+        }
+      },
+      modelConfig: {
+        serializedName: "model_config",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
         }
       },
       messages: {
@@ -1103,6 +1121,12 @@ export const TestCase: coreClient.CompositeMapper = {
               className: "TestCaseMessage"
             }
           }
+        }
+      },
+      pregeneratedResponse: {
+        serializedName: "pregenerated_response",
+        type: {
+          name: "String"
         }
       },
       evaluators: {
@@ -1155,8 +1179,8 @@ export const TestSetParams: coreClient.CompositeMapper = {
           name: "String"
         }
       },
-      versionId: {
-        serializedName: "version_id",
+      version: {
+        serializedName: "version",
         required: true,
         type: {
           name: "Number"

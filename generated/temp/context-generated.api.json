@@ -1,7 +1,7 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.39.1",
+    "toolVersion": "7.38.3",
     "schemaVersion": 1011,
     "oldestForwardsCompatibleVersion": 1001,
     "tsdocConfig": {
@@ -1108,6 +1108,33 @@
           "name": "Conversation",
           "preserveMemberOrder": false,
           "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Conversation#feedback:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "feedback?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "feedback",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
             {
               "kind": "PropertySignature",
               "canonicalReference": "@contextco/context-generated!Conversation#messages:member",
@@ -7677,7 +7704,7 @@
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "model: "
+                  "text": "model?: "
                 },
                 {
                   "kind": "Content",
@@ -7689,12 +7716,44 @@
                 }
               ],
               "isReadonly": false,
-              "isOptional": false,
+              "isOptional": true,
               "releaseTag": "Public",
               "name": "model",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestCase#modelConfig:member",
+              "docComment": "/**\n * Any object\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "modelConfig?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, unknown>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "modelConfig",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
               }
             },
             {
@@ -7719,6 +7778,33 @@
               "isOptional": false,
               "releaseTag": "Public",
               "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestCase#pregeneratedResponse:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "pregeneratedResponse?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "pregeneratedResponse",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -8192,12 +8278,12 @@
             },
             {
               "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!TestSetParams#versionId:member",
+              "canonicalReference": "@contextco/context-generated!TestSetParams#version:member",
               "docComment": "",
               "excerptTokens": [
                 {
                   "kind": "Content",
-                  "text": "versionId: "
+                  "text": "version: "
                 },
                 {
                   "kind": "Content",
@@ -8211,7 +8297,7 @@
               "isReadonly": false,
               "isOptional": false,
               "releaseTag": "Public",
-              "name": "versionId",
+              "name": "version",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -8235,6 +8321,33 @@
           "name": "Thread",
           "preserveMemberOrder": false,
           "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!Thread#feedback:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "feedback?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "feedback",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
             {
               "kind": "PropertySignature",
               "canonicalReference": "@contextco/context-generated!Thread#id:member",
