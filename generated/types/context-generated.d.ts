@@ -78,6 +78,7 @@ export declare interface Conversation {
     metadata?: {
         [propertyName: string]: string;
     };
+    feedback?: string;
 }
 
 /** Contains response data for the conversation operation. */
@@ -644,8 +645,11 @@ export declare type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSug
 
 export declare interface TestCase {
     name: string;
-    model: string;
+    model?: string;
+    /** Any object */
+    modelConfig?: Record<string, unknown>;
     messages: TestCaseMessage[];
+    pregeneratedResponse?: string;
     evaluators?: Evaluator[];
 }
 
@@ -694,7 +698,7 @@ export declare interface TestSet {
 
 export declare interface TestSetParams {
     name: string;
-    versionId: number;
+    version: number;
 }
 
 export declare interface Thread {
@@ -704,6 +708,7 @@ export declare interface Thread {
     metadata?: {
         [propertyName: string]: string;
     };
+    feedback?: string;
 }
 
 export declare interface Topic {

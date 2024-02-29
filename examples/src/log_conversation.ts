@@ -8,6 +8,7 @@ const c = new ContextAPI( options,);
 c.log.conversationUpsert({
   body: {
     conversation: {
+      feedback: "The agent resolved my query very fast - thank you!",
       messages: [
         { message: "You are a very helpful assistant.", role: KnownMessageRole.System, rating: 0 },
         { type: 'message', message: "Hi there, how are you doing?", role: KnownMessageRole.User, rating: 0 },

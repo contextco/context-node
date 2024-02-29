@@ -134,6 +134,7 @@ export interface Conversation {
     metadata?: {
         [propertyName: string]: string;
     };
+    feedback?: string;
 }
 export interface Message {
     role?: MessageParamsRole;
@@ -164,6 +165,7 @@ export interface Thread {
     metadata?: {
         [propertyName: string]: string;
     };
+    feedback?: string;
 }
 export interface PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema {
     status?: string;
@@ -179,8 +181,11 @@ export interface TestSet {
 }
 export interface TestCase {
     name: string;
-    model: string;
+    model?: string;
+    /** Any object */
+    modelConfig?: Record<string, unknown>;
     messages: TestCaseMessage[];
+    pregeneratedResponse?: string;
     evaluators?: Evaluator[];
 }
 export interface Evaluator {
@@ -190,7 +195,7 @@ export interface Evaluator {
 }
 export interface TestSetParams {
     name: string;
-    versionId: number;
+    version: number;
 }
 export interface Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema {
     topics: TopicWithSamples[];
