@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@azure/core-auth": "^1.5.0",
-    "@contextco/context-generated": "8.0.0"
+    "@contextco/context-generated": "9.0.0"
   },
   "keywords": [
     "context",

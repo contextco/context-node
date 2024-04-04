@@ -253,6 +253,14 @@ export enum KnownTestCaseMessageRole {
 }
 
 // @public
+export enum KnownVersionRunParamsIterations {
+    Five = 5,
+    One = 1,
+    Seven = 7,
+    Three = 3
+}
+
+// @public
 export interface Log {
     conversation(options?: LogConversationOptionalParams): Promise<void>;
     conversationThread(options?: LogConversationThreadOptionalParams): Promise<LogConversationThreadResponse>;
@@ -647,6 +655,8 @@ export interface TestCaseRun {
     // (undocumented)
     evaluations: Evaluation[];
     // (undocumented)
+    iteration?: number;
+    // (undocumented)
     testCase: TestCaseDetails;
 }
 
@@ -702,10 +712,15 @@ export interface TopicWithSamples {
 // @public (undocumented)
 export interface VersionRunParams {
     // (undocumented)
+    iterations?: VersionRunParamsIterations;
+    // (undocumented)
     testSetName: string;
     // (undocumented)
     version: number;
 }
+
+// @public
+export type VersionRunParamsIterations = number;
 
 // @public
 export interface VolumeOptionalParams extends coreClient.OperationOptions {

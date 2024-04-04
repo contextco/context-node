@@ -1,7 +1,7 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.38.3",
+    "toolVersion": "7.43.0",
     "schemaVersion": 1011,
     "oldestForwardsCompatibleVersion": 1001,
     "tsdocConfig": {
@@ -3618,6 +3618,107 @@
               },
               "releaseTag": "Public",
               "name": "User"
+            }
+          ]
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "@contextco/context-generated!KnownVersionRunParamsIterations:enum",
+          "docComment": "/**\n * Known values of {@link VersionRunParamsIterations} that the service accepts.\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum KnownVersionRunParamsIterations "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "KnownVersionRunParamsIterations",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownVersionRunParamsIterations.Five:member",
+              "docComment": "/**\n * Five\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Five = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "5"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Five"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownVersionRunParamsIterations.One:member",
+              "docComment": "/**\n * One\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "One = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "1"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "One"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownVersionRunParamsIterations.Seven:member",
+              "docComment": "/**\n * Seven\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Seven = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "7"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Seven"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownVersionRunParamsIterations.Three:member",
+              "docComment": "/**\n * Three\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Three = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "3"
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Three"
             }
           ]
         },
@@ -8096,6 +8197,33 @@
             },
             {
               "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!TestCaseRun#iteration:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "iteration?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "iteration",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "@contextco/context-generated!TestCaseRun#testCase:member",
               "docComment": "",
               "excerptTokens": [
@@ -8630,6 +8758,34 @@
           "members": [
             {
               "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!VersionRunParams#iterations:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "iterations?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VersionRunParamsIterations",
+                  "canonicalReference": "@contextco/context-generated!VersionRunParamsIterations:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "iterations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
               "canonicalReference": "@contextco/context-generated!VersionRunParams#testSetName:member",
               "docComment": "",
               "excerptTokens": [
@@ -8684,6 +8840,32 @@
             }
           ],
           "extendsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@contextco/context-generated!VersionRunParamsIterations:type",
+          "docComment": "/**\n * Defines values for VersionRunParamsIterations. \\ {@link KnownVersionRunParamsIterations} can be used interchangeably with VersionRunParamsIterations, this enum contains the known values that the service supports. ### Known values supported by the service **3** \\ **5** \\ **7** \\ **1**\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type VersionRunParamsIterations = "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "VersionRunParamsIterations",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
         },
         {
           "kind": "Interface",

@@ -26,6 +26,18 @@ export var KnownMessageRole;
     /** User */
     KnownMessageRole["User"] = "user";
 })(KnownMessageRole || (KnownMessageRole = {}));
+/** Known values of {@link VersionRunParamsIterations} that the service accepts. */
+export var KnownVersionRunParamsIterations;
+(function (KnownVersionRunParamsIterations) {
+    /** Three */
+    KnownVersionRunParamsIterations[KnownVersionRunParamsIterations["Three"] = 3] = "Three";
+    /** Five */
+    KnownVersionRunParamsIterations[KnownVersionRunParamsIterations["Five"] = 5] = "Five";
+    /** Seven */
+    KnownVersionRunParamsIterations[KnownVersionRunParamsIterations["Seven"] = 7] = "Seven";
+    /** One */
+    KnownVersionRunParamsIterations[KnownVersionRunParamsIterations["One"] = 1] = "One";
+})(KnownVersionRunParamsIterations || (KnownVersionRunParamsIterations = {}));
 /** Known values of {@link EvaluationsRunResponseStatus} that the service accepts. */
 export var KnownEvaluationsRunResponseStatus;
 (function (KnownEvaluationsRunResponseStatus) {
