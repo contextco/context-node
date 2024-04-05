@@ -540,6 +540,13 @@ export const VersionRunParams: coreClient.CompositeMapper = {
         type: {
           name: "Number"
         }
+      },
+      iterations: {
+        defaultValue: 1,
+        serializedName: "iterations",
+        type: {
+          name: "Number"
+        }
       }
     }
   }
@@ -687,6 +694,12 @@ export const TestCaseRun: coreClient.CompositeMapper = {
     name: "Composite",
     className: "TestCaseRun",
     modelProperties: {
+      iteration: {
+        serializedName: "iteration",
+        type: {
+          name: "Number"
+        }
+      },
       testCase: {
         serializedName: "test_case",
         type: {

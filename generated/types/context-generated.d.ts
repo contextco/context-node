@@ -686,6 +686,7 @@ export declare interface TestCaseMessage {
 export declare type TestCaseMessageRole = string;
 
 export declare interface TestCaseRun {
+    iteration?: number;
     testCase: TestCaseDetails;
     evaluations: Evaluation[];
 }
@@ -725,6 +726,7 @@ export declare interface TopicWithSamples {
 export declare interface VersionRunParams {
     testSetName: string;
     version: number;
+    iterations?: number;
 }
 
 /** Optional parameters. */

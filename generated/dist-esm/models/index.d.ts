@@ -83,6 +83,7 @@ export interface Pagination {
 export interface VersionRunParams {
     testSetName: string;
     version: number;
+    iterations?: number;
 }
 export interface Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema {
     status?: string;
@@ -108,6 +109,7 @@ export interface EvaluationsRunResponseDetails {
     version?: number;
 }
 export interface TestCaseRun {
+    iteration?: number;
     testCase: TestCaseDetails;
     evaluations: Evaluation[];
 }

@@ -647,6 +647,8 @@ export interface TestCaseRun {
     // (undocumented)
     evaluations: Evaluation[];
     // (undocumented)
+    iteration?: number;
+    // (undocumented)
     testCase: TestCaseDetails;
 }
 
@@ -701,6 +703,8 @@ export interface TopicWithSamples {
 
 // @public (undocumented)
 export interface VersionRunParams {
+    // (undocumented)
+    iterations?: number;
     // (undocumented)
     testSetName: string;
     // (undocumented)
