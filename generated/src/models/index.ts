@@ -89,7 +89,7 @@ export interface Pagination {
 export interface VersionRunParams {
   testSetName: string;
   version: number;
-  iterations?: VersionRunParamsIterations;
+  iterations?: number;
 }
 
 export interface Paths2XppqwApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchema {
@@ -309,30 +309,6 @@ export enum KnownMessageRole {
  * **user**
  */
 export type MessageRole = string;
-
-/** Known values of {@link VersionRunParamsIterations} that the service accepts. */
-export enum KnownVersionRunParamsIterations {
-  /** Three */
-  Three = 3,
-  /** Five */
-  Five = 5,
-  /** Seven */
-  Seven = 7,
-  /** One */
-  One = 1
-}
-
-/**
- * Defines values for VersionRunParamsIterations. \
- * {@link KnownVersionRunParamsIterations} can be used interchangeably with VersionRunParamsIterations,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **3** \
- * **5** \
- * **7** \
- * **1**
- */
-export type VersionRunParamsIterations = number;
 
 /** Known values of {@link EvaluationsRunResponseStatus} that the service accepts. */
 export enum KnownEvaluationsRunResponseStatus {

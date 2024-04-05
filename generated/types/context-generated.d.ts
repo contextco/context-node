@@ -329,18 +329,6 @@ export declare enum KnownTestCaseMessageRole {
     User = "user"
 }
 
-/** Known values of {@link VersionRunParamsIterations} that the service accepts. */
-export declare enum KnownVersionRunParamsIterations {
-    /** Three */
-    Three = 3,
-    /** Five */
-    Five = 5,
-    /** Seven */
-    Seven = 7,
-    /** One */
-    One = 1
-}
-
 /** Interface representing a Log. */
 export declare interface Log {
     /**
@@ -738,20 +726,8 @@ export declare interface TopicWithSamples {
 export declare interface VersionRunParams {
     testSetName: string;
     version: number;
-    iterations?: VersionRunParamsIterations;
+    iterations?: number;
 }
-
-/**
- * Defines values for VersionRunParamsIterations. \
- * {@link KnownVersionRunParamsIterations} can be used interchangeably with VersionRunParamsIterations,
- *  this enum contains the known values that the service supports.
- * ### Known values supported by the service
- * **3** \
- * **5** \
- * **7** \
- * **1**
- */
-export declare type VersionRunParamsIterations = number;
 
 /** Optional parameters. */
 export declare interface VolumeOptionalParams extends coreClient.OperationOptions {
