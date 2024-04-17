@@ -609,6 +609,7 @@ export interface TestCase {
     evaluators?: Evaluator[];
     // (undocumented)
     messages: TestCaseMessage[];
+    metadata?: Record<string, unknown>;
     // (undocumented)
     model?: string;
     modelConfig?: Record<string, unknown>;

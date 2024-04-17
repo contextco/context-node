@@ -14,6 +14,9 @@ c.log.testSets(
         {
           name: "My TS LLM test case",
           model: "gpt-4",
+          metadata: {
+            key: "value"
+          },
           messages: [
             {
               message: "You are a super TS LLM agent.",
