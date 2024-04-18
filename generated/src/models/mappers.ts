@@ -1123,6 +1123,13 @@ export const TestCase: coreClient.CompositeMapper = {
           value: { type: { name: "any" } }
         }
       },
+      metadata: {
+        serializedName: "metadata",
+        type: {
+          name: "Dictionary",
+          value: { type: { name: "any" } }
+        }
+      },
       messages: {
         serializedName: "messages",
         required: true,

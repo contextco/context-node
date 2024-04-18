@@ -205,6 +205,8 @@ export interface TestCase {
   model?: string;
   /** Any object */
   modelConfig?: Record<string, unknown>;
+  /** Any object */
+  metadata?: Record<string, unknown>;
   messages: TestCaseMessage[];
   pregeneratedResponse?: string;
   evaluators?: Evaluator[];
