@@ -46,6 +46,7 @@ const conversationOperationSpec = {
     httpMethod: "POST",
     responses: { 201: {} },
     requestBody: Parameters.body1,
+    queryParameters: [Parameters.tenantId],
     urlParameters: [Parameters.$host],
     headerParameters: [Parameters.authorization, Parameters.contentType],
     mediaType: "json",
@@ -56,6 +57,7 @@ const conversationUpsertOperationSpec = {
     httpMethod: "POST",
     responses: { 201: {} },
     requestBody: Parameters.body2,
+    queryParameters: [Parameters.tenantId],
     urlParameters: [Parameters.$host],
     headerParameters: [Parameters.authorization, Parameters.contentType],
     mediaType: "json",
@@ -70,6 +72,7 @@ const conversationThreadOperationSpec = {
         }
     },
     requestBody: Parameters.body3,
+    queryParameters: [Parameters.tenantId],
     urlParameters: [Parameters.$host],
     headerParameters: [
         Parameters.accept,

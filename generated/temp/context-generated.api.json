@@ -1,7 +1,7 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.43.1",
+    "toolVersion": "7.47.0",
     "schemaVersion": 1011,
     "oldestForwardsCompatibleVersion": 1001,
     "tsdocConfig": {
@@ -715,227 +715,6 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "sentiment"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@contextco/context-generated!ContextAPI#suggestedTopicConversations:member(1)",
-              "docComment": "/**\n * Returns statistics of selected topic\n *\n * @param id - \n *\n * @param options - The options parameters.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "suggestedTopicConversations(id: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", options?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicConversationsOptionalParams",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsOptionalParams:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicConversationsResponse",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsResponse:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 9
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "id",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": true
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "suggestedTopicConversations"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@contextco/context-generated!ContextAPI#suggestedTopics:member(1)",
-              "docComment": "/**\n * Returns suggested topics details\n *\n * @param options - The options parameters.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "suggestedTopics(options?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicsOptionalParams",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicsOptionalParams:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicsResponse",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicsResponse:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 3,
-                "endIndex": 7
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": true
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "suggestedTopics"
-            },
-            {
-              "kind": "Method",
-              "canonicalReference": "@contextco/context-generated!ContextAPI#suggestedTopicStatistics:member(1)",
-              "docComment": "/**\n * Returns a list of conversations matching given topic\n *\n * @param id - \n *\n * @param options - The options parameters.\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "suggestedTopicStatistics(id: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ", options?: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicStatisticsOptionalParams",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsOptionalParams:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "): "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Promise",
-                  "canonicalReference": "!Promise:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "<"
-                },
-                {
-                  "kind": "Reference",
-                  "text": "SuggestedTopicStatisticsResponse",
-                  "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsResponse:type"
-                },
-                {
-                  "kind": "Content",
-                  "text": ">"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isStatic": false,
-              "returnTypeTokenRange": {
-                "startIndex": 5,
-                "endIndex": 9
-              },
-              "releaseTag": "Public",
-              "isProtected": false,
-              "overloadIndex": 1,
-              "parameters": [
-                {
-                  "parameterName": "id",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 1,
-                    "endIndex": 2
-                  },
-                  "isOptional": false
-                },
-                {
-                  "parameterName": "options",
-                  "parameterTypeTokenRange": {
-                    "startIndex": 3,
-                    "endIndex": 4
-                  },
-                  "isOptional": true
-                }
-              ],
-              "isOptional": false,
-              "isAbstract": false,
-              "name": "suggestedTopicStatistics"
             },
             {
               "kind": "Method",
@@ -2086,8 +1865,9 @@
                   "text": "reasoning?: "
                 },
                 {
-                  "kind": "Content",
-                  "text": "string"
+                  "kind": "Reference",
+                  "text": "EvaluationReasoning",
+                  "canonicalReference": "@contextco/context-generated!EvaluationReasoning:interface"
                 },
                 {
                   "kind": "Content",
@@ -2131,6 +1911,56 @@
             "startIndex": 1,
             "endIndex": 2
           }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!EvaluationReasoning:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface EvaluationReasoning "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "EvaluationReasoning",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!EvaluationReasoning#result:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "result?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReasoningResult",
+                  "canonicalReference": "@contextco/context-generated!ReasoningResult:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "result",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "Interface",
@@ -3939,6 +3769,33 @@
                 "startIndex": 1,
                 "endIndex": 2
               }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!LogConversationOptionalParams#tenantId:member",
+              "docComment": "/**\n * The tenant ID to log the conversation against.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tenantId?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tenantId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
             }
           ],
           "extendsTokenRanges": [
@@ -4022,6 +3879,33 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "body",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!LogConversationThreadOptionalParams#tenantId:member",
+              "docComment": "/**\n * The tenant ID to log the conversation against.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tenantId?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tenantId",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -4136,6 +4020,33 @@
               "isOptional": true,
               "releaseTag": "Public",
               "name": "body",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!LogConversationUpsertOptionalParams#tenantId:member",
+              "docComment": "/**\n * The tenant ID to log the conversation against.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tenantId?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "tenantId",
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
@@ -5202,80 +5113,6 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "@contextco/context-generated!Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema:interface",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema "
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema#statistics:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "statistics: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics",
-                  "canonicalReference": "@contextco/context-generated!Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "statistics",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema#topic:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "topic: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Topic",
-                  "canonicalReference": "@contextco/context-generated!Topic:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "topic",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
           "canonicalReference": "@contextco/context-generated!Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData:interface",
           "docComment": "",
           "excerptTokens": [
@@ -5637,159 +5474,6 @@
         },
         {
           "kind": "Interface",
-          "canonicalReference": "@contextco/context-generated!Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics:interface",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics "
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics#assistantMessageCount:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "assistantMessageCount: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "assistantMessageCount",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics#conversationCount:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "conversationCount: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "conversationCount",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics#meanSentiment:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "meanSentiment: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "meanSentiment",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics#meanUserRating:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "meanUserRating: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "meanUserRating",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics#userMessageCount:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "userMessageCount: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "userMessageCount",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
           "canonicalReference": "@contextco/context-generated!Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchemaPropertiesData:interface",
           "docComment": "",
           "excerptTokens": [
@@ -6032,162 +5716,6 @@
               "propertyTypeTokenRange": {
                 "startIndex": 1,
                 "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "@contextco/context-generated!Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema:interface",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema "
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema#conversations:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "conversations: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "ConversationResponse",
-                  "canonicalReference": "@contextco/context-generated!ConversationResponse:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "conversations",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema#pagination:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "pagination: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Pagination",
-                  "canonicalReference": "@contextco/context-generated!Pagination:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "pagination",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "@contextco/context-generated!Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema:interface",
-          "docComment": "",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema "
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema#pagination:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "pagination: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "Pagination",
-                  "canonicalReference": "@contextco/context-generated!Pagination:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "pagination",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema#topics:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "topics: "
-                },
-                {
-                  "kind": "Reference",
-                  "text": "TopicWithSamples",
-                  "canonicalReference": "@contextco/context-generated!TopicWithSamples:interface"
-                },
-                {
-                  "kind": "Content",
-                  "text": "[]"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": false,
-              "releaseTag": "Public",
-              "name": "topics",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 3
               }
             }
           ],
@@ -6934,6 +6462,78 @@
         },
         {
           "kind": "Interface",
+          "canonicalReference": "@contextco/context-generated!ReasoningResult:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ReasoningResult "
+            }
+          ],
+          "fileUrlPath": "src/models/index.ts",
+          "releaseTag": "Public",
+          "name": "ReasoningResult",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!ReasoningResult#reason:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "reason: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "reason",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@contextco/context-generated!ReasoningResult#verdict:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "verdict: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "verdict",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
           "canonicalReference": "@contextco/context-generated!SentimentOptionalParams:interface",
           "docComment": "/**\n * Optional parameters.\n */\n",
           "excerptTokens": [
@@ -7197,426 +6797,6 @@
             }
           ],
           "extendsTokenRanges": []
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsOptionalParams:interface",
-          "docComment": "/**\n * Optional parameters.\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface SuggestedTopicConversationsOptionalParams extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "coreClient.OperationOptions",
-              "canonicalReference": "@azure/core-client!OperationOptions:interface"
-            },
-            {
-              "kind": "Content",
-              "text": " "
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "SuggestedTopicConversationsOptionalParams",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsOptionalParams#authorization:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "authorization?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "authorization",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": [
-            {
-              "startIndex": 1,
-              "endIndex": 2
-            }
-          ]
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@contextco/context-generated!SuggestedTopicConversationsResponse:type",
-          "docComment": "/**\n * Contains response data for the suggestedTopicConversations operation.\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type SuggestedTopicConversationsResponse = "
-            },
-            {
-              "kind": "Reference",
-              "text": "Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema",
-              "canonicalReference": "@contextco/context-generated!Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema:interface"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "SuggestedTopicConversationsResponse",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "@contextco/context-generated!SuggestedTopicsOptionalParams:interface",
-          "docComment": "/**\n * Optional parameters.\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface SuggestedTopicsOptionalParams extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "coreClient.OperationOptions",
-              "canonicalReference": "@azure/core-client!OperationOptions:interface"
-            },
-            {
-              "kind": "Content",
-              "text": " "
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "SuggestedTopicsOptionalParams",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!SuggestedTopicsOptionalParams#authorization:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "authorization?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "authorization",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!SuggestedTopicsOptionalParams#page:member",
-              "docComment": "/**\n * Page number of results to return. Defaults to 1.<br />\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "page?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "page",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!SuggestedTopicsOptionalParams#perPage:member",
-              "docComment": "/**\n * Number of results to return per page. Defaults to 20.<br />\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "perPage?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "perPage",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": [
-            {
-              "startIndex": 1,
-              "endIndex": 2
-            }
-          ]
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@contextco/context-generated!SuggestedTopicsResponse:type",
-          "docComment": "/**\n * Contains response data for the suggestedTopics operation.\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type SuggestedTopicsResponse = "
-            },
-            {
-              "kind": "Reference",
-              "text": "Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema",
-              "canonicalReference": "@contextco/context-generated!Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema:interface"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "SuggestedTopicsResponse",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
-        },
-        {
-          "kind": "Interface",
-          "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsOptionalParams:interface",
-          "docComment": "/**\n * Optional parameters.\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export interface SuggestedTopicStatisticsOptionalParams extends "
-            },
-            {
-              "kind": "Reference",
-              "text": "coreClient.OperationOptions",
-              "canonicalReference": "@azure/core-client!OperationOptions:interface"
-            },
-            {
-              "kind": "Content",
-              "text": " "
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "SuggestedTopicStatisticsOptionalParams",
-          "preserveMemberOrder": false,
-          "members": [
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsOptionalParams#authorization:member",
-              "docComment": "",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "authorization?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "authorization",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsOptionalParams#endTime:member",
-              "docComment": "/**\n * Limits returned conversations to those that occurred before given time.<br />Must be ISO 8601. Defaults to now.<br />\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "endTime?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "endTime",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsOptionalParams#page:member",
-              "docComment": "/**\n * Page number of results to return. Defaults to 1.<br />\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "page?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "page",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsOptionalParams#perPage:member",
-              "docComment": "/**\n * Number of results to return per page. Defaults to 20.<br />\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "perPage?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "number"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "perPage",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            },
-            {
-              "kind": "PropertySignature",
-              "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsOptionalParams#startTime:member",
-              "docComment": "/**\n * Limits returned conversations to those that occurred after given time.<br />Must be ISO 8601. Defaults to the beginning of 6 days ago.<br />\n */\n",
-              "excerptTokens": [
-                {
-                  "kind": "Content",
-                  "text": "startTime?: "
-                },
-                {
-                  "kind": "Content",
-                  "text": "string"
-                },
-                {
-                  "kind": "Content",
-                  "text": ";"
-                }
-              ],
-              "isReadonly": false,
-              "isOptional": true,
-              "releaseTag": "Public",
-              "name": "startTime",
-              "propertyTypeTokenRange": {
-                "startIndex": 1,
-                "endIndex": 2
-              }
-            }
-          ],
-          "extendsTokenRanges": [
-            {
-              "startIndex": 1,
-              "endIndex": 2
-            }
-          ]
-        },
-        {
-          "kind": "TypeAlias",
-          "canonicalReference": "@contextco/context-generated!SuggestedTopicStatisticsResponse:type",
-          "docComment": "/**\n * Contains response data for the suggestedTopicStatistics operation.\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "export type SuggestedTopicStatisticsResponse = "
-            },
-            {
-              "kind": "Reference",
-              "text": "Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema",
-              "canonicalReference": "@contextco/context-generated!Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema:interface"
-            },
-            {
-              "kind": "Content",
-              "text": ";"
-            }
-          ],
-          "fileUrlPath": "src/models/index.ts",
-          "releaseTag": "Public",
-          "name": "SuggestedTopicStatisticsResponse",
-          "typeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 2
-          }
         },
         {
           "kind": "Interface",

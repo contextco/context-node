@@ -19,13 +19,7 @@ import {
   ConversationOptionalParams,
   ConversationOperationResponse,
   ConversationsOptionalParams,
-  ConversationsResponse,
-  SuggestedTopicsOptionalParams,
-  SuggestedTopicsResponse,
-  SuggestedTopicConversationsOptionalParams,
-  SuggestedTopicConversationsResponse,
-  SuggestedTopicStatisticsOptionalParams,
-  SuggestedTopicStatisticsResponse
+  ConversationsResponse
 } from "./models";
 
 export class ContextAPI extends coreClient.ServiceClient {
@@ -170,46 +164,6 @@ export class ContextAPI extends coreClient.ServiceClient {
     return this.sendOperationRequest({ options }, conversationsOperationSpec);
   }
 
-  /**
-   * Returns suggested topics details
-   * @param options The options parameters.
-   */
-  suggestedTopics(
-    options?: SuggestedTopicsOptionalParams
-  ): Promise<SuggestedTopicsResponse> {
-    return this.sendOperationRequest({ options }, suggestedTopicsOperationSpec);
-  }
-
-  /**
-   * Returns statistics of selected topic
-   * @param id
-   * @param options The options parameters.
-   */
-  suggestedTopicConversations(
-    id: string,
-    options?: SuggestedTopicConversationsOptionalParams
-  ): Promise<SuggestedTopicConversationsResponse> {
-    return this.sendOperationRequest(
-      { id, options },
-      suggestedTopicConversationsOperationSpec
-    );
-  }
-
-  /**
-   * Returns a list of conversations matching given topic
-   * @param id
-   * @param options The options parameters.
-   */
-  suggestedTopicStatistics(
-    id: string,
-    options?: SuggestedTopicStatisticsOptionalParams
-  ): Promise<SuggestedTopicStatisticsResponse> {
-    return this.sendOperationRequest(
-      { id, options },
-      suggestedTopicStatisticsOperationSpec
-    );
-  }
-
   evaluations: Evaluations;
   log: Log;
 }
@@ -334,52 +288,6 @@ const conversationsOperationSpec: coreClient.OperationSpec = {
     Parameters.tenantId1
   ],
   urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept, Parameters.authorization],
-  serializer
-};
-const suggestedTopicsOperationSpec: coreClient.OperationSpec = {
-  path: "/api/v1/topic_suggestions",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema
-    }
-  },
-  queryParameters: [Parameters.page, Parameters.perPage],
-  urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept, Parameters.authorization],
-  serializer
-};
-const suggestedTopicConversationsOperationSpec: coreClient.OperationSpec = {
-  path: "/api/v1/topic_suggestions/{id}/statistics",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema
-    }
-  },
-  urlParameters: [Parameters.$host, Parameters.id],
-  headerParameters: [Parameters.accept, Parameters.authorization],
-  serializer
-};
-const suggestedTopicStatisticsOperationSpec: coreClient.OperationSpec = {
-  path: "/api/v1/topic_suggestions/{id}/conversations",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema
-    }
-  },
-  queryParameters: [
-    Parameters.startTime,
-    Parameters.endTime,
-    Parameters.page,
-    Parameters.perPage
-  ],
-  urlParameters: [Parameters.$host, Parameters.id],
   headerParameters: [Parameters.accept, Parameters.authorization],
   serializer
 };

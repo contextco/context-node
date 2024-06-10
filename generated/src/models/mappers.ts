@@ -811,6 +811,51 @@ export const Evaluation: coreClient.CompositeMapper = {
       reasoning: {
         serializedName: "reasoning",
         type: {
+          name: "Composite",
+          className: "EvaluationReasoning"
+        }
+      }
+    }
+  }
+};
+
+export const EvaluationReasoning: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "EvaluationReasoning",
+    modelProperties: {
+      result: {
+        serializedName: "result",
+        type: {
+          name: "Sequence",
+          element: {
+            type: {
+              name: "Composite",
+              className: "ReasoningResult"
+            }
+          }
+        }
+      }
+    }
+  }
+};
+
+export const ReasoningResult: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ReasoningResult",
+    modelProperties: {
+      verdict: {
+        serializedName: "verdict",
+        required: true,
+        type: {
+          name: "Boolean"
+        }
+      },
+      reason: {
+        serializedName: "reason",
+        required: true,
+        type: {
           name: "String"
         }
       }
@@ -1210,36 +1255,6 @@ export const TestSetParams: coreClient.CompositeMapper = {
   }
 };
 
-export const Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema",
-    modelProperties: {
-      topics: {
-        serializedName: "topics",
-        required: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "TopicWithSamples"
-            }
-          }
-        }
-      },
-      pagination: {
-        serializedName: "pagination",
-        type: {
-          name: "Composite",
-          className: "Pagination"
-        }
-      }
-    }
-  }
-};
-
 export const TopicWithSamples: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
@@ -1270,114 +1285,6 @@ export const TopicWithSamples: coreClient.CompositeMapper = {
               className: "ConversationResponse"
             }
           }
-        }
-      }
-    }
-  }
-};
-
-export const Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema",
-    modelProperties: {
-      topic: {
-        serializedName: "topic",
-        type: {
-          name: "Composite",
-          className: "Topic"
-        }
-      },
-      statistics: {
-        serializedName: "statistics",
-        type: {
-          name: "Composite",
-          className:
-            "Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics"
-        }
-      }
-    }
-  }
-};
-
-export const Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics",
-    modelProperties: {
-      conversationCount: {
-        serializedName: "conversation_count",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      },
-      userMessageCount: {
-        serializedName: "user_message_count",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      },
-      assistantMessageCount: {
-        serializedName: "assistant_message_count",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      },
-      meanSentiment: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: -1
-        },
-        serializedName: "mean_sentiment",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      },
-      meanUserRating: {
-        constraints: {
-          InclusiveMaximum: 1,
-          InclusiveMinimum: -1
-        },
-        serializedName: "mean_user_rating",
-        required: true,
-        type: {
-          name: "Number"
-        }
-      }
-    }
-  }
-};
-
-export const Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper = {
-  type: {
-    name: "Composite",
-    className:
-      "Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema",
-    modelProperties: {
-      conversations: {
-        serializedName: "conversations",
-        required: true,
-        type: {
-          name: "Sequence",
-          element: {
-            type: {
-              name: "Composite",
-              className: "ConversationResponse"
-            }
-          }
-        }
-      },
-      pagination: {
-        serializedName: "pagination",
-        type: {
-          name: "Composite",
-          className: "Pagination"
         }
       }
     }
