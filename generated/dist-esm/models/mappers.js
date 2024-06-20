@@ -139,55 +139,6 @@ export const PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentAppl
         }
     }
 };
-export const Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema = {
-    type: {
-        name: "Composite",
-        className: "Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema",
-        modelProperties: {
-            series: {
-                serializedName: "series",
-                required: true,
-                type: {
-                    name: "Sequence",
-                    element: {
-                        type: {
-                            name: "Composite",
-                            className: "SeriesItem"
-                        }
-                    }
-                }
-            },
-            type: {
-                serializedName: "type",
-                required: true,
-                type: {
-                    name: "String"
-                }
-            },
-            period: {
-                serializedName: "period",
-                required: true,
-                type: {
-                    name: "String"
-                }
-            },
-            startTime: {
-                serializedName: "start_time",
-                required: true,
-                type: {
-                    name: "String"
-                }
-            },
-            endTime: {
-                serializedName: "end_time",
-                required: true,
-                type: {
-                    name: "String"
-                }
-            }
-        }
-    }
-};
 export const Paths1Ola7DlApiV1ConversationsSeriesVolumeGetResponses200ContentApplicationJsonSchema = {
     type: {
         name: "Composite",

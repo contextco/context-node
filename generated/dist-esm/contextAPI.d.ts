@@ -1,6 +1,6 @@
 import * as coreClient from "@azure/core-client";
 import { Evaluations, Log } from "./operationsInterfaces";
-import { ContextAPIOptionalParams, ConversationSeriesOptionalParams, ConversationSeriesResponse, SentimentOptionalParams, SentimentResponse, RatingOptionalParams, RatingResponse, EstimatedCostOptionalParams, EstimatedCostResponse, VolumeOptionalParams, VolumeResponse, ConversationOptionalParams, ConversationOperationResponse, ConversationsOptionalParams, ConversationsResponse } from "./models";
+import { ContextAPIOptionalParams, ConversationSeriesOptionalParams, ConversationSeriesResponse, SentimentOptionalParams, SentimentResponse, RatingOptionalParams, RatingResponse, VolumeOptionalParams, VolumeResponse, ConversationOptionalParams, ConversationOperationResponse, ConversationsOptionalParams, ConversationsResponse } from "./models";
 export declare class ContextAPI extends coreClient.ServiceClient {
     $host: string;
     /**
@@ -23,11 +23,6 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      * @param options The options parameters.
      */
     rating(options?: RatingOptionalParams): Promise<RatingResponse>;
-    /**
-     * Returns estimated cost details
-     * @param options The options parameters.
-     */
-    estimatedCost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
     /**
      * Returns volume details
      * @param options The options parameters.

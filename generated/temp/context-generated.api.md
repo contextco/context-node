@@ -14,7 +14,6 @@ export class ContextAPI extends coreClient.ServiceClient {
     conversation(id: string, options?: ConversationOptionalParams): Promise<ConversationOperationResponse>;
     conversations(options?: ConversationsOptionalParams): Promise<ConversationsResponse>;
     conversationSeries(options?: ConversationSeriesOptionalParams): Promise<ConversationSeriesResponse>;
-    estimatedCost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
     // (undocumented)
     evaluations: Evaluations;
     // (undocumented)
@@ -92,19 +91,6 @@ export interface ConversationsOptionalParams extends coreClient.OperationOptions
 
 // @public
 export type ConversationsResponse = PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema;
-
-// @public
-export interface EstimatedCostOptionalParams extends coreClient.OperationOptions {
-    // (undocumented)
-    authorization?: string;
-    endTime?: string;
-    period?: string;
-    startTime?: string;
-    tenantId?: string;
-}
-
-// @public
-export type EstimatedCostResponse = Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema;
 
 // @public (undocumented)
 export interface Evaluation {
@@ -392,20 +378,6 @@ export interface Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicati
 
 // @public (undocumented)
 export interface Paths1AqjttjApiV1ConversationsSeriesSentimentGetResponses200ContentApplicationJsonSchema {
-    // (undocumented)
-    endTime: string;
-    // (undocumented)
-    period: string;
-    // (undocumented)
-    series: SeriesItem[];
-    // (undocumented)
-    startTime: string;
-    // (undocumented)
-    type: string;
-}
-
-// @public (undocumented)
-export interface Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema {
     // (undocumented)
     endTime: string;
     // (undocumented)

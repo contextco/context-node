@@ -1,6 +1,6 @@
 {
   "name": "@contextco/context-node",
-  "version": "0.10.0",
+  "version": "0.12.0",
   "description": "Node SDK for the Context API",
   "main": "./build/index.js",
   "module": "./build/index.esm.js",
