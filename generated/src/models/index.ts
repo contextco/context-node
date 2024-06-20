@@ -140,7 +140,16 @@ export interface TestCaseMessage {
 export interface Evaluation {
   evaluatorName: string;
   outcome: EvaluationOutcome;
-  reasoning?: string;
+  reasoning?: EvaluationReasoning;
+}
+
+export interface EvaluationReasoning {
+  result?: ReasoningResult[];
+}
+
+export interface ReasoningResult {
+  verdict: boolean;
+  reason: string;
 }
 
 export interface PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema {
@@ -223,33 +232,10 @@ export interface TestSetParams {
   version: number;
 }
 
-export interface Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema {
-  topics: TopicWithSamples[];
-  pagination: Pagination;
-}
-
 export interface TopicWithSamples {
   id: string;
   name: string;
   conversationsSample: ConversationResponse[];
-}
-
-export interface Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema {
-  topic: Topic;
-  statistics: Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics;
-}
-
-export interface Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics {
-  conversationCount: number;
-  userMessageCount: number;
-  assistantMessageCount: number;
-  meanSentiment: number;
-  meanUserRating: number;
-}
-
-export interface Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema {
-  conversations: ConversationResponse[];
-  pagination: Pagination;
 }
 
 /** Known values of {@link ConversationSentimentTrend} that the service accepts. */
@@ -543,45 +529,6 @@ export interface ConversationsOptionalParams
 export type ConversationsResponse = PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
-export interface SuggestedTopicsOptionalParams
-  extends coreClient.OperationOptions {
-  authorization?: string;
-  /** Page number of results to return. Defaults to 1.<br /> */
-  page?: number;
-  /** Number of results to return per page. Defaults to 20.<br /> */
-  perPage?: number;
-}
-
-/** Contains response data for the suggestedTopics operation. */
-export type SuggestedTopicsResponse = Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface SuggestedTopicConversationsOptionalParams
-  extends coreClient.OperationOptions {
-  authorization?: string;
-}
-
-/** Contains response data for the suggestedTopicConversations operation. */
-export type SuggestedTopicConversationsResponse = Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface SuggestedTopicStatisticsOptionalParams
-  extends coreClient.OperationOptions {
-  authorization?: string;
-  /** Limits returned conversations to those that occurred after given time.<br />Must be ISO 8601. Defaults to the beginning of 6 days ago.<br /> */
-  startTime?: string;
-  /** Limits returned conversations to those that occurred before given time.<br />Must be ISO 8601. Defaults to now.<br /> */
-  endTime?: string;
-  /** Page number of results to return. Defaults to 1.<br /> */
-  page?: number;
-  /** Number of results to return per page. Defaults to 20.<br /> */
-  perPage?: number;
-}
-
-/** Contains response data for the suggestedTopicStatistics operation. */
-export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
 export interface EvaluationsRunOptionalParams
   extends coreClient.OperationOptions {
   authorization?: string;
@@ -604,6 +551,8 @@ export type EvaluationsResultResponse = EvaluationsRunResponse;
 export interface LogConversationOptionalParams
   extends coreClient.OperationOptions {
   authorization?: string;
+  /** The tenant ID to log the conversation against. */
+  tenantId?: string;
   body?: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema;
 }
 
@@ -611,6 +560,8 @@ export interface LogConversationOptionalParams
 export interface LogConversationUpsertOptionalParams
   extends coreClient.OperationOptions {
   authorization?: string;
+  /** The tenant ID to log the conversation against. */
+  tenantId?: string;
   body?: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema;
 }
 
@@ -618,6 +569,8 @@ export interface LogConversationUpsertOptionalParams
 export interface LogConversationThreadOptionalParams
   extends coreClient.OperationOptions {
   authorization?: string;
+  /** The tenant ID to log the conversation against. */
+  tenantId?: string;
   body?: Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema;
 }
 

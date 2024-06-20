@@ -21,9 +21,6 @@ export class ContextAPI extends coreClient.ServiceClient {
     log: Log;
     rating(options?: RatingOptionalParams): Promise<RatingResponse>;
     sentiment(options?: SentimentOptionalParams): Promise<SentimentResponse>;
-    suggestedTopicConversations(id: string, options?: SuggestedTopicConversationsOptionalParams): Promise<SuggestedTopicConversationsResponse>;
-    suggestedTopics(options?: SuggestedTopicsOptionalParams): Promise<SuggestedTopicsResponse>;
-    suggestedTopicStatistics(id: string, options?: SuggestedTopicStatisticsOptionalParams): Promise<SuggestedTopicStatisticsResponse>;
     volume(options?: VolumeOptionalParams): Promise<VolumeResponse>;
 }
 
@@ -116,11 +113,17 @@ export interface Evaluation {
     // (undocumented)
     outcome: EvaluationOutcome;
     // (undocumented)
-    reasoning?: string;
+    reasoning?: EvaluationReasoning;
 }
 
 // @public
 export type EvaluationOutcome = string;
+
+// @public (undocumented)
+export interface EvaluationReasoning {
+    // (undocumented)
+    result?: ReasoningResult[];
+}
 
 // @public
 export interface Evaluations {
@@ -266,6 +269,7 @@ export interface LogConversationOptionalParams extends coreClient.OperationOptio
     authorization?: string;
     // (undocumented)
     body?: PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema;
+    tenantId?: string;
 }
 
 // @public
@@ -274,6 +278,7 @@ export interface LogConversationThreadOptionalParams extends coreClient.Operatio
     authorization?: string;
     // (undocumented)
     body?: Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema;
+    tenantId?: string;
 }
 
 // @public
@@ -285,6 +290,7 @@ export interface LogConversationUpsertOptionalParams extends coreClient.Operatio
     authorization?: string;
     // (undocumented)
     body?: PathsRai0VpApiV1LogConversationUpsertPostRequestbodyContentApplicationJsonSchema;
+    tenantId?: string;
 }
 
 // @public
@@ -379,14 +385,6 @@ export interface Pagination {
 }
 
 // @public (undocumented)
-export interface Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema {
-    // (undocumented)
-    statistics: Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics;
-    // (undocumented)
-    topic: Topic;
-}
-
-// @public (undocumented)
 export interface Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentApplicationJsonSchemaPropertiesData {
     // (undocumented)
     runId?: string;
@@ -421,20 +419,6 @@ export interface Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses20
 }
 
 // @public (undocumented)
-export interface Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics {
-    // (undocumented)
-    assistantMessageCount: number;
-    // (undocumented)
-    conversationCount: number;
-    // (undocumented)
-    meanSentiment: number;
-    // (undocumented)
-    meanUserRating: number;
-    // (undocumented)
-    userMessageCount: number;
-}
-
-// @public (undocumented)
 export interface Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchemaPropertiesData {
     // (undocumented)
     id?: string;
@@ -458,22 +442,6 @@ export interface Paths1Ola7DlApiV1ConversationsSeriesVolumeGetResponses200Conten
 export interface Paths1S2Rf6XApiV1LogConversationThreadPostRequestbodyContentApplicationJsonSchema {
     // (undocumented)
     conversation?: Thread;
-}
-
-// @public (undocumented)
-export interface Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema {
-    // (undocumented)
-    conversations: ConversationResponse[];
-    // (undocumented)
-    pagination: Pagination;
-}
-
-// @public (undocumented)
-export interface Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema {
-    // (undocumented)
-    pagination: Pagination;
-    // (undocumented)
-    topics: TopicWithSamples[];
 }
 
 // @public (undocumented)
@@ -548,6 +516,14 @@ export interface RatingOptionalParams extends coreClient.OperationOptions {
 // @public
 export type RatingResponse = PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentApplicationJsonSchema;
 
+// @public (undocumented)
+export interface ReasoningResult {
+    // (undocumented)
+    reason: string;
+    // (undocumented)
+    verdict: boolean;
+}
+
 // @public
 export interface SentimentOptionalParams extends coreClient.OperationOptions {
     // (undocumented)
@@ -569,39 +545,6 @@ export interface SeriesItem {
     // (undocumented)
     name: string;
 }
-
-// @public
-export interface SuggestedTopicConversationsOptionalParams extends coreClient.OperationOptions {
-    // (undocumented)
-    authorization?: string;
-}
-
-// @public
-export type SuggestedTopicConversationsResponse = Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema;
-
-// @public
-export interface SuggestedTopicsOptionalParams extends coreClient.OperationOptions {
-    // (undocumented)
-    authorization?: string;
-    page?: number;
-    perPage?: number;
-}
-
-// @public
-export type SuggestedTopicsResponse = Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema;
-
-// @public
-export interface SuggestedTopicStatisticsOptionalParams extends coreClient.OperationOptions {
-    // (undocumented)
-    authorization?: string;
-    endTime?: string;
-    page?: number;
-    perPage?: number;
-    startTime?: string;
-}
-
-// @public
-export type SuggestedTopicStatisticsResponse = Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema;
 
 // @public (undocumented)
 export interface TestCase {

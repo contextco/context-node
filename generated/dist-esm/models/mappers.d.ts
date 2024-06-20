@@ -20,6 +20,8 @@ export declare const TestCaseRun: coreClient.CompositeMapper;
 export declare const TestCaseDetails: coreClient.CompositeMapper;
 export declare const TestCaseMessage: coreClient.CompositeMapper;
 export declare const Evaluation: coreClient.CompositeMapper;
+export declare const EvaluationReasoning: coreClient.CompositeMapper;
+export declare const ReasoningResult: coreClient.CompositeMapper;
 export declare const PathsLi5TynApiV1LogConversationPostRequestbodyContentApplicationJsonSchema: coreClient.CompositeMapper;
 export declare const Conversation: coreClient.CompositeMapper;
 export declare const Message: coreClient.CompositeMapper;
@@ -32,9 +34,5 @@ export declare const TestSet: coreClient.CompositeMapper;
 export declare const TestCase: coreClient.CompositeMapper;
 export declare const Evaluator: coreClient.CompositeMapper;
 export declare const TestSetParams: coreClient.CompositeMapper;
-export declare const Paths1U893W0ApiV1TopicSuggestionsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper;
 export declare const TopicWithSamples: coreClient.CompositeMapper;
-export declare const Paths11Gsqt2ApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper;
-export declare const Paths1MjxjdtApiV1TopicSuggestionsIdStatisticsGetResponses200ContentApplicationJsonSchemaPropertiesStatistics: coreClient.CompositeMapper;
-export declare const Paths1TzwckqApiV1TopicSuggestionsIdConversationsGetResponses200ContentApplicationJsonSchema: coreClient.CompositeMapper;
 //# sourceMappingURL=mappers.d.ts.map

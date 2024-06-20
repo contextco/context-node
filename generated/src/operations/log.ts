@@ -77,6 +77,7 @@ const conversationOperationSpec: coreClient.OperationSpec = {
   httpMethod: "POST",
   responses: { 201: {} },
   requestBody: Parameters.body1,
+  queryParameters: [Parameters.tenantId],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.authorization, Parameters.contentType],
   mediaType: "json",
@@ -87,6 +88,7 @@ const conversationUpsertOperationSpec: coreClient.OperationSpec = {
   httpMethod: "POST",
   responses: { 201: {} },
   requestBody: Parameters.body2,
+  queryParameters: [Parameters.tenantId],
   urlParameters: [Parameters.$host],
   headerParameters: [Parameters.authorization, Parameters.contentType],
   mediaType: "json",
@@ -102,6 +104,7 @@ const conversationThreadOperationSpec: coreClient.OperationSpec = {
     }
   },
   requestBody: Parameters.body3,
+  queryParameters: [Parameters.tenantId],
   urlParameters: [Parameters.$host],
   headerParameters: [
     Parameters.accept,

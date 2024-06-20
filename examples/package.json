@@ -7,8 +7,8 @@
     "build": "esbuild ./src/* --bundle --format=cjs --platform=node --outdir=build"
   },
   "dependencies": {
-    "@contextco/context-node": "file:..",
-    "@contextco/context-generated": "file:../generated"
+    "@contextco/context-generated": "file:../generated",
+    "@contextco/context-node": "file:.."
   },
   "author": "",
   "license": "ISC",
