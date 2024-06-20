@@ -23,11 +23,6 @@ export declare class ContextAPI extends coreClient.ServiceClient {
      */
     rating(options?: RatingOptionalParams): Promise<RatingResponse>;
     /**
-     * Returns estimated cost details
-     * @param options The options parameters.
-     */
-    estimatedCost(options?: EstimatedCostOptionalParams): Promise<EstimatedCostResponse>;
-    /**
      * Returns volume details
      * @param options The options parameters.
      */
@@ -120,22 +115,6 @@ export declare interface ConversationsOptionalParams extends coreClient.Operatio
 
 /** Contains response data for the conversations operation. */
 export declare type ConversationsResponse = PathsY5Azv9ApiV1ConversationsGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export declare interface EstimatedCostOptionalParams extends coreClient.OperationOptions {
-    authorization?: string;
-    /** Filter by tenant id.<br /> */
-    tenantId?: string;
-    /** Limits scope to data that occurred after given time.<br />Must be ISO 8601. Defaults to the beginning of 6 days ago.<br /> */
-    startTime?: string;
-    /** Limits scope to data that occurred before given time.<br />Must be ISO 8601. Defaults to now.<br /> */
-    endTime?: string;
-    /** Period to group data by. Defaults to day. Options are: day, week, month.<br /> */
-    period?: string;
-}
-
-/** Contains response data for the estimatedCost operation. */
-export declare type EstimatedCostResponse = Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema;
 
 export declare interface Evaluation {
     evaluatorName: string;
@@ -468,14 +447,6 @@ export declare interface Paths14Bf6A5ApiV1EvaluationsRunPostResponses202ContentA
 }
 
 export declare interface Paths1AqjttjApiV1ConversationsSeriesSentimentGetResponses200ContentApplicationJsonSchema {
-    series: SeriesItem[];
-    type: string;
-    period: string;
-    startTime: string;
-    endTime: string;
-}
-
-export declare interface Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema {
     series: SeriesItem[];
     type: string;
     period: string;

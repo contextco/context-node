@@ -26,14 +26,6 @@ export interface PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200Content
   endTime: string;
 }
 
-export interface Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema {
-  series: SeriesItem[];
-  type: string;
-  period: string;
-  startTime: string;
-  endTime: string;
-}
-
 export interface Paths1Ola7DlApiV1ConversationsSeriesVolumeGetResponses200ContentApplicationJsonSchema {
   series: SeriesItem[];
   type: string;
@@ -466,23 +458,6 @@ export interface RatingOptionalParams extends coreClient.OperationOptions {
 
 /** Contains response data for the rating operation. */
 export type RatingResponse = PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentApplicationJsonSchema;
-
-/** Optional parameters. */
-export interface EstimatedCostOptionalParams
-  extends coreClient.OperationOptions {
-  authorization?: string;
-  /** Filter by tenant id.<br /> */
-  tenantId?: string;
-  /** Limits scope to data that occurred after given time.<br />Must be ISO 8601. Defaults to the beginning of 6 days ago.<br /> */
-  startTime?: string;
-  /** Limits scope to data that occurred before given time.<br />Must be ISO 8601. Defaults to now.<br /> */
-  endTime?: string;
-  /** Period to group data by. Defaults to day. Options are: day, week, month.<br /> */
-  period?: string;
-}
-
-/** Contains response data for the estimatedCost operation. */
-export type EstimatedCostResponse = Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema;
 
 /** Optional parameters. */
 export interface VolumeOptionalParams extends coreClient.OperationOptions {

@@ -12,8 +12,6 @@ import {
   SentimentResponse,
   RatingOptionalParams,
   RatingResponse,
-  EstimatedCostOptionalParams,
-  EstimatedCostResponse,
   VolumeOptionalParams,
   VolumeResponse,
   ConversationOptionalParams,
@@ -122,16 +120,6 @@ export class ContextAPI extends coreClient.ServiceClient {
   }
 
   /**
-   * Returns estimated cost details
-   * @param options The options parameters.
-   */
-  estimatedCost(
-    options?: EstimatedCostOptionalParams
-  ): Promise<EstimatedCostResponse> {
-    return this.sendOperationRequest({ options }, estimatedCostOperationSpec);
-  }
-
-  /**
    * Returns volume details
    * @param options The options parameters.
    */
@@ -209,25 +197,6 @@ const ratingOperationSpec: coreClient.OperationSpec = {
     200: {
       bodyMapper:
         Mappers.PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentApplicationJsonSchema
-    }
-  },
-  queryParameters: [
-    Parameters.tenantId,
-    Parameters.startTime,
-    Parameters.endTime,
-    Parameters.period
-  ],
-  urlParameters: [Parameters.$host],
-  headerParameters: [Parameters.accept, Parameters.authorization],
-  serializer
-};
-const estimatedCostOperationSpec: coreClient.OperationSpec = {
-  path: "/api/v1/conversations/series/estimated_cost",
-  httpMethod: "GET",
-  responses: {
-    200: {
-      bodyMapper:
-        Mappers.Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema
     }
   },
   queryParameters: [

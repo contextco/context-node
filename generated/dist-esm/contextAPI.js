@@ -73,13 +73,6 @@ export class ContextAPI extends coreClient.ServiceClient {
         return this.sendOperationRequest({ options }, ratingOperationSpec);
     }
     /**
-     * Returns estimated cost details
-     * @param options The options parameters.
-     */
-    estimatedCost(options) {
-        return this.sendOperationRequest({ options }, estimatedCostOperationSpec);
-    }
-    /**
      * Returns volume details
      * @param options The options parameters.
      */
@@ -140,24 +133,6 @@ const ratingOperationSpec = {
     responses: {
         200: {
             bodyMapper: Mappers.PathsXq2NqjApiV1ConversationsSeriesRatingGetResponses200ContentApplicationJsonSchema
-        }
-    },
-    queryParameters: [
-        Parameters.tenantId,
-        Parameters.startTime,
-        Parameters.endTime,
-        Parameters.period
-    ],
-    urlParameters: [Parameters.$host],
-    headerParameters: [Parameters.accept, Parameters.authorization],
-    serializer
-};
-const estimatedCostOperationSpec = {
-    path: "/api/v1/conversations/series/estimated_cost",
-    httpMethod: "GET",
-    responses: {
-        200: {
-            bodyMapper: Mappers.Paths1J9XfjaApiV1ConversationsSeriesEstimatedCostGetResponses200ContentApplicationJsonSchema
         }
     },
     queryParameters: [
