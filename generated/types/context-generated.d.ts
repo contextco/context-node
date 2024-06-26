@@ -313,6 +313,12 @@ export declare interface Log {
      */
     conversationThread(options?: LogConversationThreadOptionalParams): Promise<LogConversationThreadResponse>;
     /**
+     * Updates a thread
+     * @param id The thread id of the conversation to update.
+     * @param options The options parameters.
+     */
+    updateConversationThread(id: string, options?: LogUpdateConversationThreadOptionalParams): Promise<void>;
+    /**
      * Returns test set and version details
      * @param options The options parameters.
      */
@@ -356,6 +362,13 @@ export declare interface LogTestSetsOptionalParams extends coreClient.OperationO
 
 /** Contains response data for the testSets operation. */
 export declare type LogTestSetsResponse = TestSetParams;
+
+/** Optional parameters. */
+export declare interface LogUpdateConversationThreadOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    /** Array of thread_message */
+    body?: ThreadMessage[];
+}
 
 export declare interface Message {
     role?: MessageParamsRole;
@@ -622,6 +635,10 @@ export declare interface Thread {
         [propertyName: string]: string;
     };
     feedback?: string;
+}
+
+export declare interface ThreadMessage {
+    rating?: Rating;
 }
 
 export declare interface Topic {

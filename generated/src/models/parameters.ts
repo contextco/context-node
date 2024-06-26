@@ -160,6 +160,22 @@ export const body3: OperationParameter = {
 
 export const body4: OperationParameter = {
   parameterPath: ["options", "body"],
+  mapper: {
+    serializedName: "body",
+    type: {
+      name: "Sequence",
+      element: {
+        type: {
+          name: "Composite",
+          className: "ThreadMessage"
+        }
+      }
+    }
+  }
+};
+
+export const body5: OperationParameter = {
+  parameterPath: ["options", "body"],
   mapper: TestSetMapper
 };
 

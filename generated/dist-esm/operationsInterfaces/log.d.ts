@@ -1,4 +1,4 @@
-import { LogConversationOptionalParams, LogConversationUpsertOptionalParams, LogConversationThreadOptionalParams, LogConversationThreadResponse, LogTestSetsOptionalParams, LogTestSetsResponse } from "../models";
+import { LogConversationOptionalParams, LogConversationUpsertOptionalParams, LogConversationThreadOptionalParams, LogConversationThreadResponse, LogUpdateConversationThreadOptionalParams, LogTestSetsOptionalParams, LogTestSetsResponse } from "../models";
 /** Interface representing a Log. */
 export interface Log {
     /**
@@ -16,6 +16,12 @@ export interface Log {
      * @param options The options parameters.
      */
     conversationThread(options?: LogConversationThreadOptionalParams): Promise<LogConversationThreadResponse>;
+    /**
+     * Updates a thread
+     * @param id The thread id of the conversation to update.
+     * @param options The options parameters.
+     */
+    updateConversationThread(id: string, options?: LogUpdateConversationThreadOptionalParams): Promise<void>;
     /**
      * Returns test set and version details
      * @param options The options parameters.

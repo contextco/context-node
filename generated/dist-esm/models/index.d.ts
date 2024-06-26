@@ -176,6 +176,9 @@ export interface PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApp
 export interface Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchemaPropertiesData {
     id?: string;
 }
+export interface ThreadMessage {
+    rating?: Rating;
+}
 export interface TestSet {
     name: string;
     testCases: TestCase[];
@@ -482,6 +485,12 @@ export interface LogConversationThreadOptionalParams extends coreClient.Operatio
 }
 /** Contains response data for the conversationThread operation. */
 export type LogConversationThreadResponse = PathsDo7Pm8ApiV1LogConversationThreadPostResponses201ContentApplicationJsonSchema;
+/** Optional parameters. */
+export interface LogUpdateConversationThreadOptionalParams extends coreClient.OperationOptions {
+    authorization?: string;
+    /** Array of thread_message */
+    body?: ThreadMessage[];
+}
 /** Optional parameters. */
 export interface LogTestSetsOptionalParams extends coreClient.OperationOptions {
     authorization?: string;

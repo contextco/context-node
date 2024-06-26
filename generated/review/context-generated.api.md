@@ -247,6 +247,7 @@ export interface Log {
     conversationThread(options?: LogConversationThreadOptionalParams): Promise<LogConversationThreadResponse>;
     conversationUpsert(options?: LogConversationUpsertOptionalParams): Promise<void>;
     testSets(options?: LogTestSetsOptionalParams): Promise<LogTestSetsResponse>;
+    updateConversationThread(id: string, options?: LogUpdateConversationThreadOptionalParams): Promise<void>;
 }
 
 // @public
@@ -290,6 +291,13 @@ export interface LogTestSetsOptionalParams extends coreClient.OperationOptions {
 
 // @public
 export type LogTestSetsResponse = TestSetParams;
+
+// @public
+export interface LogUpdateConversationThreadOptionalParams extends coreClient.OperationOptions {
+    // (undocumented)
+    authorization?: string;
+    body?: ThreadMessage[];
+}
 
 // @public (undocumented)
 export interface Message {
@@ -597,6 +605,12 @@ export interface Thread {
     metadata?: {
         [propertyName: string]: string;
     };
+}
+
+// @public (undocumented)
+export interface ThreadMessage {
+    // (undocumented)
+    rating?: Rating;
 }
 
 // @public (undocumented)

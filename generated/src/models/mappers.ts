@@ -1051,6 +1051,22 @@ export const Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplic
   }
 };
 
+export const ThreadMessage: coreClient.CompositeMapper = {
+  type: {
+    name: "Composite",
+    className: "ThreadMessage",
+    modelProperties: {
+      rating: {
+        serializedName: "rating",
+        type: {
+          name: "Enum",
+          allowedValues: [-1, 0, 1]
+        }
+      }
+    }
+  }
+};
+
 export const TestSet: coreClient.CompositeMapper = {
   type: {
     name: "Composite",
