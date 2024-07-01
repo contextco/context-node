@@ -350,7 +350,9 @@ export declare enum KnownMessageParamsType {
     /** Message */
     Message = "message",
     /** Tool */
-    Tool = "tool"
+    Tool = "tool",
+    /** Event */
+    Event = "event"
 }
 /**
  * Defines values for MessageParamsType. \
@@ -358,7 +360,8 @@ export declare enum KnownMessageParamsType {
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **message** \
- * **tool**
+ * **tool** \
+ * **event**
  */
 export type MessageParamsType = string;
 /** Known values of {@link TestCaseFrom} that the service accepts. */

@@ -256,7 +256,9 @@ export declare enum KnownMessageParamsType {
     /** Message */
     Message = "message",
     /** Tool */
-    Tool = "tool"
+    Tool = "tool",
+    /** Event */
+    Event = "event"
 }
 
 /** Known values of {@link MessageRole} that the service accepts. */
@@ -404,7 +406,8 @@ export declare type MessageParamsRole = string;
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **message** \
- * **tool**
+ * **tool** \
+ * **event**
  */
 export declare type MessageParamsType = string;
 
