@@ -211,6 +211,7 @@ export enum KnownMessageParamsRole {
 
 // @public
 export enum KnownMessageParamsType {
+    Event = "event",
     Message = "message",
     Tool = "tool"
 }

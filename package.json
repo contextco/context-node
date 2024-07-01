@@ -1,6 +1,6 @@
 {
   "name": "@contextco/context-node",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Node SDK for the Context API",
   "main": "./build/index.js",
   "module": "./build/index.esm.js",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@azure/core-auth": "^1.5.0",
-    "@contextco/context-generated": "13.0.0"
+    "@contextco/context-generated": "14.0.0"
   },
   "keywords": [
     "context",

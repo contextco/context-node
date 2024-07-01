@@ -77,6 +77,8 @@ export var KnownMessageParamsType;
     KnownMessageParamsType["Message"] = "message";
     /** Tool */
     KnownMessageParamsType["Tool"] = "tool";
+    /** Event */
+    KnownMessageParamsType["Event"] = "event";
 })(KnownMessageParamsType || (KnownMessageParamsType = {}));
 /** Known values of {@link TestCaseFrom} that the service accepts. */
 export var KnownTestCaseFrom;

@@ -389,7 +389,9 @@ export enum KnownMessageParamsType {
   /** Message */
   Message = "message",
   /** Tool */
-  Tool = "tool"
+  Tool = "tool",
+  /** Event */
+  Event = "event"
 }
 
 /**
@@ -398,7 +400,8 @@ export enum KnownMessageParamsType {
  *  this enum contains the known values that the service supports.
  * ### Known values supported by the service
  * **message** \
- * **tool**
+ * **tool** \
+ * **event**
  */
 export type MessageParamsType = string;
 

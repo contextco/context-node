@@ -1,7 +1,7 @@
 {
   "metadata": {
     "toolPackage": "@microsoft/api-extractor",
-    "toolVersion": "7.43.1",
+    "toolVersion": "7.38.0",
     "schemaVersion": 1011,
     "oldestForwardsCompatibleVersion": 1001,
     "tsdocConfig": {
@@ -2874,6 +2874,27 @@
           "members": [
             {
               "kind": "EnumMember",
+              "canonicalReference": "@contextco/context-generated!KnownMessageParamsType.Event:member",
+              "docComment": "/**\n * Event\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Event = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"event\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Event"
+            },
+            {
+              "kind": "EnumMember",
               "canonicalReference": "@contextco/context-generated!KnownMessageParamsType.Message:member",
               "docComment": "/**\n * Message\n */\n",
               "excerptTokens": [
@@ -4428,7 +4449,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "@contextco/context-generated!MessageParamsType:type",
-          "docComment": "/**\n * Defines values for MessageParamsType. \\ {@link KnownMessageParamsType} can be used interchangeably with MessageParamsType, this enum contains the known values that the service supports. ### Known values supported by the service **message** \\ **tool**\n */\n",
+          "docComment": "/**\n * Defines values for MessageParamsType. \\ {@link KnownMessageParamsType} can be used interchangeably with MessageParamsType, this enum contains the known values that the service supports. ### Known values supported by the service **message** \\ **tool** \\ **event**\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
