@@ -132,6 +132,21 @@ export const body3 = {
 };
 export const body4 = {
     parameterPath: ["options", "body"],
+    mapper: {
+        serializedName: "body",
+        type: {
+            name: "Sequence",
+            element: {
+                type: {
+                    name: "Composite",
+                    className: "ThreadMessage"
+                }
+            }
+        }
+    }
+};
+export const body5 = {
+    parameterPath: ["options", "body"],
     mapper: TestSetMapper
 };
 export const copyTestCasesFrom = {

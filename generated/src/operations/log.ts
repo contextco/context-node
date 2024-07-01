@@ -8,6 +8,7 @@ import {
   LogConversationUpsertOptionalParams,
   LogConversationThreadOptionalParams,
   LogConversationThreadResponse,
+  LogUpdateConversationThreadOptionalParams,
   LogTestSetsOptionalParams,
   LogTestSetsResponse
 } from "../models";
@@ -58,6 +59,21 @@ export class LogImpl implements Log {
     return this.client.sendOperationRequest(
       { options },
       conversationThreadOperationSpec
+    );
+  }
+
+  /**
+   * Updates a thread
+   * @param id The thread id of the conversation to update.
+   * @param options The options parameters.
+   */
+  updateConversationThread(
+    id: string,
+    options?: LogUpdateConversationThreadOptionalParams
+  ): Promise<void> {
+    return this.client.sendOperationRequest(
+      { id, options },
+      updateConversationThreadOperationSpec
     );
   }
 
@@ -114,6 +130,16 @@ const conversationThreadOperationSpec: coreClient.OperationSpec = {
   mediaType: "json",
   serializer
 };
+const updateConversationThreadOperationSpec: coreClient.OperationSpec = {
+  path: "/api/v1/log/conversation/thread/{id}",
+  httpMethod: "PATCH",
+  responses: { 200: {} },
+  requestBody: Parameters.body4,
+  urlParameters: [Parameters.$host, Parameters.id],
+  headerParameters: [Parameters.authorization, Parameters.contentType],
+  mediaType: "json",
+  serializer
+};
 const testSetsOperationSpec: coreClient.OperationSpec = {
   path: "/api/v1/test_sets",
   httpMethod: "POST",
@@ -122,7 +148,7 @@ const testSetsOperationSpec: coreClient.OperationSpec = {
       bodyMapper: Mappers.TestSetParams
     }
   },
-  requestBody: Parameters.body4,
+  requestBody: Parameters.body5,
   queryParameters: [Parameters.copyTestCasesFrom],
   urlParameters: [Parameters.$host],
   headerParameters: [

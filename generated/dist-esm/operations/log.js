@@ -32,6 +32,14 @@ export class LogImpl {
         return this.client.sendOperationRequest({ options }, conversationThreadOperationSpec);
     }
     /**
+     * Updates a thread
+     * @param id The thread id of the conversation to update.
+     * @param options The options parameters.
+     */
+    updateConversationThread(id, options) {
+        return this.client.sendOperationRequest({ id, options }, updateConversationThreadOperationSpec);
+    }
+    /**
      * Returns test set and version details
      * @param options The options parameters.
      */
@@ -82,6 +90,16 @@ const conversationThreadOperationSpec = {
     mediaType: "json",
     serializer
 };
+const updateConversationThreadOperationSpec = {
+    path: "/api/v1/log/conversation/thread/{id}",
+    httpMethod: "PATCH",
+    responses: { 200: {} },
+    requestBody: Parameters.body4,
+    urlParameters: [Parameters.$host, Parameters.id],
+    headerParameters: [Parameters.authorization, Parameters.contentType],
+    mediaType: "json",
+    serializer
+};
 const testSetsOperationSpec = {
     path: "/api/v1/test_sets",
     httpMethod: "POST",
@@ -90,7 +108,7 @@ const testSetsOperationSpec = {
             bodyMapper: Mappers.TestSetParams
         }
     },
-    requestBody: Parameters.body4,
+    requestBody: Parameters.body5,
     queryParameters: [Parameters.copyTestCasesFrom],
     urlParameters: [Parameters.$host],
     headerParameters: [

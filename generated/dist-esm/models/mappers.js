@@ -1005,6 +1005,21 @@ export const Paths1O34Sy5ApiV1LogConversationThreadPostResponses201ContentApplic
         }
     }
 };
+export const ThreadMessage = {
+    type: {
+        name: "Composite",
+        className: "ThreadMessage",
+        modelProperties: {
+            rating: {
+                serializedName: "rating",
+                type: {
+                    name: "Enum",
+                    allowedValues: [-1, 0, 1]
+                }
+            }
+        }
+    }
+};
 export const TestSet = {
     type: {
         name: "Composite",
